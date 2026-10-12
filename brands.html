@@ -1,0 +1,1001 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+    <!-- Instant Theme & Layout Initializer (Prevents Flash of Dark/Light Theme on Navigation) -->
+    <script>
+        (function() {
+            try {
+                var savedTheme = localStorage.getItem('aether_theme') || 'light';
+                var savedDir = localStorage.getItem('aether_dir') || 'ltr';
+                document.documentElement.setAttribute('data-theme', savedTheme);
+                document.documentElement.setAttribute('dir', savedDir);
+                document.documentElement.setAttribute('lang', savedDir === 'rtl' ? 'ar' : 'en');
+            } catch(e) {}
+        })();
+    </script>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="AETHER VOYAGE Brand Heritage — Discover American Tourister, Skybags, Samsonite, Rimowa, Tumi, Carl Friedrik, and Aether Atelier craftsmanship and origins." />
+    <title>Brand Heritage & Partners — AETHER VOYAGE</title>
+
+    <!-- Favicon & Brand Touch Icons -->
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png" />
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="manifest" href="site.webmanifest" />
+    <meta name="theme-color" content="#dfba73" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800;900&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome 6 Icons CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+    <!-- Master Stylesheet -->
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="site-header" id="siteHeader">
+        <div class="container header-container">
+            <a href="index.html" class="brand-logo" aria-label="Aether Voyage Home">
+                <div class="logo-monogram">Æ</div>
+                <div class="logo-text-group">
+                    <span class="logo-title">AETHER</span>
+                    <span class="logo-subtitle">TRAVEL LUGGAGE</span>
+                </div>
+            </a>
+
+            <nav class="nav-menu" aria-label="Primary Navigation">
+                <div class="nav-item-dropdown">
+                    <a href="index.html" class="nav-link dropdown-toggle">
+                        <span>Home</span>
+                        <i class="fa-solid fa-chevron-down nav-dropdown-arrow"></i>
+                    </a>
+                    <div class="nav-dropdown-menu">
+                        <a href="index.html" class="nav-dropdown-item">
+                            <div class="dropdown-item-icon">
+                                <i class="fa-solid fa-landmark"></i>
+                            </div>
+                            <div class="dropdown-item-content">
+                                <div class="dropdown-item-title">Home 1: Flagship Showcase</div>
+                                <div class="dropdown-item-desc">Classic brand collections & travel luggage</div>
+                            </div>
+                        </a>
+                        <a href="home2.html" class="nav-dropdown-item">
+                            <div class="dropdown-item-icon">
+                                <i class="fa-solid fa-wand-magic-sparkles"></i>
+                            </div>
+                            <div class="dropdown-item-content">
+                                <div class="dropdown-item-title">Home 2: Bespoke Studio</div>
+                                <div class="dropdown-item-desc">Customize bag designs, colors & monograms</div>
+                            </div>
+                            <span class="dropdown-item-badge">New</span>
+                        </a>
+                    </div>
+                </div>
+                <a href="collections.html" class="nav-link">Collections</a>
+                <a href="brands.html" class="nav-link active">Brands</a>
+                <a href="warranty.html" class="nav-link" title="100-Year Warranty & Repair">Warranty</a>
+                <a href="blog.html" class="nav-link">Blog</a>
+                <a href="contact.html" class="nav-link" title="Contact Concierge">Contact</a>
+            </nav>
+
+            <div class="header-actions">
+
+                <button id="dirToggle" class="compact-tool-btn" title="Toggle Layout Direction (LTR/RTL)">
+                    <span>RTL</span>
+                </button>
+
+                <button id="themeToggle" class="compact-tool-btn" title="Toggle Dark / Light Theme">
+                    <i class="fa-solid fa-sun"></i>
+                </button>
+
+                <button id="wishlistBtn" class="compact-tool-btn wishlist-open-btn" title="Open Wishlist">
+                    <i class="fa-regular fa-heart"></i>
+                    <span class="action-badge wishlist-count-badge" style="display: none;">0</span>
+                </button>
+
+                <button id="cartBtn" class="compact-tool-btn cart-open-btn" title="Open Luggage Cart">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <span class="action-badge cart-count-badge" style="display: none;">0</span>
+                </button>
+
+                <a href="collections.html" class="header-cta-btn" id="headerCtaBtn" title="Shop Curated Luxury Luggage">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <span>Shop Luggage</span>
+                </a>
+
+                <button id="mobileMenuToggle" class="hamburger-btn" aria-label="Open Mobile Menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Drawer -->
+    <div class="mobile-nav-drawer" id="mobileMenu">
+        <div class="mobile-nav-header">
+            <a href="index.html" class="brand-logo" aria-label="Aether Voyage Home">
+                <div class="logo-monogram">Æ</div>
+                <span class="logo-title">AETHER</span>
+            </a>
+            <button class="drawer-close-btn" id="mobileMenuClose"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div class="mobile-nav-links">
+            <div class="mobile-nav-dropdown-section">
+                <a href="index.html" class="mobile-nav-link">
+                    <i class="fa-solid fa-house"></i> Home
+                </a>
+                <div class="mobile-nav-subgroup">
+                    <a href="index.html" class="mobile-nav-sublink">
+                        <span>Home 1: Flagship Showcase</span>
+                        <i class="fa-solid fa-landmark"></i>
+                    </a>
+                    <a href="home2.html" class="mobile-nav-sublink">
+                        <span>Home 2: Bespoke Studio</span>
+                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+                    </a>
+                </div>
+            </div>
+            <a href="collections.html" class="mobile-nav-link"><i class="fa-solid fa-suitcase-rolling"></i> Collections</a>
+            <a href="brands.html" class="mobile-nav-link active"><i class="fa-solid fa-award"></i> Brands</a>
+            <a href="warranty.html" class="mobile-nav-link"><i class="fa-solid fa-shield-halved"></i> 100-Year Warranty</a>
+            <a href="blog.html" class="mobile-nav-link"><i class="fa-solid fa-newspaper"></i> Blog & Journal</a>
+            <a href="contact.html" class="mobile-nav-link"><i class="fa-solid fa-headset"></i> Contact Us</a>
+            <a href="collections.html" class="mobile-nav-link mobile-nav-cta">
+                <i class="fa-solid fa-suitcase-rolling"></i> <span>Shop Luggage</span>
+            </a>
+            <a href="#wishlist" class="mobile-nav-link wishlist-open-btn">
+                <i class="fa-regular fa-heart"></i>
+                <span>Private Wishlist</span>
+                <span class="action-badge wishlist-count-badge" style="margin-left: auto; display: none;">0</span>
+            </a>
+        </div>
+        <div class="mobile-nav-footer">
+            <div class="mobile-tools-grid">
+                <button id="themeToggleMobile" class="btn btn-secondary btn-sm" style="flex:1;"><i class="fa-solid fa-sun"></i> Theme</button>
+                <button id="dirToggleMobile" class="btn btn-secondary btn-sm" style="flex:1;"><span>RTL / LTR</span></button>
+            </div>
+        </div>
+    </div>
+
+    <div class="drawer-backdrop" id="drawerBackdrop"></div>
+
+    <!-- Main Brands Heritage Content -->
+    <main id="mainContent">
+        <section class="catalog-section">
+            <div class="container">
+                <!-- Section Header -->
+                <div class="section-header">
+                    <span class="section-eyebrow"><i class="fa-solid fa-crown"></i> Luxury Luggage Heritage & Brands</span>
+                    <h1 class="section-title">The Great Luggage Houses</h1>
+                    <p class="section-subtitle">Aether Voyage curates only the finest luggage manufacturers in world history — honoring unmatched aeronautical engineering, patented innovations, and centuries of handcrafted luggage excellence.</p>
+                </div>
+
+                <!-- Hero Metrics Counter Bar -->
+                <div class="brand-hero-metrics">
+                    <div class="brand-metric-cell">
+                        <span class="brand-metric-num">173 Years</span>
+                        <span class="brand-metric-lbl">Heritage Lineage (1853–2026)</span>
+                    </div>
+                    <div class="brand-metric-cell">
+                        <span class="brand-metric-num">13 Houses</span>
+                        <span class="brand-metric-lbl">World-Class Brands</span>
+                    </div>
+                    <div class="brand-metric-cell">
+                        <span class="brand-metric-num">100-Year</span>
+                        <span class="brand-metric-lbl">Digital Warranty System</span>
+                    </div>
+                    <div class="brand-metric-cell">
+                        <span class="brand-metric-num">180+ Centers</span>
+                        <span class="brand-metric-lbl">Global Service Network</span>
+                    </div>
+                </div>
+
+                <!-- Infinite Brand Logo Marquee Banner -->
+                <div class="brand-marquee-section">
+                    <div class="brand-marquee-track">
+                        <a href="collections.html?brand=Aether+Atelier" class="brand-marquee-badge">
+                            <span class="brand-marquee-icon">Æ</span>
+                            <span>Aether Atelier (Zurich)</span>
+                        </a>
+                        <a href="collections.html?brand=Goyard" class="brand-marquee-badge">
+                            <span class="brand-marquee-icon"><i class="fa-solid fa-feather"></i></span>
+                            <span>Goyard (Paris)</span>
+                        </a>
+                        <a href="collections.html?brand=Louis+Vuitton" class="brand-marquee-badge">
+                            <span class="brand-marquee-icon"><i class="fa-solid fa-crown"></i></span>
+                            <span>Louis Vuitton (Paris)</span>
+                        </a>
+                        <a href="collections.html?brand=Globe-Trotter" class="brand-marquee-badge">
+                            <span class="brand-marquee-icon"><i class="fa-solid fa-gem"></i></span>
+                            <span>Globe-Trotter (London)</span>
+                        </a>
+                        <a href="collections.html?brand=Rimowa" class="brand-marquee-badge">
+                            <span class="brand-marquee-icon"><i class="fa-solid fa-shield"></i></span>
+                            <span>Rimowa (Cologne)</span>
+                        </a>
+                        <a href="collections.html?brand=FPM+Milano" class="brand-marquee-badge">
+                            <span class="brand-marquee-icon"><i class="fa-solid fa-lock"></i></span>
+                            <span>FPM Milano (Milan)</span>
+                        </a>
+                        <a href="collections.html?brand=Montblanc" class="brand-marquee-badge">
+                            <span class="brand-marquee-icon"><i class="fa-solid fa-mountain"></i></span>
+                            <span>Montblanc (Hamburg)</span>
+                        </a>
+                        <a href="collections.html?brand=Tumi" class="brand-marquee-badge">
+                            <span class="brand-marquee-icon"><i class="fa-solid fa-circle-check"></i></span>
+                            <span>Tumi (New Jersey)</span>
+                        </a>
+                        <a href="collections.html?brand=Carl+Friedrik" class="brand-marquee-badge">
+                            <span class="brand-marquee-icon"><i class="fa-solid fa-ribbon"></i></span>
+                            <span>Carl Friedrik (London & Florence)</span>
+                        </a>
+                        <a href="collections.html?brand=Samsonite" class="brand-marquee-badge">
+                            <span class="brand-marquee-icon"><i class="fa-solid fa-earth-americas"></i></span>
+                            <span>Samsonite (Denver)</span>
+                        </a>
+                        <a href="collections.html?brand=Briggs+%26+Riley" class="brand-marquee-badge">
+                            <span class="brand-marquee-icon"><i class="fa-solid fa-compass"></i></span>
+                            <span>Briggs & Riley (New York)</span>
+                        </a>
+                        <a href="collections.html?brand=American+Tourister" class="brand-marquee-badge">
+                            <span class="brand-marquee-icon"><i class="fa-solid fa-star"></i></span>
+                            <span>American Tourister (Providence)</span>
+                        </a>
+                        <a href="collections.html?brand=Skybags" class="brand-marquee-badge">
+                            <span class="brand-marquee-icon"><i class="fa-solid fa-bolt"></i></span>
+                            <span>Skybags (Mumbai)</span>
+                        </a>
+
+                        <!-- Duplicate set for seamless infinite loop -->
+                        <a href="collections.html?brand=Aether+Atelier" class="brand-marquee-badge">
+                            <span class="brand-marquee-icon">Æ</span>
+                            <span>Aether Atelier (Zurich)</span>
+                        </a>
+                        <a href="collections.html?brand=Goyard" class="brand-marquee-badge">
+                            <span class="brand-marquee-icon"><i class="fa-solid fa-feather"></i></span>
+                            <span>Goyard (Paris)</span>
+                        </a>
+                        <a href="collections.html?brand=Louis+Vuitton" class="brand-marquee-badge">
+                            <span class="brand-marquee-icon"><i class="fa-solid fa-crown"></i></span>
+                            <span>Louis Vuitton (Paris)</span>
+                        </a>
+                        <a href="collections.html?brand=Globe-Trotter" class="brand-marquee-badge">
+                            <span class="brand-marquee-icon"><i class="fa-solid fa-gem"></i></span>
+                            <span>Globe-Trotter (London)</span>
+                        </a>
+                        <a href="collections.html?brand=Rimowa" class="brand-marquee-badge">
+                            <span class="brand-marquee-icon"><i class="fa-solid fa-shield"></i></span>
+                            <span>Rimowa (Cologne)</span>
+                        </a>
+                        <a href="collections.html?brand=FPM+Milano" class="brand-marquee-badge">
+                            <span class="brand-marquee-icon"><i class="fa-solid fa-lock"></i></span>
+                            <span>FPM Milano (Milan)</span>
+                        </a>
+                        <a href="collections.html?brand=Montblanc" class="brand-marquee-badge">
+                            <span class="brand-marquee-icon"><i class="fa-solid fa-mountain"></i></span>
+                            <span>Montblanc (Hamburg)</span>
+                        </a>
+                        <a href="collections.html?brand=Tumi" class="brand-marquee-badge">
+                            <span class="brand-marquee-icon"><i class="fa-solid fa-circle-check"></i></span>
+                            <span>Tumi (New Jersey)</span>
+                        </a>
+                        <a href="collections.html?brand=Carl+Friedrik" class="brand-marquee-badge">
+                            <span class="brand-marquee-icon"><i class="fa-solid fa-ribbon"></i></span>
+                            <span>Carl Friedrik (London & Florence)</span>
+                        </a>
+                        <a href="collections.html?brand=Samsonite" class="brand-marquee-badge">
+                            <span class="brand-marquee-icon"><i class="fa-solid fa-earth-americas"></i></span>
+                            <span>Samsonite (Denver)</span>
+                        </a>
+                        <a href="collections.html?brand=Briggs+%26+Riley" class="brand-marquee-badge">
+                            <span class="brand-marquee-icon"><i class="fa-solid fa-compass"></i></span>
+                            <span>Briggs & Riley (New York)</span>
+                        </a>
+                        <a href="collections.html?brand=American+Tourister" class="brand-marquee-badge">
+                            <span class="brand-marquee-icon"><i class="fa-solid fa-star"></i></span>
+                            <span>American Tourister (Providence)</span>
+                        </a>
+                        <a href="collections.html?brand=Skybags" class="brand-marquee-badge">
+                            <span class="brand-marquee-icon"><i class="fa-solid fa-bolt"></i></span>
+                            <span>Skybags (Mumbai)</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Brand Filter & Search Controls Bar -->
+                <div class="brand-controls-wrapper">
+                    <div class="brand-search-box">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <input type="text" id="brandSearchInput" placeholder="Filter 13 luxury houses by name, origin city, material, or innovation...">
+                    </div>
+
+                    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+                        <div class="brand-category-pills">
+                            <button class="brand-filter-pill active" data-category="all">All Brands (13)</button>
+                            <button class="brand-filter-pill" data-category="haute-couture">Luxury Trunks & Travel Cases (3)</button>
+                            <button class="brand-filter-pill" data-category="aviation-tech">Aviation Aluminum & High-Tech (4)</button>
+                            <button class="brand-filter-pill" data-category="artisanal-leather">Artisanal Leather & Craft (2)</button>
+                            <button class="brand-filter-pill" data-category="contemporary">Contemporary & Global Adventure (4)</button>
+                        </div>
+                        <span id="brandResultCount" style="font-size: 0.8rem; font-weight: 700; color: var(--color-gold);">13 Brands Displayed</span>
+                    </div>
+                </div>
+
+                <!-- Luxury Brand Showcase Bento Grid -->
+                <div class="brand-grid" id="brandCardsGrid">
+
+                    <!-- 1. Aether Atelier (Featured Grand Card) -->
+                    <div class="brand-luxury-card brand-col-12" data-category="aviation-tech" style="background: linear-gradient(135deg, var(--bg-card) 0%, rgba(197, 160, 89, 0.08) 100%); border-color: var(--border-gold-subtle);">
+                        <div>
+                            <div class="brand-card-header">
+                                <div style="display: flex; align-items: center; gap: 1.25rem;">
+                                    <div class="brand-crest-box">Æ</div>
+                                    <div>
+                                        <span class="brand-card-origin">Zurich, Switzerland · Est. 1928</span>
+                                        <h2 class="brand-card-name" style="font-size: 2rem;">Aether Atelier</h2>
+                                        <p class="brand-card-tagline">Aviation Aluminum & Master Watchmaker Tolerances</p>
+                                    </div>
+                                </div>
+                                <span class="brand-badge-tag"><i class="fa-solid fa-crown"></i> High-Precision Watch Grade</span>
+                            </div>
+                            <p class="brand-card-desc" style="max-width: 950px; font-size: 0.95rem;">
+                                Pioneers in monocoque rivetless 6061-T6 aeronautical aluminum alloy luggage. Each case is laser-machined to 0.02mm watchmaker tolerances with whisper-silent Japanese Hinomoto ball-bearing spinner wheels and encrypted NFC lifetime warranty tags.
+                            </p>
+                            <div class="brand-patents-list">
+                                <span class="brand-patent-chip">AeroShield™ Monocoque</span>
+                                <span class="brand-patent-chip">GlideBearing 360°</span>
+                                <span class="brand-patent-chip">Biometric TSA Lock</span>
+                                <span class="brand-patent-chip">100-Year Unconditional Warranty</span>
+                            </div>
+                        </div>
+                        <div class="brand-card-footer">
+                            <span class="brand-sustainability-badge"><i class="fa-solid fa-leaf"></i> 100% Recyclable Aeronautical Alloys & Zero-Waste Assembly</span>
+                            <a href="collections.html?brand=Aether+Atelier" class="btn btn-primary btn-sm">
+                                Explore Aether Luggage &rarr;
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- 2. Goyard -->
+                    <div class="brand-luxury-card brand-col-6" data-category="haute-couture">
+                        <div>
+                            <div class="brand-card-header">
+                                <div style="display: flex; align-items: center; gap: 1rem;">
+                                    <div class="brand-crest-box" style="font-family: var(--font-serif); letter-spacing: 0.1em;">GY</div>
+                                    <div>
+                                        <span class="brand-card-origin">Paris, France · Est. 1853</span>
+                                        <h3 class="brand-card-name">Goyard</h3>
+                                        <p class="brand-card-tagline">The World's Most Discreet & Exclusive Trunkmaker</p>
+                                    </div>
+                                </div>
+                                <span class="brand-badge-tag">Luxury Luggage</span>
+                            </div>
+                            <p class="brand-card-desc">
+                                Handcrafted trunkmaking rooted in 233 Rue Saint-Honoré. Celebrated worldwide for its iconic hand-stippled Goyardine chevron canvas, natural beechwood reinforcement slats, and custom crest commissions.
+                            </p>
+                            <div class="brand-patents-list">
+                                <span class="brand-patent-chip">Goyardine Chevron Canvas</span>
+                                <span class="brand-patent-chip">French Beechwood Clavetage</span>
+                                <span class="brand-patent-chip">Brass Trunk Studding</span>
+                            </div>
+                        </div>
+                        <div class="brand-card-footer">
+                            <span class="brand-sustainability-badge"><i class="fa-solid fa-leaf"></i> Natural Hemp, Linen & Vegetable Tannage</span>
+                            <a href="collections.html?brand=Goyard" class="btn btn-secondary btn-sm">
+                                View Goyard Pieces &rarr;
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- 3. Louis Vuitton -->
+                    <div class="brand-luxury-card brand-col-6" data-category="haute-couture">
+                        <div>
+                            <div class="brand-card-header">
+                                <div style="display: flex; align-items: center; gap: 1rem;">
+                                    <div class="brand-crest-box" style="font-family: var(--font-serif); font-size: 1.5rem;">LV</div>
+                                    <div>
+                                        <span class="brand-card-origin">Paris, France · Est. 1854</span>
+                                        <h3 class="brand-card-name">Louis Vuitton</h3>
+                                        <p class="brand-card-tagline">The Legendary Pioneer of Modern Luxury Travel</p>
+                                    </div>
+                                </div>
+                                <span class="brand-badge-tag">French Malletier</span>
+                            </div>
+                            <p class="brand-card-desc">
+                                Inventor of the flat-top waterproof canvas steamer trunk and the patented unpickable Tumbler Lock. Built with centuries of French malletier mastery and iconic Monogram & Damier canvas.
+                            </p>
+                            <div class="brand-patents-list">
+                                <span class="brand-patent-chip">Patented Tumbler Lock</span>
+                                <span class="brand-patent-chip">Damier & Monogram Canvas</span>
+                                <span class="brand-patent-chip">Marc Newson Wide-Cane Frame</span>
+                            </div>
+                        </div>
+                        <div class="brand-card-footer">
+                            <span class="brand-sustainability-badge"><i class="fa-solid fa-leaf"></i> LVMH Life 360 Eco-Protocol</span>
+                            <a href="collections.html?brand=Louis+Vuitton" class="btn btn-secondary btn-sm">
+                                View Louis Vuitton Pieces &rarr;
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- 4. Globe-Trotter -->
+                    <div class="brand-luxury-card brand-col-6" data-category="haute-couture">
+                        <div>
+                            <div class="brand-card-header">
+                                <div style="display: flex; align-items: center; gap: 1rem;">
+                                    <div class="brand-crest-box" style="font-family: var(--font-serif); font-size: 1.25rem;"><i class="fa-solid fa-crown"></i></div>
+                                    <div>
+                                        <span class="brand-card-origin">London & Mayfair, UK · Est. 1897</span>
+                                        <h3 class="brand-card-name">Globe-Trotter</h3>
+                                        <p class="brand-card-tagline">Handcrafted Vulcanized Fibreboard & Royal Heritage</p>
+                                    </div>
+                                </div>
+                                <span class="brand-badge-tag">Royal Warrant</span>
+                            </div>
+                            <p class="brand-card-desc">
+                                Purveyors to HM Queen Elizabeth II, Sir Winston Churchill, and the official luggage partner of James Bond 007. Handcrafted in England on original Victorian machinery with patented vulcanized fibreboard.
+                            </p>
+                            <div class="brand-patents-list">
+                                <span class="brand-patent-chip">14-Layer Vulcanized Fibreboard</span>
+                                <span class="brand-patent-chip">English Bridle Leather Corners</span>
+                                <span class="brand-patent-chip">Victorian Drawbolt Latches</span>
+                            </div>
+                        </div>
+                        <div class="brand-card-footer">
+                            <span class="brand-sustainability-badge"><i class="fa-solid fa-leaf"></i> 100% Organic Wood Pulp & Cotton Fibre</span>
+                            <a href="collections.html?brand=Globe-Trotter" class="btn btn-secondary btn-sm">
+                                View Globe-Trotter Pieces &rarr;
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- 5. Rimowa -->
+                    <div class="brand-luxury-card brand-col-6" data-category="aviation-tech">
+                        <div>
+                            <div class="brand-card-header">
+                                <div style="display: flex; align-items: center; gap: 1rem;">
+                                    <div class="brand-crest-box"><i class="fa-solid fa-shield"></i></div>
+                                    <div>
+                                        <span class="brand-card-origin">Cologne, Germany · Est. 1898</span>
+                                        <h3 class="brand-card-name">Rimowa</h3>
+                                        <p class="brand-card-tagline">Distinctive Parallel Grooves of Aviation Legend</p>
+                                    </div>
+                                </div>
+                                <span class="brand-badge-tag">German Precision</span>
+                            </div>
+                            <p class="brand-card-desc">
+                                The benchmark of German industrial luxury luggage. Inspired by the golden age of aircraft engineering, its iconic corrugated parallel grooved aluminum design is instantly recognizable across airport first-class lounges worldwide.
+                            </p>
+                            <div class="brand-patents-list">
+                                <span class="brand-patent-chip">Aviation Ribbed Aluminum</span>
+                                <span class="brand-patent-chip">Multiwheel® Bearing System</span>
+                                <span class="brand-patent-chip">Flex Divider™ Packing</span>
+                            </div>
+                        </div>
+                        <div class="brand-card-footer">
+                            <span class="brand-sustainability-badge"><i class="fa-solid fa-leaf"></i> Lifetime Functional Repair Guarantee</span>
+                            <a href="collections.html?brand=Rimowa" class="btn btn-secondary btn-sm">
+                                View Rimowa Pieces &rarr;
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- 6. FPM Milano -->
+                    <div class="brand-luxury-card brand-col-6" data-category="aviation-tech">
+                        <div>
+                            <div class="brand-card-header">
+                                <div style="display: flex; align-items: center; gap: 1rem;">
+                                    <div class="brand-crest-box" style="font-size: 1rem; font-weight: 900;">FPM</div>
+                                    <div>
+                                        <span class="brand-card-origin">Milan, Italy · Est. 1946</span>
+                                        <h3 class="brand-card-name">FPM Milano</h3>
+                                        <p class="brand-card-tagline">Italian Luxury Luggage & Bank Trunk Architecture</p>
+                                    </div>
+                                </div>
+                                <span class="brand-badge-tag">Italian Craftsmanship</span>
+                            </div>
+                            <p class="brand-card-desc">
+                                Fabbrica Pelletterie Milano collaborated with legendary designer Marc Sadler to forge the Bank Collection—featuring solid aluminum shells, handcrafted Italian saddle leather handles, and maxi butterfly locks.
+                            </p>
+                            <div class="brand-patents-list">
+                                <span class="brand-patent-chip">Maxi Butterfly Latch Locks</span>
+                                <span class="brand-patent-chip">Bank Ribbed Anodized Armor</span>
+                                <span class="brand-patent-chip">Hand-Sewn Cuoio Leather</span>
+                            </div>
+                        </div>
+                        <div class="brand-card-footer">
+                            <span class="brand-sustainability-badge"><i class="fa-solid fa-leaf"></i> 100% Recyclable Virgin Aluminum</span>
+                            <a href="collections.html?brand=FPM+Milano" class="btn btn-secondary btn-sm">
+                                View FPM Milano Pieces &rarr;
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- 7. Montblanc -->
+                    <div class="brand-luxury-card brand-col-6" data-category="artisanal-leather">
+                        <div>
+                            <div class="brand-card-header">
+                                <div style="display: flex; align-items: center; gap: 1rem;">
+                                    <div class="brand-crest-box"><i class="fa-solid fa-mountain"></i></div>
+                                    <div>
+                                        <span class="brand-card-origin">Hamburg & Florence · Est. 1906</span>
+                                        <h3 class="brand-card-name">Montblanc</h3>
+                                        <p class="brand-card-tagline">High-Performance #MY4810 & Florentine Leather Trims</p>
+                                    </div>
+                                </div>
+                                <span class="brand-badge-tag">Alpine Benchmark</span>
+                            </div>
+                            <p class="brand-card-desc">
+                                Where German precision engineering meets Italian leather crafting. High-performance polycarbonate shells lined with jacquard motifs, Florentine leather detailing, and whisper-quiet Japanese ball-bearing spinner wheels.
+                            </p>
+                            <div class="brand-patents-list">
+                                <span class="brand-patent-chip">#MY4810 Polycarbonate Shell</span>
+                                <span class="brand-patent-chip">Florentine Leather Corner Wraps</span>
+                                <span class="brand-patent-chip">360° Ball-Bearing Axles</span>
+                            </div>
+                        </div>
+                        <div class="brand-card-footer">
+                            <span class="brand-sustainability-badge"><i class="fa-solid fa-leaf"></i> Certified Italian Pelleterie Leather</span>
+                            <a href="collections.html?brand=Montblanc" class="btn btn-secondary btn-sm">
+                                View Montblanc Pieces &rarr;
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- 8. Tumi -->
+                    <div class="brand-luxury-card brand-col-6" data-category="aviation-tech">
+                        <div>
+                            <div class="brand-card-header">
+                                <div style="display: flex; align-items: center; gap: 1rem;">
+                                    <div class="brand-crest-box"><i class="fa-solid fa-circle-check"></i></div>
+                                    <div>
+                                        <span class="brand-card-origin">New Jersey, USA · Est. 1975</span>
+                                        <h3 class="brand-card-name">Tumi</h3>
+                                        <p class="brand-card-tagline">FXT® Ballistic Nylon & 19 Degree Fluid Contour</p>
+                                    </div>
+                                </div>
+                                <span class="brand-badge-tag">Executive First-Class</span>
+                            </div>
+                            <p class="brand-card-desc">
+                                The gold standard for business executives and global travelers. Built with military-grade FXT® Ballistic Nylon, fluid 19 Degree contours, patented Omega Closure System®, and the global TUMI Tracer® recovery program.
+                            </p>
+                            <div class="brand-patents-list">
+                                <span class="brand-patent-chip">FXT® Ballistic Nylon</span>
+                                <span class="brand-patent-chip">TUMI Tracer® Global ID</span>
+                                <span class="brand-patent-chip">19 Degree Fluid Contour™</span>
+                            </div>
+                        </div>
+                        <div class="brand-card-footer">
+                            <span class="brand-sustainability-badge"><i class="fa-solid fa-leaf"></i> Post-Consumer Recycled FXT Textiles</span>
+                            <a href="collections.html?brand=Tumi" class="btn btn-secondary btn-sm">
+                                View Tumi Pieces &rarr;
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- 9. Carl Friedrik -->
+                    <div class="brand-luxury-card brand-col-6" data-category="artisanal-leather">
+                        <div>
+                            <div class="brand-card-header">
+                                <div style="display: flex; align-items: center; gap: 1rem;">
+                                    <div class="brand-crest-box"><i class="fa-solid fa-feather"></i></div>
+                                    <div>
+                                        <span class="brand-card-origin">London & Florence · Est. 2012</span>
+                                        <h3 class="brand-card-name">Carl Friedrik</h3>
+                                        <p class="brand-card-tagline">Hand-Burnished Tuscan Vachetta Leather</p>
+                                    </div>
+                                </div>
+                                <span class="brand-badge-tag">Artisanal Leather</span>
+                            </div>
+                            <p class="brand-card-desc">
+                                Modern Scandinavian minimalism paired with traditional Tuscan artisanal leather crafting. Vegetable-tanned Vachetta leather from Santa Croce sull’Arno that develops a rich, organic patina through decades of journeys.
+                            </p>
+                            <div class="brand-patents-list">
+                                <span class="brand-patent-chip">Tuscan Vachetta Leather</span>
+                                <span class="brand-patent-chip">Lock-Snap Aluminum Frame</span>
+                                <span class="brand-patent-chip">Raccagni Symphony Zippers</span>
+                            </div>
+                        </div>
+                        <div class="brand-card-footer">
+                            <span class="brand-sustainability-badge"><i class="fa-solid fa-leaf"></i> 100% Chrome-Free Vegetable Tanning</span>
+                            <a href="collections.html?brand=Carl+Friedrik" class="btn btn-secondary btn-sm">
+                                View Carl Friedrik Pieces &rarr;
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- 10. Briggs & Riley -->
+                    <div class="brand-luxury-card brand-col-6" data-category="contemporary">
+                        <div>
+                            <div class="brand-card-header">
+                                <div style="display: flex; align-items: center; gap: 1rem;">
+                                    <div class="brand-crest-box" style="font-size: 0.95rem; font-weight: 900;">B&R</div>
+                                    <div>
+                                        <span class="brand-card-origin">New York, USA · Est. 1993</span>
+                                        <h3 class="brand-card-name">Briggs & Riley</h3>
+                                        <p class="brand-card-tagline">Patented CX™ One-Touch Compression & Lifetime Guarantee</p>
+                                    </div>
+                                </div>
+                                <span class="brand-badge-tag">Executive Favorite</span>
+                            </div>
+                            <p class="brand-card-desc">
+                                Engineered for maximum packing efficiency. Famous for patented CX™ one-touch compression systems, outsider handle design for wrinkle-free flat packing, and legendary lifetime unconditional repair guarantee.
+                            </p>
+                            <div class="brand-patents-list">
+                                <span class="brand-patent-chip">CX™ Compression-Expansion</span>
+                                <span class="brand-patent-chip">Outsider® Flat-Pack Handle</span>
+                                <span class="brand-patent-chip">Simple as That® Guarantee</span>
+                            </div>
+                        </div>
+                        <div class="brand-card-footer">
+                            <span class="brand-sustainability-badge"><i class="fa-solid fa-leaf"></i> Guaranteed for Life Repair Program</span>
+                            <a href="collections.html?brand=Briggs+%26+Riley" class="btn btn-secondary btn-sm">
+                                View Briggs & Riley Pieces &rarr;
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- 11. Samsonite -->
+                    <div class="brand-luxury-card brand-col-6" data-category="contemporary">
+                        <div>
+                            <div class="brand-card-header">
+                                <div style="display: flex; align-items: center; gap: 1rem;">
+                                    <div class="brand-crest-box"><i class="fa-solid fa-gem"></i></div>
+                                    <div>
+                                        <span class="brand-card-origin">Denver, USA · Est. 1910</span>
+                                        <h3 class="brand-card-name">Samsonite</h3>
+                                        <p class="brand-card-tagline">The Benchmark of World Travel Engineering</p>
+                                    </div>
+                                </div>
+                                <span class="brand-badge-tag">Centennial Heritage</span>
+                            </div>
+                            <p class="brand-card-desc">
+                                Over 115 years of legendary innovation. Renowned worldwide for self-reinforced Roxkin™ composite weave and patented Curv® material technology, offering maximum shock absorption at ultra-light tare weight.
+                            </p>
+                            <div class="brand-patents-list">
+                                <span class="brand-patent-chip">Curv® Woven Composite</span>
+                                <span class="brand-patent-chip">Roxkin™ Multi-Layer</span>
+                                <span class="brand-patent-chip">Aero-Trac™ Suspension</span>
+                            </div>
+                        </div>
+                        <div class="brand-card-footer">
+                            <span class="brand-sustainability-badge"><i class="fa-solid fa-leaf"></i> Recyclex™ Material Technology</span>
+                            <a href="collections.html?brand=Samsonite" class="btn btn-secondary btn-sm">
+                                View Samsonite Pieces &rarr;
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- 12. American Tourister -->
+                    <div class="brand-luxury-card brand-col-6" data-category="contemporary">
+                        <div>
+                            <div class="brand-card-header">
+                                <div style="display: flex; align-items: center; gap: 1rem;">
+                                    <div class="brand-crest-box"><i class="fa-solid fa-star"></i></div>
+                                    <div>
+                                        <span class="brand-card-origin">Providence, USA · Est. 1933</span>
+                                        <h3 class="brand-card-name">American Tourister</h3>
+                                        <p class="brand-card-tagline">Vibrant Circular Grooves & Unstoppable Durability</p>
+                                    </div>
+                                </div>
+                                <span class="brand-badge-tag">Global Icon</span>
+                            </div>
+                            <p class="brand-card-desc">
+                                World-renowned for vibrant circular grooved ridges and shock-absorbent polypropylene shells. Built for high-velocity global explorers who demand bold aesthetic expression with heavy-duty resilience.
+                            </p>
+                            <div class="brand-patents-list">
+                                <span class="brand-patent-chip">Curio Ridgeform™</span>
+                                <span class="brand-patent-chip">PlentiVol™ Packing</span>
+                                <span class="brand-patent-chip">ShockGrip™ Polypropylene</span>
+                            </div>
+                        </div>
+                        <div class="brand-card-footer">
+                            <span class="brand-sustainability-badge"><i class="fa-solid fa-leaf"></i> Eco-Conscious Recyclex™ Fabrics</span>
+                            <a href="collections.html?brand=American+Tourister" class="btn btn-secondary btn-sm">
+                                View American Tourister Pieces &rarr;
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- 13. Skybags -->
+                    <div class="brand-luxury-card brand-col-6" data-category="contemporary">
+                        <div>
+                            <div class="brand-card-header">
+                                <div style="display: flex; align-items: center; gap: 1rem;">
+                                    <div class="brand-crest-box"><i class="fa-solid fa-bolt"></i></div>
+                                    <div>
+                                        <span class="brand-card-origin">Mumbai, India · Est. 2011</span>
+                                        <h3 class="brand-card-name">Skybags</h3>
+                                        <p class="brand-card-tagline">Dynamic Youthful Energy & High-Velocity Commuter Gear</p>
+                                    </div>
+                                </div>
+                                <span class="brand-badge-tag">Urban Explorer</span>
+                            </div>
+                            <p class="brand-card-desc">
+                                Dynamic, youth-inspired lightweight travel engineering. Featuring aerodynamic geometric hard-shells, featherlight frame structures, and dual-surface glide wheels for spontaneous urban adventures.
+                            </p>
+                            <div class="brand-patents-list">
+                                <span class="brand-patent-chip">GeoArmor™ Texture</span>
+                                <span class="brand-patent-chip">AirMesh™ Ergonomics</span>
+                                <span class="brand-patent-chip">ArmorGlide™ Dual Wheels</span>
+                            </div>
+                        </div>
+                        <div class="brand-card-footer">
+                            <span class="brand-sustainability-badge"><i class="fa-solid fa-leaf"></i> Water-Repellent EcoShield™ Coating</span>
+                            <a href="collections.html?brand=Skybags" class="btn btn-secondary btn-sm">
+                                View Skybags Pieces &rarr;
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Heritage Timeline Section -->
+                <div class="brand-timeline-section">
+                    <div class="section-header" style="text-align: center; max-width: 820px; margin: 0 auto 2.5rem; display: flex; flex-direction: column; align-items: center;">
+                        <span class="section-eyebrow" style="margin: 0 auto 0.75rem;"><i class="fa-solid fa-timeline"></i> Luggage Heritage & History</span>
+                        <h2 class="section-title" style="font-size: 2.2rem; text-align: center;">A Timeline of Travel Innovation</h2>
+                        <p class="section-subtitle" style="margin: 0 auto; text-align: center;">How 173 years of craftsmanship revolutionized the way humanity navigates the earth.</p>
+                    </div>
+
+                    <div class="timeline-track">
+                        <div class="timeline-card">
+                            <div class="timeline-year">1853</div>
+                            <h4 class="timeline-title">Goyard (Paris)</h4>
+                            <p class="timeline-text">Francois Goyard opens 233 Rue Saint-Honoré, pioneering hand-painted Goyardine chevron canvas trunks for European nobility and maharajas.</p>
+                        </div>
+                        <div class="timeline-card">
+                            <div class="timeline-year">1854</div>
+                            <h4 class="timeline-title">Louis Vuitton (Paris)</h4>
+                            <p class="timeline-text">Invention of the flat-topped grey Trianon waterproof canvas steamer trunk and the patented unpickable Tumbler Lock in Asnières-sur-Seine.</p>
+                        </div>
+                        <div class="timeline-card">
+                            <div class="timeline-year">1897</div>
+                            <h4 class="timeline-title">Globe-Trotter (London)</h4>
+                            <p class="timeline-text">Patent awarded for 14-layer vulcanized fibreboard luggage, earning the Royal Warrant and accompanying historic polar expeditions.</p>
+                        </div>
+                        <div class="timeline-card">
+                            <div class="timeline-year">1898</div>
+                            <h4 class="timeline-title">Rimowa (Cologne)</h4>
+                            <p class="timeline-text">Founded by Paul Morszeck. Later introduces the world’s first aviation-grade corrugated grooved aluminum suitcase inspired by the Junkers F13.</p>
+                        </div>
+                        <div class="timeline-card">
+                            <div class="timeline-year">1910</div>
+                            <h4 class="timeline-title">Samsonite (Denver)</h4>
+                            <p class="timeline-text">Jesse Shwayder introduces wooden trunks built so sturdy that five men could stand on them without crushing—ushering in modern durability.</p>
+                        </div>
+                        <div class="timeline-card">
+                            <div class="timeline-year">1928</div>
+                            <h4 class="timeline-title">Aether Atelier (Zurich)</h4>
+                            <p class="timeline-text">Swiss watchmaker tolerances applied to rivetless monocoque aerospace aluminum, forging the world’s most indestructible travel trunks.</p>
+                        </div>
+                        <div class="timeline-card">
+                            <div class="timeline-year">1946</div>
+                            <h4 class="timeline-title">FPM Milano (Milan)</h4>
+                            <p class="timeline-text">Fabbrica Pelletterie Milano introduces Italian luxury luggage, later teaming with Marc Sadler for the architectural Bank Collection.</p>
+                        </div>
+                        <div class="timeline-card">
+                            <div class="timeline-year">1975</div>
+                            <h4 class="timeline-title">Tumi (New Jersey)</h4>
+                            <p class="timeline-text">Introduces black-on-black military-grade FXT® Ballistic Nylon, redefining business travel luggage for the modern executive.</p>
+                        </div>
+                        <div class="timeline-card">
+                            <div class="timeline-year">1993</div>
+                            <h4 class="timeline-title">Briggs & Riley (New York)</h4>
+                            <p class="timeline-text">Pioneers the Outsider® handle and one-touch CX™ compression-expansion system, backed by an unconditional lifetime warranty.</p>
+                        </div>
+                        <div class="timeline-card">
+                            <div class="timeline-year">2006</div>
+                            <h4 class="timeline-title">Montblanc #MY4810</h4>
+                            <p class="timeline-text">Fuses German precision polycarbonate engineering with Florentine leather mastery for seamless international business navigation.</p>
+                        </div>
+                        <div class="timeline-card">
+                            <div class="timeline-year">2011</div>
+                            <h4 class="timeline-title">Skybags (Mumbai)</h4>
+                            <p class="timeline-text">Ignites a vibrant revolution in lightweight aerodynamic polycarbonate cases and commuter bags designed for high-velocity urban mobility.</p>
+                        </div>
+                        <div class="timeline-card">
+                            <div class="timeline-year">2012</div>
+                            <h4 class="timeline-title">Carl Friedrik (London)</h4>
+                            <p class="timeline-text">Scandinavian minimalism paired with vegetable-tanned Tuscan Vachetta leather from Santa Croce sull’Arno for timeless heirloom journeys.</p>
+                        </div>
+                        <div class="timeline-card timeline-card-2026 timeline-card-featured">
+                            <div class="timeline-2026-left">
+                                <div class="timeline-year" style="color: var(--color-gold); font-size: 2.2rem; line-height: 1; margin: 0;">2026</div>
+                                <span class="timeline-pill-gold"><i class="fa-solid fa-shield-halved"></i> Century Milestone</span>
+                            </div>
+                            <div class="timeline-2026-body">
+                                <h4 class="timeline-title" style="font-size: 1.25rem; margin-bottom: 0.45rem; color: var(--text-primary);">Aether 100-Year Warranty & Diagnostics</h4>
+                                <p class="timeline-text" style="font-size: 0.88rem; line-height: 1.6; margin: 0; color: var(--text-secondary);">
+                                    Launches the world’s first encrypted NFC lifetime warranty service with live 5-stage repair diagnostics across 180+ global service centers. Every handcrafted piece is registered to its owner and guaranteed for a century of journeys.
+                                </p>
+                            </div>
+                            <div class="timeline-2026-action">
+                                <a href="warranty.html" class="btn btn-primary btn-sm" style="white-space: nowrap; padding: 0.75rem 1.4rem;">
+                                    <i class="fa-solid fa-certificate"></i> Explore 100-Yr Warranty &rarr;
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- Customer Account Drawer (Slides in from Left-to-Right) -->
+    <aside class="slide-drawer slide-drawer-left" id="authDrawer" aria-label="Customer Account Drawer">
+        <div class="drawer-header">
+            <div class="drawer-title-group">
+                <i class="fa-regular fa-user" style="color: var(--color-gold); font-size: 1.1rem;"></i>
+                <h3 class="drawer-title" id="authDrawerTitle">Customer Account</h3>
+            </div>
+            <button class="drawer-close-btn" id="authDrawerClose" aria-label="Close Account Drawer"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div class="drawer-body" id="authDrawerBody"></div>
+    </aside>
+
+    <aside class="slide-drawer" id="cartDrawer" aria-label="Luggage Cart Drawer">
+        <div class="drawer-header">
+            <div class="drawer-title-group">
+                <i class="fa-solid fa-bag-shopping" style="color: var(--color-gold);"></i>
+                <h3 class="drawer-title">Luggage Cart</h3>
+                <span class="drawer-count-badge cart-count-badge">0</span>
+            </div>
+            <button class="drawer-close-btn" id="cartDrawerClose"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div class="shipping-progress-box">
+            <div class="shipping-progress-text" id="shippingProgressText">
+                Add <strong>$500</strong> for Complimentary Express Shipping
+            </div>
+            <div class="shipping-bar-bg">
+                <div class="shipping-bar-fill" id="shippingProgressBar" style="width: 0%;"></div>
+            </div>
+        </div>
+        <div class="drawer-body" id="cartItemsList"></div>
+        <div class="drawer-footer">
+            <div class="promo-form">
+                <input type="text" class="promo-input" id="promoCodeInput" placeholder="PROMO CODE (VOYAGE10)">
+                <button class="promo-btn" id="applyPromoBtn" type="button">Apply</button>
+            </div>
+            <div class="cart-totals-list">
+                <div class="cart-totals-row">
+                    <span>Subtotal</span>
+                    <span id="cartSubtotal">$0</span>
+                </div>
+                <div class="cart-totals-row" id="cartDiscountRow" style="display: none; color: #10b981;">
+                    <span>Member Discount</span>
+                    <span id="cartDiscount">-$0</span>
+                </div>
+                <div class="cart-totals-row">
+                    <span>Worldwide Express Shipping</span>
+                    <span id="cartShipping">FREE</span>
+                </div>
+                <div class="cart-totals-row final-total">
+                    <span>Total</span>
+                    <span class="total-amount" id="cartFinalTotal">$0</span>
+                </div>
+            </div>
+            <button class="checkout-btn" id="checkoutBtn">
+                <i class="fa-solid fa-lock"></i> Proceed to Checkout
+            </button>
+        </div>
+    </aside>
+
+    <aside class="slide-drawer" id="wishlistDrawer" aria-label="Wishlist Drawer">
+        <div class="drawer-header">
+            <div class="drawer-title-group">
+                <i class="fa-solid fa-heart" style="color: var(--color-gold);"></i>
+                <h3 class="drawer-title">My Wishlist</h3>
+                <span class="drawer-count-badge wishlist-count-badge">0</span>
+            </div>
+            <button class="drawer-close-btn" id="wishlistDrawerClose"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div class="drawer-body" id="wishlistItemsList"></div>
+        <!-- Wishlist Drawer Footer -->
+        <div class="drawer-footer" id="wishlistDrawerFooter" style="display: none;"></div>
+    </aside>
+
+    <!-- Modals -->
+    <div class="modal-backdrop" id="checkoutModal">
+        <div class="modal-dialog checkout-dialog" id="checkoutDialogContent">
+            <button class="modal-close-btn" id="checkoutModalClose"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-top-grid">
+                <div>
+                    <a href="index.html" class="brand-logo" style="margin-bottom: 1rem; text-decoration: none;" aria-label="Aether Voyage Home">
+                        <div class="logo-monogram">Æ</div>
+                        <div class="logo-text-group">
+                            <span class="logo-title" style="color: #fff;">AETHER</span>
+                            <span class="logo-subtitle">TRAVEL LUGGAGE</span>
+                        </div>
+                    </a>
+                    <p class="footer-brand-desc" style="font-size: 0.82rem; color: #b8c4d4; line-height: 1.6; max-width: 300px;">
+                        Aeronautical aluminum suitcases, ballistic nylon travel bags, and handcrafted Italian leather goods. Designed for modern travelers.
+                    </p>
+                    <div class="footer-social-block">
+                        <span class="footer-social-label">Follow Us</span>
+                        <div class="footer-social-icons">
+                            <a href="https://www.instagram.com/accounts/login/" target="_blank" rel="noopener noreferrer" class="footer-social-btn instagram" aria-label="Follow us on Instagram (Redirects to Login)" title="Instagram Login">
+                                <i class="fa-brands fa-instagram"></i>
+                            </a>
+                            <a href="https://www.facebook.com/login/" target="_blank" rel="noopener noreferrer" class="footer-social-btn facebook" aria-label="Follow us on Facebook (Redirects to Login)" title="Facebook Login">
+                                <i class="fa-brands fa-facebook-f"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/login" target="_blank" rel="noopener noreferrer" class="footer-social-btn linkedin" aria-label="Follow us on LinkedIn (Redirects to Login)" title="LinkedIn Login">
+                                <i class="fa-brands fa-linkedin-in"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="footer-col-title">Our Collections</h4>
+                    <ul class="footer-links-list">
+                        <li><a href="collections.html?brand=American+Tourister" class="footer-link">American Tourister</a></li>
+                        <li><a href="collections.html?brand=Skybags" class="footer-link">Skybags Collection</a></li>
+                        <li><a href="collections.html?brand=Samsonite" class="footer-link">Samsonite Series</a></li>
+                        <li><a href="collections.html?brand=Rimowa" class="footer-link">Rimowa Classic & Cabin</a></li>
+                        <li><a href="collections.html?brand=Tumi" class="footer-link">Tumi Ballistic Duffels</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-col-title">Customer Services</h4>
+                    <ul class="footer-links-list">
+                        <li><a href="warranty.html" class="footer-link">100-Year Lifetime Warranty</a></li>
+                        <li><a href="warranty.html#tracker" class="footer-link">5-Stage Repair Tracker</a></li>
+                        <li><a href="warranty.html#service-centers" class="footer-link">Global Service Centers</a></li>
+                        <li><a href="blog.html" class="footer-link">The Aether Journal</a></li>
+                        <li><a href="contact.html" class="footer-link">Store Consultation</a></li>
+                        <li><a href="collections.html" class="footer-link">Curated Collections</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-col-title">Global Flagships</h4>
+                    <p class="footer-cities" style="font-size: 0.82rem; color: #b8c4d4; line-height: 1.6;">&bull; Paris &bull; Tokyo &bull; New York &bull; London &bull; Dubai &bull; Singapore</p>
+                    <p style="font-size: 0.82rem; color: var(--color-gold); font-weight: 700; margin-top: 0.5rem; margin-bottom: 1rem;">Contact Us: +1 (800) 492-AETH</p>
+                    <div class="footer-actions-dock" id="footerActionsDock">
+                        <button id="backToTopBtn" class="back-to-top" title="Back to Top" aria-label="Back to Top"><i class="fa-solid fa-arrow-up"></i></button>
+                        <a href="contact.html" id="floatingContactBtn" class="floating-contact-btn" title="Contact Us" aria-label="Contact Us">
+                            <span class="contact-status-dot" aria-hidden="true"></span>
+                            <i class="fa-solid fa-headset"></i>
+                            <span class="contact-btn-label">Contact Us</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div>&copy; 2026 AETHER VOYAGE S.A. All Rights Reserved. Luxury Luggage & Travel Goods.</div>
+                <div class="footer-legal-links">
+                    <a href="warranty.html" class="footer-link">Warranty Terms</a>
+                    <a href="contact.html" class="footer-link">Privacy Policy</a>
+                    <a href="contact.html" class="footer-link">Sustainability</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/data.js"></script>
+    <script src="js/theme.js"></script>
+    <script src="js/router.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/catalog.js"></script>
+    <script src="js/warranty.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/checkout.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+{
+  "name": "AETHER VOYAGE — Luxury Luggage & Travel Goods",
+  "short_name": "Aether Voyage",
+  "description": "Bespoke luxury luggage, aerospace aluminum suitcases, Tuscan leather trims, and personalized travel atelier.",
+  "icons": [
+    {
+      "src": "assets/images/favicon-16x16.png",
+      "sizes": "16x16",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/images/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/images/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/images/favicon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#dfba73",
+  "background_color": "#080b12",
+  "display": "standalone",
+  "start_url": "index.html"
+}

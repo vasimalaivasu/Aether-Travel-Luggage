@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+    <!-- Instant Theme & Layout Initializer (Prevents Flash of Dark/Light Theme on Navigation) -->
+    <script>
+        (function() {
+            try {
+                var savedTheme = localStorage.getItem('aether_theme') || 'light';
+                var savedDir = localStorage.getItem('aether_dir') || 'ltr';
+                document.documentElement.setAttribute('data-theme', savedTheme);
+                document.documentElement.setAttribute('dir', savedDir);
+                document.documentElement.setAttribute('lang', savedDir === 'rtl' ? 'ar' : 'en');
+            } catch(e) {}
+        })();
+    </script>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="AETHER VOYAGE Contact Us — Book store appointments in Paris, Tokyo, London, and New York. Custom monogramming and luggage advisory." />
+    <title>Contact Us & Stores — AETHER VOYAGE</title>
+
+    <!-- Favicon & Brand Touch Icons -->
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png" />
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="manifest" href="site.webmanifest" />
+    <meta name="theme-color" content="#dfba73" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800;900&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome 6 Icons CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+    <!-- Master Stylesheet -->
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="site-header" id="siteHeader">
+        <div class="container header-container">
+            <a href="index.html" class="brand-logo" aria-label="Aether Voyage Home">
+                <div class="logo-monogram">Æ</div>
+                <div class="logo-text-group">
+                    <span class="logo-title">AETHER</span>
+                    <span class="logo-subtitle">TRAVEL LUGGAGE</span>
+                </div>
+            </a>
+
+            <nav class="nav-menu" aria-label="Primary Navigation">
+                <div class="nav-item-dropdown">
+                    <a href="index.html" class="nav-link dropdown-toggle">
+                        <span>Home</span>
+                        <i class="fa-solid fa-chevron-down nav-dropdown-arrow"></i>
+                    </a>
+                    <div class="nav-dropdown-menu">
+                        <a href="index.html" class="nav-dropdown-item">
+                            <div class="dropdown-item-icon">
+                                <i class="fa-solid fa-landmark"></i>
+                            </div>
+                            <div class="dropdown-item-content">
+                                <div class="dropdown-item-title">Home 1: Flagship Showcase</div>
+                                <div class="dropdown-item-desc">Classic brand collections & travel luggage</div>
+                            </div>
+                        </a>
+                        <a href="home2.html" class="nav-dropdown-item">
+                            <div class="dropdown-item-icon">
+                                <i class="fa-solid fa-wand-magic-sparkles"></i>
+                            </div>
+                            <div class="dropdown-item-content">
+                                <div class="dropdown-item-title">Home 2: Bespoke Studio</div>
+                                <div class="dropdown-item-desc">Customize bag designs, colors & monograms</div>
+                            </div>
+                            <span class="dropdown-item-badge">New</span>
+                        </a>
+                    </div>
+                </div>
+                <a href="collections.html" class="nav-link">Collections</a>
+                <a href="brands.html" class="nav-link">Brands</a>
+                <a href="warranty.html" class="nav-link" title="100-Year Warranty & Repair">Warranty</a>
+                <a href="blog.html" class="nav-link">Blog</a>
+                <a href="contact.html" class="nav-link active" title="Contact Concierge">Contact</a>
+            </nav>
+
+            <div class="header-actions">
+
+                <button id="dirToggle" class="compact-tool-btn" title="Toggle Layout Direction (LTR/RTL)">
+                    <span>RTL</span>
+                </button>
+
+                <button id="themeToggle" class="compact-tool-btn" title="Toggle Dark / Light Theme">
+                    <i class="fa-solid fa-sun"></i>
+                </button>
+
+                <button id="wishlistBtn" class="compact-tool-btn wishlist-open-btn" title="Open Wishlist">
+                    <i class="fa-regular fa-heart"></i>
+                    <span class="action-badge wishlist-count-badge" style="display: none;">0</span>
+                </button>
+
+                <button id="cartBtn" class="compact-tool-btn cart-open-btn" title="Open Luggage Cart">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <span class="action-badge cart-count-badge" style="display: none;">0</span>
+                </button>
+
+                <a href="collections.html" class="header-cta-btn" id="headerCtaBtn" title="Shop Curated Luxury Luggage">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <span>Shop Luggage</span>
+                </a>
+
+                <button id="mobileMenuToggle" class="hamburger-btn" aria-label="Open Mobile Menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Drawer -->
+    <div class="mobile-nav-drawer" id="mobileMenu">
+        <div class="mobile-nav-header">
+            <a href="index.html" class="brand-logo" aria-label="Aether Voyage Home">
+                <div class="logo-monogram">Æ</div>
+                <span class="logo-title">AETHER</span>
+            </a>
+            <button class="drawer-close-btn" id="mobileMenuClose"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div class="mobile-nav-links">
+            <div class="mobile-nav-dropdown-section">
+                <a href="index.html" class="mobile-nav-link">
+                    <i class="fa-solid fa-house"></i> Home
+                </a>
+                <div class="mobile-nav-subgroup">
+                    <a href="index.html" class="mobile-nav-sublink">
+                        <span>Home 1: Flagship Showcase</span>
+                        <i class="fa-solid fa-landmark"></i>
+                    </a>
+                    <a href="home2.html" class="mobile-nav-sublink">
+                        <span>Home 2: Bespoke Studio</span>
+                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+                    </a>
+                </div>
+            </div>
+            <a href="collections.html" class="mobile-nav-link"><i class="fa-solid fa-suitcase-rolling"></i> Collections</a>
+            <a href="brands.html" class="mobile-nav-link"><i class="fa-solid fa-award"></i> Brands</a>
+            <a href="warranty.html" class="mobile-nav-link"><i class="fa-solid fa-shield-halved"></i> 100-Year Warranty</a>
+            <a href="blog.html" class="mobile-nav-link"><i class="fa-solid fa-newspaper"></i> Blog & Journal</a>
+            <a href="contact.html" class="mobile-nav-link active"><i class="fa-solid fa-headset"></i> Contact Us</a>
+            <a href="collections.html" class="mobile-nav-link mobile-nav-cta">
+                <i class="fa-solid fa-suitcase-rolling"></i> <span>Shop Luggage</span>
+            </a>
+            <a href="#wishlist" class="mobile-nav-link wishlist-open-btn">
+                <i class="fa-regular fa-heart"></i>
+                <span>Private Wishlist</span>
+                <span class="action-badge wishlist-count-badge" style="margin-left: auto; display: none;">0</span>
+            </a>
+        </div>
+        <div class="mobile-nav-footer">
+            <div class="mobile-tools-grid">
+                <button id="themeToggleMobile" class="btn btn-secondary btn-sm" style="flex:1;"><i class="fa-solid fa-sun"></i> Theme</button>
+                <button id="dirToggleMobile" class="btn btn-secondary btn-sm" style="flex:1;"><span>RTL / LTR</span></button>
+            </div>
+        </div>
+    </div>
+
+    <div class="drawer-backdrop" id="drawerBackdrop"></div>
+
+    <!-- Main Contact Content -->
+    <main id="mainContent">
+        <section class="catalog-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-eyebrow"><i class="fa-solid fa-headset"></i> Customer Service & Support</span>
+                    <h1 class="section-title">Contact Us & Flagship Stores</h1>
+                    <p class="section-subtitle">Arrange store appointments, custom laser monogramming, or travel luggage support with our dedicated team.</p>
+                </div>
+
+                <div class="warranty-grid">
+                    <!-- Booking Form -->
+                    <div class="warranty-card" id="appointmentBooking" style="scroll-margin-top: 100px;">
+                        <h2 style="font-family: var(--font-serif); font-size: 1.4rem; margin-bottom: 0.5rem;">
+                            <i class="fa-solid fa-calendar-check" style="color: var(--color-gold);"></i> Request Store Consultation Appointment
+                        </h2>
+                        <p style="font-size: 0.82rem; color: var(--text-secondary); margin-bottom: 1.25rem;">
+                            Experience store visits, personalized luggage recommendations, and custom initials engraving.
+                        </p>
+
+                        <form class="warranty-form" onsubmit="event.preventDefault(); window.AetherApp.showToast('Appointment requested. Our support team will confirm within 2 hours.', 'success'); this.reset();">
+                            <div class="warranty-form-row">
+                                <div class="form-field">
+                                    <label>Full Name</label>
+                                    <input type="text" placeholder="Alex Morgan" required>
+                                </div>
+                                <div class="form-field">
+                                    <label>Email Address</label>
+                                    <input type="email" placeholder="alex@example.com" required>
+                                </div>
+                            </div>
+                            <div class="warranty-form-row">
+                                <div class="form-field">
+                                    <label>Preferred Store</label>
+                                    <select id="preferredStoreSelect" required>
+                                        <option value="paris">Paris (18 Place Vendôme)</option>
+                                        <option value="tokyo">Tokyo (Ginza 6-Chome)</option>
+                                        <option value="newyork">New York (712 Madison Ave)</option>
+                                        <option value="london">London (144 New Bond St)</option>
+                                        <option value="dubai">Dubai (Fashion Avenue)</option>
+                                    </select>
+                                </div>
+                                <div class="form-field">
+                                    <label>Preferred Date</label>
+                                    <input type="date" required>
+                                </div>
+                            </div>
+                            <div class="form-field">
+                                <label>Special Requests / Monogramming</label>
+                                <textarea rows="3" placeholder="Specify suitcase models of interest or custom initials for hot-stamping..."></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary" style="margin-top: 0.5rem;">
+                                <i class="fa-solid fa-check"></i> Confirm Appointment Request
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- Direct Contact & Channels -->
+                    <div class="warranty-card" style="display: flex; flex-direction: column; justify-content: space-between;">
+                        <div>
+                            <h2 style="font-family: var(--font-serif); font-size: 1.4rem; margin-bottom: 0.5rem;">
+                                <i class="fa-solid fa-headset" style="color: var(--color-gold);"></i> 24/7 Customer Helpdesk
+                            </h2>
+                            <p style="font-size: 0.82rem; color: var(--text-secondary); margin-bottom: 1.5rem;">
+                                Direct communication channels reserved for international travelers, hotel guests, and VIP members.
+                            </p>
+
+                            <div style="display: flex; flex-direction: column; gap: 1.25rem;">
+                                <div style="display: flex; gap: 1rem; align-items: center;">
+                                    <div class="bento-card-icon" style="margin-bottom: 0; width: 44px; height: 44px; font-size: 1.1rem;">
+                                        <i class="fa-solid fa-phone"></i>
+                                    </div>
+                                    <div>
+                                        <span style="font-size: 0.72rem; color: var(--text-tertiary); text-transform: uppercase;">Direct International Line</span>
+                                        <h4 style="font-size: 1.05rem; color: var(--color-gold);">+1 (800) 492-AETH (2384)</h4>
+                                    </div>
+                                </div>
+
+                                <div style="display: flex; gap: 1rem; align-items: center;">
+                                    <div class="bento-card-icon" style="margin-bottom: 0; width: 44px; height: 44px; font-size: 1.1rem;">
+                                        <i class="fa-solid fa-envelope"></i>
+                                    </div>
+                                    <div>
+                                        <span style="font-size: 0.72rem; color: var(--text-tertiary); text-transform: uppercase;">Customer Support Email</span>
+                                        <h4 class="contact-email-link" style="font-size: 1.05rem; color: var(--text-primary);">contact@aethervoyage.luxury</h4>
+                                    </div>
+                                </div>
+
+                                <div style="display: flex; gap: 1rem; align-items: center;">
+                                    <div class="bento-card-icon" style="margin-bottom: 0; width: 44px; height: 44px; font-size: 1.1rem;">
+                                        <i class="fa-solid fa-plane"></i>
+                                    </div>
+                                    <div>
+                                        <span style="font-size: 0.72rem; color: var(--text-tertiary); text-transform: uppercase;">Hotel Luggage Delivery</span>
+                                        <p style="font-size: 0.82rem; color: var(--text-secondary);">Complimentary loaner luggage delivered directly to suites in major metropolitan hubs.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div style="margin-top: 1.5rem; padding-top: 1.25rem; border-top: 1px solid var(--border-color);">
+                            <a href="collections.html" class="btn btn-secondary btn-sm" style="width: 100%; white-space: normal; text-align: center;">
+                                <i class="fa-solid fa-bag-shopping"></i> Browse Travel Luggage & Trunks
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dedicated Global Flagship Map Section -->
+        <section class="contact-map-section" id="flagshipMap">
+            <div class="container">
+                <div class="section-header" style="margin-bottom: 2.75rem; text-align: center;">
+                    <span class="section-eyebrow"><i class="fa-solid fa-map-location-dot"></i> Worldwide Flagships & Boutiques</span>
+                    <h2 class="section-title">Visit Our Global Salons</h2>
+                    <p class="section-subtitle">
+                        Experience bespoke trunk commissioning, tactile leather sampling, personalized laser monogramming, and concierge pickup at our private worldwide locations.
+                    </p>
+                </div>
+
+                <div class="map-layout-grid">
+                    <!-- Salon Selector Directory (Left Column) -->
+                    <div class="salons-directory">
+                        <div class="salons-directory-header">
+                            <h3><i class="fa-solid fa-building-columns" style="color: var(--color-gold);"></i> Flagship Salons</h3>
+                            <span class="salons-count-badge">5 Boutiques</span>
+                        </div>
+
+                        <div class="salon-cards-list" id="salonCardsList">
+                            <!-- 1. Paris -->
+                            <div class="salon-card active" data-salon="paris" onclick="selectSalon('paris')" tabindex="0" role="button" aria-label="Select Paris Flagship Salon">
+                                <div class="salon-card-header">
+                                    <h4 class="salon-name">Paris Flagship Salon</h4>
+                                    <span class="salon-city-pill">Europe</span>
+                                </div>
+                                <p class="salon-address"><i class="fa-solid fa-location-dot"></i> 18 Place Vendôme, 75001 Paris, France</p>
+                                <div class="salon-meta-row">
+                                    <span><i class="fa-regular fa-clock"></i> Mon–Sat: 10:00 – 19:30</span>
+                                    <span><i class="fa-solid fa-phone"></i> +33 1 42 68 88 00</span>
+                                </div>
+                            </div>
+
+                            <!-- 2. New York -->
+                            <div class="salon-card" data-salon="newyork" onclick="selectSalon('newyork')" tabindex="0" role="button" aria-label="Select New York Madison Atelier">
+                                <div class="salon-card-header">
+                                    <h4 class="salon-name">New York Atelier</h4>
+                                    <span class="salon-city-pill">Americas</span>
+                                </div>
+                                <p class="salon-address"><i class="fa-solid fa-location-dot"></i> 712 Madison Ave, New York, NY 10065, USA</p>
+                                <div class="salon-meta-row">
+                                    <span><i class="fa-regular fa-clock"></i> Mon–Sat: 10:00 – 19:00</span>
+                                    <span><i class="fa-solid fa-phone"></i> +1 212 555 0192</span>
+                                </div>
+                            </div>
+
+                            <!-- 3. London -->
+                            <div class="salon-card" data-salon="london" onclick="selectSalon('london')" tabindex="0" role="button" aria-label="Select London Mayfair Salon">
+                                <div class="salon-card-header">
+                                    <h4 class="salon-name">London Mayfair Salon</h4>
+                                    <span class="salon-city-pill">Europe</span>
+                                </div>
+                                <p class="salon-address"><i class="fa-solid fa-location-dot"></i> 144 New Bond St, Mayfair, London W1S 2PF, UK</p>
+                                <div class="salon-meta-row">
+                                    <span><i class="fa-regular fa-clock"></i> Mon–Sat: 10:00 – 18:30</span>
+                                    <span><i class="fa-solid fa-phone"></i> +44 20 7946 0918</span>
+                                </div>
+                            </div>
+
+                            <!-- 4. Tokyo -->
+                            <div class="salon-card" data-salon="tokyo" onclick="selectSalon('tokyo')" tabindex="0" role="button" aria-label="Select Tokyo Ginza Maison">
+                                <div class="salon-card-header">
+                                    <h4 class="salon-name">Tokyo Ginza Maison</h4>
+                                    <span class="salon-city-pill">Asia-Pacific</span>
+                                </div>
+                                <p class="salon-address"><i class="fa-solid fa-location-dot"></i> 6-10-1 Ginza, Chuo-ku, Tokyo 104-0061, Japan</p>
+                                <div class="salon-meta-row">
+                                    <span><i class="fa-regular fa-clock"></i> Daily: 10:30 – 20:00</span>
+                                    <span><i class="fa-solid fa-phone"></i> +81 3 5555 0142</span>
+                                </div>
+                            </div>
+
+                            <!-- 5. Dubai -->
+                            <div class="salon-card" data-salon="dubai" onclick="selectSalon('dubai')" tabindex="0" role="button" aria-label="Select Dubai Fashion Avenue Boutique">
+                                <div class="salon-card-header">
+                                    <h4 class="salon-name">Dubai Fashion Avenue</h4>
+                                    <span class="salon-city-pill">Middle East</span>
+                                </div>
+                                <p class="salon-address"><i class="fa-solid fa-location-dot"></i> Fashion Avenue, The Dubai Mall, Downtown Dubai, UAE</p>
+                                <div class="salon-meta-row">
+                                    <span><i class="fa-regular fa-clock"></i> Daily: 10:00 – 23:00</span>
+                                    <span><i class="fa-solid fa-phone"></i> +971 4 362 7500</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Interactive Map Preview & Details Card (Right Column) -->
+                    <div class="salon-map-display-card">
+                        <div class="map-frame-header">
+                            <div class="map-current-info">
+                                <span class="map-live-indicator"><span class="pulse-dot"></span> Active Salon Preview</span>
+                                <h3 id="currentSalonTitle">Paris Flagship Salon</h3>
+                                <p id="currentSalonSubtitle">18 Place Vendôme, 75001 Paris, France</p>
+                            </div>
+                            <div class="map-actions-group">
+                                <a id="mapGetDirectionsBtn" href="https://maps.google.com/?q=18+Place+Vendome+Paris+France" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i> Open in Maps
+                                </a>
+                                <a href="#appointmentBooking" class="btn btn-primary btn-sm">
+                                    <i class="fa-solid fa-calendar-check"></i> Book Visit
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="map-iframe-container">
+                            <iframe 
+                                id="salonMapIframe" 
+                                title="Aether Global Flagship Salon Location" 
+                                src="https://maps.google.com/maps?q=18%20Place%20Vend%C3%B4me,%2075001%20Paris,%20France&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+                                width="100%" 
+                                height="100%" 
+                                style="border:0;" 
+                                allowfullscreen="" 
+                                loading="lazy" 
+                                referrerpolicy="no-referrer-when-downgrade">
+                            </iframe>
+                        </div>
+
+                        <div class="map-footer-perks">
+                            <div class="perk-item">
+                                <i class="fa-solid fa-car-side" style="color: var(--color-gold);"></i>
+                                <span>Complimentary Valet Parking</span>
+                            </div>
+                            <div class="perk-item">
+                                <i class="fa-solid fa-champagne-glasses" style="color: var(--color-gold);"></i>
+                                <span>Private VIP Salon & Refreshments</span>
+                            </div>
+                            <div class="perk-item">
+                                <i class="fa-solid fa-shield-heart" style="color: var(--color-gold);"></i>
+                                <span>Same-Day Laser Initials Monogramming</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Customer Account Drawer (Slides in from Left-to-Right) -->
+    <aside class="slide-drawer slide-drawer-left" id="authDrawer" aria-label="Customer Account Drawer">
+        <div class="drawer-header">
+            <div class="drawer-title-group">
+                <i class="fa-regular fa-user" style="color: var(--color-gold); font-size: 1.1rem;"></i>
+                <h3 class="drawer-title" id="authDrawerTitle">Customer Account</h3>
+            </div>
+            <button class="drawer-close-btn" id="authDrawerClose" aria-label="Close Account Drawer"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div class="drawer-body" id="authDrawerBody"></div>
+    </aside>
+
+    <aside class="slide-drawer" id="cartDrawer" aria-label="Luggage Cart Drawer">
+        <div class="drawer-header">
+            <div class="drawer-title-group">
+                <i class="fa-solid fa-bag-shopping" style="color: var(--color-gold);"></i>
+                <h3 class="drawer-title">Luggage Cart</h3>
+                <span class="drawer-count-badge cart-count-badge">0</span>
+            </div>
+            <button class="drawer-close-btn" id="cartDrawerClose"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div class="shipping-progress-box">
+            <div class="shipping-progress-text" id="shippingProgressText">
+                Add <strong>$500</strong> for Complimentary Express Shipping
+            </div>
+            <div class="shipping-bar-bg">
+                <div class="shipping-bar-fill" id="shippingProgressBar" style="width: 0%;"></div>
+            </div>
+        </div>
+        <div class="drawer-body" id="cartItemsList"></div>
+        <div class="drawer-footer">
+            <div class="promo-form">
+                <input type="text" class="promo-input" id="promoCodeInput" placeholder="PROMO CODE (VOYAGE10)">
+                <button class="promo-btn" id="applyPromoBtn" type="button">Apply</button>
+            </div>
+            <div class="cart-totals-list">
+                <div class="cart-totals-row">
+                    <span>Subtotal</span>
+                    <span id="cartSubtotal">$0</span>
+                </div>
+                <div class="cart-totals-row" id="cartDiscountRow" style="display: none; color: #10b981;">
+                    <span>Member Discount</span>
+                    <span id="cartDiscount">-$0</span>
+                </div>
+                <div class="cart-totals-row">
+                    <span>Worldwide Express Shipping</span>
+                    <span id="cartShipping">FREE</span>
+                </div>
+                <div class="cart-totals-row final-total">
+                    <span>Total</span>
+                    <span class="total-amount" id="cartFinalTotal">$0</span>
+                </div>
+            </div>
+            <button class="checkout-btn" id="checkoutBtn">
+                <i class="fa-solid fa-lock"></i> Proceed to Checkout
+            </button>
+        </div>
+    </aside>
+
+    <aside class="slide-drawer" id="wishlistDrawer" aria-label="Wishlist Drawer">
+        <div class="drawer-header">
+            <div class="drawer-title-group">
+                <i class="fa-solid fa-heart" style="color: var(--color-gold);"></i>
+                <h3 class="drawer-title">My Wishlist</h3>
+                <span class="drawer-count-badge wishlist-count-badge">0</span>
+            </div>
+            <button class="drawer-close-btn" id="wishlistDrawerClose"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div class="drawer-body" id="wishlistItemsList"></div>
+        <!-- Wishlist Drawer Footer -->
+        <div class="drawer-footer" id="wishlistDrawerFooter" style="display: none;"></div>
+    </aside>
+
+    <div class="modal-backdrop" id="quickViewModal">
+        <div class="modal-dialog">
+            <button class="modal-close-btn" id="quickViewCloseBtn"><i class="fa-solid fa-xmark"></i></button>
+            <div id="quickViewContent"></div>
+        </div>
+    </div>
+
+    <div class="modal-backdrop" id="checkoutModal">
+        <div class="modal-dialog checkout-dialog" id="checkoutDialogContent">
+            <button class="modal-close-btn" id="checkoutModalClose"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+    </div>
+
+    <div id="toastContainer"></div>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-top-grid">
+                <div>
+                    <a href="index.html" class="brand-logo" style="margin-bottom: 1rem; text-decoration: none;" aria-label="Aether Voyage Home">
+                        <div class="logo-monogram">Æ</div>
+                        <div class="logo-text-group">
+                            <span class="logo-title" style="color: #fff;">AETHER</span>
+                            <span class="logo-subtitle">TRAVEL LUGGAGE</span>
+                        </div>
+                    </a>
+                    <p class="footer-brand-desc" style="font-size: 0.82rem; color: #b8c4d4; line-height: 1.6; max-width: 300px;">
+                        Aeronautical aluminum suitcases, ballistic nylon travel armor, and handcrafted Italian leather goods. Designed for modern travelers.
+                    </p>
+                    <div class="footer-social-block">
+                        <span class="footer-social-label">Follow Us</span>
+                        <div class="footer-social-icons">
+                            <a href="https://www.instagram.com/accounts/login/" target="_blank" rel="noopener noreferrer" class="footer-social-btn instagram" aria-label="Follow us on Instagram (Redirects to Login)" title="Instagram Login">
+                                <i class="fa-brands fa-instagram"></i>
+                            </a>
+                            <a href="https://www.facebook.com/login/" target="_blank" rel="noopener noreferrer" class="footer-social-btn facebook" aria-label="Follow us on Facebook (Redirects to Login)" title="Facebook Login">
+                                <i class="fa-brands fa-facebook-f"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/login" target="_blank" rel="noopener noreferrer" class="footer-social-btn linkedin" aria-label="Follow us on LinkedIn (Redirects to Login)" title="LinkedIn Login">
+                                <i class="fa-brands fa-linkedin-in"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="footer-col-title">Our Collections</h4>
+                    <ul class="footer-links-list">
+                        <li><a href="collections.html?brand=American+Tourister" class="footer-link">American Tourister</a></li>
+                        <li><a href="collections.html?brand=Skybags" class="footer-link">Skybags Collection</a></li>
+                        <li><a href="collections.html?brand=Samsonite" class="footer-link">Samsonite Series</a></li>
+                        <li><a href="collections.html?brand=Rimowa" class="footer-link">Rimowa Classic & Cabin</a></li>
+                        <li><a href="collections.html?brand=Tumi" class="footer-link">Tumi Ballistic Duffels</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-col-title">Customer Services</h4>
+                    <ul class="footer-links-list">
+                        <li><a href="warranty.html" class="footer-link">100-Year Lifetime Warranty</a></li>
+                        <li><a href="warranty.html#tracker" class="footer-link">5-Stage Repair Tracker</a></li>
+                        <li><a href="warranty.html#service-centers" class="footer-link">Global Service Centers</a></li>
+                        <li><a href="blog.html" class="footer-link">The Aether Journal</a></li>
+                        <li><a href="contact.html" class="footer-link">Store Consultation</a></li>
+                        <li><a href="collections.html" class="footer-link">Curated Collections</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-col-title">Global Flagships</h4>
+                    <p class="footer-cities" style="font-size: 0.82rem; color: #b8c4d4; line-height: 1.6;">&bull; Paris &bull; Tokyo &bull; New York &bull; London &bull; Dubai &bull; Singapore</p>
+                    <p style="font-size: 0.82rem; color: var(--color-gold); font-weight: 700; margin-top: 0.5rem; margin-bottom: 1rem;">Contact Us: +1 (800) 492-AETH</p>
+                    <div class="footer-actions-dock" id="footerActionsDock">
+                        <button id="backToTopBtn" class="back-to-top" title="Back to Top" aria-label="Back to Top">
+                            <i class="fa-solid fa-arrow-up"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div>&copy; 2026 AETHER VOYAGE S.A. All Rights Reserved.</div>
+                <div class="footer-legal-links">
+                    <a href="warranty.html" class="footer-link">Warranty Terms</a>
+                    <a href="contact.html" class="footer-link">Privacy Policy</a>
+                    <a href="contact.html" class="footer-link">Sustainability</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/data.js"></script>
+    <script src="js/theme.js"></script>
+    <script src="js/router.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/catalog.js"></script>
+    <script src="js/warranty.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/checkout.js"></script>
+    <script src="js/app.js"></script>
+    <script>
+        const SALON_DATA = {
+            paris: {
+                title: "Paris Flagship Salon",
+                subtitle: "18 Place Vendôme, 75001 Paris, France",
+                embedUrl: "https://maps.google.com/maps?q=18%20Place%20Vend%C3%B4me,%2075001%20Paris,%20France&t=&z=15&ie=UTF8&iwloc=&output=embed",
+                mapLink: "https://maps.google.com/?q=18+Place+Vendome+Paris+France"
+            },
+            newyork: {
+                title: "New York Atelier",
+                subtitle: "712 Madison Ave, New York, NY 10065, USA",
+                embedUrl: "https://maps.google.com/maps?q=712%20Madison%20Ave,%20New%20York,%20NY%2010065&t=&z=15&ie=UTF8&iwloc=&output=embed",
+                mapLink: "https://maps.google.com/?q=712+Madison+Ave+New+York+NY"
+            },
+            london: {
+                title: "London Mayfair Salon",
+                subtitle: "144 New Bond St, Mayfair, London W1S 2PF, UK",
+                embedUrl: "https://maps.google.com/maps?q=144%20New%20Bond%20St,%20Mayfair,%20London%20W1S%202PF&t=&z=15&ie=UTF8&iwloc=&output=embed",
+                mapLink: "https://maps.google.com/?q=144+New+Bond+St+London+UK"
+            },
+            tokyo: {
+                title: "Tokyo Ginza Maison",
+                subtitle: "6-10-1 Ginza, Chuo-ku, Tokyo 104-0061, Japan",
+                embedUrl: "https://maps.google.com/maps?q=Ginza%20Six,%206-10-1%20Ginza,%20Chuo%20City,%20Tokyo%20104-0061&t=&z=15&ie=UTF8&iwloc=&output=embed",
+                mapLink: "https://maps.google.com/?q=Ginza+Six+Chuo+Tokyo+Japan"
+            },
+            dubai: {
+                title: "Dubai Fashion Avenue",
+                subtitle: "Fashion Avenue, The Dubai Mall, Downtown Dubai, UAE",
+                embedUrl: "https://maps.google.com/maps?q=Fashion%20Avenue,%20The%20Dubai%20Mall,%20Dubai&t=&z=15&ie=UTF8&iwloc=&output=embed",
+                mapLink: "https://maps.google.com/?q=The+Dubai+Mall+Fashion+Avenue+Dubai"
+            }
+        };
+
+        function selectSalon(salonKey) {
+            const salon = SALON_DATA[salonKey];
+            if (!salon) return;
+
+            document.querySelectorAll('.salon-card').forEach(card => {
+                if (card.getAttribute('data-salon') === salonKey) {
+                    card.classList.add('active');
+                } else {
+                    card.classList.remove('active');
+                }
+            });
+
+            const titleEl = document.getElementById('currentSalonTitle');
+            const subEl = document.getElementById('currentSalonSubtitle');
+            const dirBtn = document.getElementById('mapGetDirectionsBtn');
+            const iframe = document.getElementById('salonMapIframe');
+            const storeSelect = document.getElementById('preferredStoreSelect');
+
+            if (titleEl) titleEl.textContent = salon.title;
+            if (subEl) subEl.textContent = salon.subtitle;
+            if (dirBtn) dirBtn.href = salon.mapLink;
+            if (iframe) iframe.src = salon.embedUrl;
+            if (storeSelect) storeSelect.value = salonKey;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,118 @@
+/* ==========================================================================
+   AETHER VOYAGE — Unified Design Tokens & Theme Engine
+   ========================================================================== */
+
+:root,
+[data-theme="light"] {
+  /* Core Brand Colors */
+  --color-gold: #c5a059;
+  --color-gold-light: #dfba73;
+  --color-gold-dark: #9e7b36;
+  --color-gold-glow: rgba(197, 160, 89, 0.16);
+  --border-gold-subtle: rgba(197, 160, 89, 0.35);
+  
+  --accent-gold: #c5a059;
+  --accent-gold-hover: #dfba73;
+  --accent-gold-subtle: rgba(197, 160, 89, 0.16);
+  --accent-slate: #2c323b;
+  --accent-bronze: #8c6d46;
+
+  /* Typography */
+  --font-serif: 'Cinzel', 'Playfair Display', 'Didot', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+
+  /* Dimensions & Spacing */
+  --header-height: 66px;
+  --container-max: 1320px;
+  
+  --space-1: 0.25rem;  /* 4px */
+  --space-2: 0.5rem;   /* 8px */
+  --space-3: 0.75rem;  /* 12px */
+  --space-4: 1rem;     /* 16px */
+  --space-5: 1.25rem;  /* 20px */
+  --space-6: 1.5rem;   /* 24px */
+  --space-8: 2rem;     /* 32px */
+  --space-10: 2.5rem;  /* 40px */
+  --space-12: 3.5rem;  /* 56px */
+  --space-16: 5rem;    /* 80px */
+
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --radius-xl: 24px;
+  --radius-2xl: 32px;
+  --radius-full: 9999px;
+  --radius-pill: 9999px;
+
+  /* Transitions */
+  --transition-fast: 0.18s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-slow: 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-smooth: 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* Shadows */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.12);
+  --shadow-xl: 0 24px 60px rgba(0, 0, 0, 0.18);
+  --shadow-2xl: 0 32px 80px rgba(0, 0, 0, 0.28);
+  --shadow-gold: 0 8px 25px rgba(197, 160, 89, 0.3);
+  --shadow-gold-lg: 0 12px 35px rgba(197, 160, 89, 0.45);
+
+  /* Light Theme (Warm Travertine, Oat Linen & Tuscan Bronze Tone) */
+  --bg-primary: #f4f0eb;
+  --bg-body: #f4f0eb;
+  --bg-surface: #faf7f2;
+  --bg-surface-elevated: #ece4d8;
+  --bg-card: #faf7f2;
+  --bg-card-hover: #f2ebd9;
+  --bg-glass: rgba(244, 240, 235, 0.92);
+  --bg-subtle: #eae2d3;
+
+  --text-primary: #12151a;
+  --text-main: #12151a;
+  --text-secondary: #50463c;
+  --text-tertiary: #7d7266;
+  --text-inverse: #ffffff;
+
+  --border-color: rgba(145, 115, 80, 0.16);
+  --border-subtle: rgba(145, 115, 80, 0.12);
+  --border-card: rgba(145, 115, 80, 0.10);
+
+  --gold-gradient: linear-gradient(135deg, #dfba73 0%, #c5a059 50%, #a88138 100%);
+  --gold-gradient-hover: linear-gradient(135deg, #edd095 0%, #d4af65 50%, #b88f44 100%);
+  --gold-text-gradient: linear-gradient(135deg, #593907 0%, #8c5e15 45%, #503104 100%);
+  --dark-gradient: linear-gradient(135deg, #1f2530 0%, #12151a 100%);
+}
+
+/* Dark Theme (Obsidian, Deep Slate & Radiant Gold) */
+[data-theme="dark"] {
+  --bg-primary: #0a0d13;
+  --bg-body: #0a0d13;
+  --bg-surface: #111620;
+  --bg-surface-elevated: #18202d;
+  --bg-card: #131822;
+  --bg-card-hover: #19202c;
+  --bg-glass: rgba(17, 22, 32, 0.88);
+  --bg-subtle: #19202d;
+
+  --text-primary: #f3f5f8;
+  --text-main: #f3f5f8;
+  --text-secondary: #a0abb8;
+  --text-tertiary: #6c7786;
+  --text-inverse: #0a0d13;
+
+  --border-color: rgba(255, 255, 255, 0.09);
+  --border-subtle: rgba(255, 255, 255, 0.09);
+  --border-card: rgba(255, 255, 255, 0.07);
+
+  --gold-gradient: linear-gradient(135deg, #dfba73 0%, #c5a059 50%, #a88138 100%);
+  --gold-gradient-hover: linear-gradient(135deg, #edd095 0%, #d4af65 50%, #b88f44 100%);
+
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.5);
+  --shadow-xl: 0 24px 60px rgba(0, 0, 0, 0.65);
+  --shadow-2xl: 0 32px 80px rgba(0, 0, 0, 0.8);
+}

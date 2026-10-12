@@ -1,0 +1,509 @@
+/* ==========================================================================
+   Aether Voyage - VIP Club, Auth Portal & Member Dashboard Styles
+   ========================================================================== */
+
+.auth-page-section {
+    padding: var(--space-12) 0;
+    background: var(--bg-primary);
+    min-height: calc(100vh - var(--header-height));
+}
+
+.auth-hero-banner {
+    text-align: center;
+    max-width: 650px;
+    margin: 0 auto var(--space-8);
+}
+
+.vip-badge-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.35rem 0.85rem;
+    border-radius: var(--radius-full);
+    background: var(--color-gold-glow);
+    border: 1px solid var(--border-gold-subtle);
+    color: var(--color-gold);
+    font-size: var(--font-size-xs);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: var(--space-2);
+}
+
+/* Auth Cards Grid (for logged out state) */
+.auth-split-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: var(--space-8);
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+@media (max-width: 860px) {
+    .auth-split-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.auth-card-panel {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-2xl);
+    padding: var(--space-8);
+    box-shadow: var(--shadow-lg);
+}
+
+.vip-tier-showcase {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+}
+
+.tier-card {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-xl);
+    padding: var(--space-5);
+    position: relative;
+    overflow: hidden;
+}
+
+.tier-card.tier-obsidian {
+    border-color: var(--border-gold-subtle);
+    background: linear-gradient(135deg, var(--bg-surface) 0%, rgba(201, 169, 110, 0.08) 100%);
+}
+
+.tier-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--space-2);
+}
+
+.tier-name {
+    font-family: var(--font-serif);
+    font-size: var(--font-size-lg);
+    font-weight: 700;
+    color: var(--color-gold);
+}
+
+.tier-points {
+    font-size: var(--font-size-xs);
+    font-weight: 700;
+    color: var(--text-secondary);
+}
+
+.tier-benefits-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    font-size: var(--font-size-xs);
+    color: var(--text-secondary);
+}
+
+.tier-benefits-list li {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.tier-benefits-list i {
+    color: var(--color-gold);
+    font-size: 0.75rem;
+}
+
+/* Member Dashboard (when logged in) */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: 340px 1fr;
+    gap: var(--space-6);
+    max-width: 1240px;
+    margin: 0 auto;
+    align-items: start;
+}
+
+@media (max-width: 960px) {
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.dashboard-sidebar-column {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+}
+
+.dashboard-main-column {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+}
+
+.member-profile-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-2xl);
+    padding: var(--space-6);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: var(--space-4);
+    box-shadow: var(--shadow-sm);
+}
+
+.member-avatar-lg {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: var(--color-gold-glow);
+    border: 2px solid var(--color-gold);
+    color: var(--color-gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    font-weight: 700;
+    font-family: var(--font-serif);
+}
+
+.member-name {
+    font-family: var(--font-serif);
+    font-size: var(--font-size-xl);
+    font-weight: 700;
+}
+
+.member-tier-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    padding: 0.25rem 0.75rem;
+    background: var(--color-gold-glow);
+    border: 1px solid var(--border-gold-subtle);
+    border-radius: var(--radius-full);
+    color: var(--color-gold);
+    font-size: var(--font-size-xs);
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.member-stats-box {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-2);
+    padding-top: var(--space-4);
+    border-top: 1px solid var(--border-color);
+}
+
+.member-stat-cell {
+    display: flex;
+    flex-direction: column;
+}
+
+.stat-cell-num {
+    font-family: var(--font-serif);
+    font-size: var(--font-size-lg);
+    font-weight: 700;
+    color: var(--color-gold);
+}
+
+.stat-cell-lbl {
+    font-size: 0.65rem;
+    color: var(--text-tertiary);
+    text-transform: uppercase;
+}
+
+/* Destination Address Card in VIP Dashboard */
+.vip-address-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-2xl);
+    padding: var(--space-6);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+    text-align: left;
+    box-shadow: var(--shadow-sm);
+}
+
+.vip-card-header {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: var(--space-3);
+}
+
+.vip-card-header h3 {
+    font-family: var(--font-serif);
+    font-size: 1.15rem;
+    margin: 0;
+    color: var(--text-primary);
+}
+
+.vip-form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+}
+
+.vip-form-group label {
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-tertiary);
+}
+
+.vip-input,
+.vip-select {
+    width: 100%;
+    padding: 0.65rem 0.85rem;
+    background: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    color: var(--text-primary);
+    font-size: 0.84rem;
+    font-family: inherit;
+    transition: all var(--transition-fast);
+}
+
+.vip-input:focus,
+.vip-select:focus {
+    outline: none;
+    border-color: var(--color-gold);
+    box-shadow: 0 0 0 3px var(--color-gold-glow);
+}
+
+/* Purchased Materials Card & Details */
+.vip-purchased-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-2xl);
+    padding: var(--space-6);
+    box-shadow: var(--shadow-sm);
+}
+
+.vip-purchased-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.purchased-item-row {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-xl);
+    padding: 1.25rem;
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    gap: 1.25rem;
+    transition: all var(--transition-fast);
+}
+
+@media (max-width: 680px) {
+    .purchased-item-row {
+        grid-template-columns: 1fr;
+    }
+}
+
+.purchased-item-row:hover {
+    border-color: var(--border-gold-subtle);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+}
+
+.purchased-item-thumb {
+    width: 110px;
+    height: 110px;
+    border-radius: var(--radius-lg);
+    object-fit: cover;
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid var(--border-color);
+}
+
+.purchased-item-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.purchased-header-flex {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.purchased-title-box h4 {
+    font-family: var(--font-serif);
+    font-size: 1.15rem;
+    margin: 0 0 0.25rem 0;
+    color: var(--text-primary);
+}
+
+.purchased-meta {
+    font-size: 0.78rem;
+    color: var(--text-tertiary);
+    display: flex;
+    gap: 0.85rem;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.materials-detail-box {
+    background: rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: var(--radius-md);
+    padding: 0.75rem 0.9rem;
+    font-size: 0.8rem;
+    line-height: 1.55;
+    color: var(--text-secondary);
+}
+
+[data-theme="light"] .materials-detail-box {
+    background: rgba(197, 160, 89, 0.06);
+    border: 1px solid rgba(197, 160, 89, 0.2);
+}
+
+.materials-detail-box strong {
+    color: var(--text-primary);
+}
+
+.warranty-calc-box {
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.08) 0%, rgba(197, 160, 89, 0.06) 100%);
+    border: 1px solid rgba(16, 185, 129, 0.28);
+    border-radius: var(--radius-md);
+    padding: 0.85rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+[data-theme="light"] .warranty-calc-box {
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.07) 0%, rgba(197, 160, 89, 0.1) 100%);
+}
+
+.warranty-calc-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.warranty-status-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.25rem 0.75rem;
+    border-radius: var(--radius-full);
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    background: rgba(16, 185, 129, 0.15);
+    color: #10b981;
+    border: 1px solid rgba(16, 185, 129, 0.35);
+}
+
+.warranty-bar-bg {
+    width: 100%;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-full);
+    overflow: hidden;
+}
+
+[data-theme="light"] .warranty-bar-bg {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.warranty-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #10b981 0%, var(--color-gold) 100%);
+    border-radius: var(--radius-full);
+}
+
+.purchased-actions {
+    display: flex;
+    gap: 0.65rem;
+    margin-top: 0.35rem;
+    flex-wrap: wrap;
+}
+
+/* Registered Assets & Order History Tabs */
+.dashboard-content-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-2xl);
+    padding: var(--space-6);
+    box-shadow: var(--shadow-sm);
+}
+
+.registered-luggage-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: var(--space-4);
+    margin-top: var(--space-4);
+}
+
+.registered-asset-card {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-xl);
+    padding: var(--space-4);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+}
+
+.asset-nfc-tag {
+    font-family: monospace;
+    font-size: 0.7rem;
+    color: var(--color-gold);
+    background: var(--bg-card);
+    padding: 0.2rem 0.5rem;
+    border-radius: var(--radius-sm);
+    width: fit-content;
+}
+
+/* RTL Auth & VIP Dashboard Enhancements */
+[dir="rtl"] .vip-address-card {
+    text-align: right;
+}
+
+[dir="rtl"] .vip-form-group label {
+    text-align: right;
+}
+
+[dir="rtl"] .vip-input,
+[dir="rtl"] .vip-select {
+    text-align: right;
+}
+
+[dir="rtl"] .vip-card-header {
+    flex-direction: row;
+}
+
+[dir="rtl"] .purchased-item-info {
+    text-align: right;
+}
+
+[dir="rtl"] .purchased-item-title,
+[dir="rtl"] .purchased-item-brand {
+    text-align: right;
+}
+
+[dir="rtl"] .materials-detail-box {
+    text-align: right;
+}
+
+[dir="rtl"] .warranty-calc-box {
+    text-align: right;
+}

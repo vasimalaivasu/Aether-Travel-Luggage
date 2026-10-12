@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+    <!-- Instant Theme & Layout Initializer -->
+    <script>
+        (function() {
+            try {
+                var savedTheme = localStorage.getItem('aether_theme') || 'light';
+                var savedDir = localStorage.getItem('aether_dir') || 'ltr';
+                document.documentElement.setAttribute('data-theme', savedTheme);
+                document.documentElement.setAttribute('dir', savedDir);
+                document.documentElement.setAttribute('lang', savedDir === 'rtl' ? 'ar' : 'en');
+            } catch(e) {}
+        })();
+    </script>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="AETHER VOYAGE — Customer Account Portal. Sign in or create an account to view luggage orders and lifetime warranty certificates." />
+    <title>Customer Sign In & Registration — AETHER VOYAGE</title>
+
+    <!-- Favicon & Brand Touch Icons -->
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png" />
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="manifest" href="site.webmanifest" />
+    <meta name="theme-color" content="#dfba73" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800;900&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome 6 Icons CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+    <!-- Master Stylesheet -->
+    <link rel="stylesheet" href="css/style.css" />
+
+    <style>
+        /* Smooth Viewport Constraints */
+        html, body {
+            overflow-x: clip;
+            width: 100%;
+        }
+
+        /* Top Luxury Gold Loading Beam (Left-to-Right Progress Loader) */
+        .portal-loading-beam {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3.5px;
+            background: linear-gradient(90deg, #b38728 0%, #fbf5b7 30%, #daae51 60%, #e1ba6d 80%, #aa771c 100%);
+            box-shadow: 0 0 16px rgba(223, 186, 115, 0.95), 0 0 6px rgba(255, 255, 255, 0.8);
+            z-index: 99999;
+            transform-origin: left;
+            animation: beamSweepLTR 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            pointer-events: none;
+        }
+
+        @keyframes beamSweepLTR {
+            0% {
+                transform: scaleX(0);
+                opacity: 1;
+            }
+            65% {
+                transform: scaleX(0.88);
+                opacity: 1;
+            }
+            100% {
+                transform: scaleX(1);
+                opacity: 0;
+            }
+        }
+
+        /* Master Left-to-Right Gateway Section Entrance */
+        .login-gateway-section {
+            min-height: calc(100vh - 80px);
+            display: flex;
+            align-items: stretch;
+            justify-content: flex-start;
+            position: relative;
+            background: var(--bg-primary);
+            overflow: hidden;
+            animation: gatewaySlideInLTR 0.85s cubic-bezier(0.16, 1, 0.3, 1) both;
+        }
+
+        @keyframes gatewaySlideInLTR {
+            0% {
+                opacity: 0;
+                transform: translate3d(-100%, 0, 0);
+            }
+            100% {
+                opacity: 1;
+                transform: translate3d(0, 0, 0);
+            }
+        }
+
+        /* Left-to-Right Sliding Card Panel with Smooth Parallax Easing */
+        .login-card-container {
+            width: 100%;
+            max-width: 520px;
+            min-height: calc(100vh - 80px);
+            background: var(--bg-card);
+            border-right: 1px solid var(--border-color);
+            padding: 3rem 2.5rem;
+            box-shadow: 20px 0 50px rgba(0, 0, 0, 0.35);
+            position: relative;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            animation: cardSlideLTR 0.95s cubic-bezier(0.16, 1, 0.3, 1) 0.05s both;
+        }
+
+        @keyframes cardSlideLTR {
+            0% {
+                opacity: 0;
+                transform: translate3d(-80px, 0, 0);
+            }
+            100% {
+                opacity: 1;
+                transform: translate3d(0, 0, 0);
+            }
+        }
+
+        [dir="rtl"] .login-card-container {
+            border-right: none;
+            border-left: 1px solid var(--border-color);
+            box-shadow: -20px 0 50px rgba(0, 0, 0, 0.35);
+        }
+
+        /* Atmospheric Right Showcase Panel with Staggered Left-to-Right Reveal */
+        .login-brand-showcase {
+            flex: 1;
+            position: relative;
+            background: linear-gradient(135deg, rgba(12, 18, 30, 0.85) 0%, rgba(12, 18, 30, 0.6) 100%),
+                        url('https://images.unsplash.com/photo-1565026057447-bc90a3dceb87?auto=format&fit=crop&w=1600&q=80');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 4rem;
+            overflow: hidden;
+            animation: showcaseRevealLTR 1.05s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both;
+        }
+
+        @keyframes showcaseRevealLTR {
+            0% {
+                opacity: 0;
+                transform: translate3d(-50px, 0, 0);
+            }
+            100% {
+                opacity: 1;
+                transform: translate3d(0, 0, 0);
+            }
+        }
+
+        [data-theme="light"] .login-brand-showcase {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.88) 0%, rgba(248, 246, 240, 0.7) 100%),
+                        url('https://images.unsplash.com/photo-1565026057447-bc90a3dceb87?auto=format&fit=crop&w=1600&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .showcase-content {
+            max-width: 540px;
+            position: relative;
+            z-index: 3;
+            color: var(--text-primary);
+            animation: contentFadeLTR 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.2s both;
+        }
+
+        @keyframes contentFadeLTR {
+            0% {
+                opacity: 0;
+                transform: translate3d(-30px, 0, 0);
+            }
+            100% {
+                opacity: 1;
+                transform: translate3d(0, 0, 0);
+            }
+        }
+
+        /* Form Left-to-Right Transition */
+        @keyframes formSlideLTR {
+            0% {
+                opacity: 0;
+                transform: translate3d(-20px, 0, 0);
+            }
+            100% {
+                opacity: 1;
+                transform: translate3d(0, 0, 0);
+            }
+        }
+
+        .auth-form {
+            animation: formSlideLTR 0.35s cubic-bezier(0.16, 1, 0.3, 1) both;
+        }
+
+        .showcase-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.4rem 1rem;
+            border-radius: var(--radius-full);
+            background: var(--color-gold-glow);
+            border: 1px solid var(--border-gold-subtle);
+            color: var(--color-gold);
+            font-size: 0.78rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            margin-bottom: 1.5rem;
+        }
+
+        .showcase-title {
+            font-family: var(--font-serif);
+            font-size: 2.5rem;
+            font-weight: 700;
+            line-height: 1.25;
+            margin-bottom: 1.25rem;
+            color: var(--text-primary);
+        }
+
+        .showcase-desc {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 2rem;
+            unicode-bidi: plaintext;
+        }
+
+        .showcase-features {
+            display: flex;
+            flex-direction: column;
+            gap: 0.85rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .showcase-feat-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 0.92rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .showcase-feat-item i {
+            color: var(--color-gold);
+            font-size: 1.05rem;
+        }
+
+        @media (max-width: 960px) {
+            .login-brand-showcase {
+                display: none;
+            }
+            .login-card-container {
+                max-width: 100%;
+                border-right: none;
+                border-left: none;
+                box-shadow: none;
+                padding: 2.5rem 1.5rem;
+            }
+        }
+
+        .portal-header {
+            text-align: center;
+            margin-bottom: 1.75rem;
+        }
+
+        .portal-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45rem;
+            padding: 0.35rem 0.9rem;
+            border-radius: var(--radius-full);
+            background: var(--color-gold-glow);
+            border: 1px solid var(--border-gold-subtle);
+            color: var(--color-gold);
+            font-size: var(--font-size-xs);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 0.75rem;
+        }
+
+        .portal-title {
+            font-family: var(--font-serif);
+            font-size: 1.85rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+
+        .portal-subtitle {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+            unicode-bidi: plaintext;
+        }
+
+        .auth-tab-nav {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.5rem;
+            background: var(--bg-surface);
+            padding: 0.35rem;
+            border-radius: var(--radius-lg);
+            margin-bottom: 1.75rem;
+            border: 1px solid var(--border-color);
+        }
+
+        .auth-tab-btn {
+            padding: 0.65rem 1rem;
+            font-size: 0.88rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            background: transparent;
+            border: none;
+            border-radius: var(--radius-md);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .auth-tab-btn.active {
+            background: var(--bg-card);
+            color: var(--color-gold);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+            font-weight: 700;
+        }
+
+        .auth-form-group {
+            margin-bottom: 1.25rem;
+            text-align: left;
+        }
+
+        [dir="rtl"] .auth-form-group {
+            text-align: right;
+        }
+
+        .auth-form-group label {
+            display: block;
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            margin-bottom: 0.45rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .auth-form-input {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border-radius: var(--radius-md);
+            border: 1px solid var(--border-color);
+            background: var(--bg-surface);
+            color: var(--text-primary);
+            font-size: 0.95rem;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .auth-form-input:focus {
+            outline: none;
+            border-color: var(--color-gold);
+            box-shadow: 0 0 0 3px rgba(223, 186, 115, 0.2);
+        }
+
+        [dir="rtl"] .auth-form-input[type="email"],
+        [dir="rtl"] .auth-form-input[type="password"] {
+            direction: ltr;
+            text-align: right;
+        }
+
+        .auth-form-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 0.82rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-secondary);
+        }
+
+        .auth-remember-wrap {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            cursor: pointer;
+        }
+
+        .auth-remember-wrap input[type="checkbox"] {
+            accent-color: var(--color-gold);
+            cursor: pointer;
+        }
+
+        .auth-forgot-link {
+            color: var(--color-gold);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .auth-forgot-link:hover {
+            text-decoration: underline;
+        }
+
+        .auth-divider {
+            position: relative;
+            text-align: center;
+            margin: 1.5rem 0;
+        }
+
+        .auth-divider::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: var(--border-color);
+        }
+
+        .auth-divider span {
+            position: relative;
+            background: var(--bg-card);
+            padding: 0 1rem;
+            font-size: 0.75rem;
+            color: var(--text-tertiary);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .social-auth-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.75rem;
+        }
+
+        .btn-social {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.6rem;
+            padding: 0.75rem;
+            border-radius: var(--radius-md);
+            border: 1px solid var(--border-color);
+            background: var(--bg-surface);
+            color: var(--text-primary);
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .btn-social:hover {
+            border-color: var(--color-gold);
+            background: var(--bg-hover);
+        }
+
+        .auth-notification {
+            display: none;
+            padding: 0.85rem 1rem;
+            border-radius: var(--radius-md);
+            margin-bottom: 1.25rem;
+            font-size: 0.85rem;
+            line-height: 1.4;
+            align-items: center;
+            gap: 0.65rem;
+        }
+
+        .auth-notification.error {
+            display: flex;
+            background: rgba(239, 68, 68, 0.12);
+            border: 1px solid rgba(239, 68, 68, 0.3);
+            color: #ef4444;
+        }
+
+        .auth-notification.success {
+            display: flex;
+            background: rgba(16, 185, 129, 0.12);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            color: #10b981;
+        }
+
+        .already-logged-box {
+            display: none;
+            text-align: center;
+            padding: 1rem 0;
+        }
+
+        .already-logged-box.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Luxury Gold Loading Beam (Loads Left to Right) -->
+    <div class="portal-loading-beam" id="loadingBeam" aria-hidden="true"></div>
+
+    <!-- Minimal Header -->
+    <header class="site-header" id="siteHeader">
+        <div class="container header-container">
+            <a href="index.html" class="brand-logo" aria-label="Aether Voyage Home">
+                <div class="logo-monogram">Æ</div>
+                <div class="logo-text-group">
+                    <span class="logo-title">AETHER</span>
+                    <span class="logo-subtitle">TRAVEL LUGGAGE</span>
+                </div>
+            </a>
+
+            <div class="header-actions">
+                <button id="dirToggle" class="compact-tool-btn" title="Toggle Layout Direction (LTR/RTL)">
+                    <span>RTL</span>
+                </button>
+
+                <button id="themeToggle" class="compact-tool-btn" title="Toggle Dark / Light Theme">
+                    <i class="fa-solid fa-sun"></i>
+                </button>
+
+                <a href="collections.html" class="btn btn-outline btn-sm" style="font-size: 0.82rem; padding: 0.45rem 0.9rem;">
+                    <i class="fa-solid fa-arrow-left"></i> <span>Explore Luggage</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Gateway Content (Sliding Left-to-Right Entrance) -->
+    <main class="login-gateway-section">
+        
+        <!-- Left-to-Right Sliding Card Container -->
+        <div class="login-card-container">
+            
+            <!-- Notification Banner -->
+            <div id="authNotification" class="auth-notification">
+                <i class="fa-solid fa-circle-exclamation" id="authNotifIcon"></i>
+                <span id="authNotifText">Notification message</span>
+            </div>
+
+            <!-- Already Logged In Card State -->
+            <div id="alreadyLoggedInState" class="already-logged-box">
+                <div class="portal-badge"><i class="fa-solid fa-circle-check"></i> Signed In</div>
+                <h2 class="portal-title" id="loggedInUserName">Welcome Back</h2>
+                <p class="portal-subtitle" style="margin-bottom: 1.5rem;" id="loggedInUserEmail">You are currently signed in to your account.</p>
+                <div style="display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap;">
+                    <a href="collections.html" class="btn btn-primary">
+                        <i class="fa-solid fa-bag-shopping"></i> Continue Shopping
+                    </a>
+                    <button class="btn btn-outline" onclick="window.AetherAuth.logout();">
+                        <i class="fa-solid fa-arrow-right-from-bracket"></i> Sign Out
+                    </button>
+                </div>
+            </div>
+
+            <!-- Auth Form Card State -->
+            <div id="authFormState">
+                <div class="portal-header">
+                    <div class="portal-badge"><i class="fa-solid fa-shield-halved"></i> Customer Portal</div>
+                    <h1 class="portal-title">Account Access</h1>
+                    <p class="portal-subtitle">Sign in to your private account or register for lifetime warranty support and order tracking.</p>
+                </div>
+
+                <!-- Tab Navigation -->
+                <div class="auth-tab-nav" role="tablist">
+                    <button type="button" class="auth-tab-btn active" id="tabLoginBtn" onclick="switchAuthTab('login')">
+                        <i class="fa-solid fa-right-to-bracket"></i> Sign In
+                    </button>
+                    <button type="button" class="auth-tab-btn" id="tabRegisterBtn" onclick="switchAuthTab('register')">
+                        <i class="fa-solid fa-user-plus"></i> Create Account
+                    </button>
+                </div>
+
+                <!-- Sign In Form -->
+                <form class="auth-form" id="portalLoginForm" onsubmit="handleLoginSubmit(event)">
+                    <div class="auth-form-group">
+                        <label for="loginEmail">Email Address</label>
+                        <input type="email" id="loginEmail" class="auth-form-input" placeholder="alex@aethervoyage.com" required autocomplete="email">
+                    </div>
+                    <div class="auth-form-group">
+                        <label for="loginPass">Password</label>
+                        <input type="password" id="loginPass" class="auth-form-input" placeholder="••••••••••••" required autocomplete="current-password">
+                    </div>
+                    <div class="auth-form-footer">
+                        <label class="auth-remember-wrap">
+                            <input type="checkbox" id="rememberMe" checked>
+                            <span>Remember Me</span>
+                        </label>
+                        <a href="#forgot" class="auth-forgot-link" onclick="handleForgotPassword(event)">Forgot Password?</a>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width: 100%; padding: 0.85rem;">
+                        <i class="fa-solid fa-right-to-bracket"></i> Sign In to Account
+                    </button>
+                </form>
+
+                <!-- Registration / Create Account Form -->
+                <form class="auth-form" id="portalRegisterForm" style="display: none;" onsubmit="handleRegisterSubmit(event)">
+                    <div class="auth-form-group">
+                        <label for="regName">Full Name</label>
+                        <input type="text" id="regName" class="auth-form-input" placeholder="Alex Morgan" required autocomplete="name">
+                    </div>
+                    <div class="auth-form-group">
+                        <label for="regEmail">Email Address</label>
+                        <input type="email" id="regEmail" class="auth-form-input" placeholder="alex@aethervoyage.com" required autocomplete="email">
+                    </div>
+                    <div class="auth-form-group">
+                        <label for="regPass">Password (6+ characters)</label>
+                        <input type="password" id="regPass" class="auth-form-input" placeholder="••••••••••••" required minlength="6" autocomplete="new-password">
+                    </div>
+                    <div class="auth-form-group">
+                        <label for="regConfirmPass">Confirm Password</label>
+                        <input type="password" id="regConfirmPass" class="auth-form-input" placeholder="••••••••••••" required minlength="6" autocomplete="new-password">
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width: 100%; padding: 0.85rem; margin-top: 0.5rem;">
+                        <i class="fa-solid fa-user-check"></i> Complete Account Registration
+                    </button>
+                </form>
+
+                <!-- Social Authentication Divider & Buttons -->
+                <div class="auth-divider">
+                    <span>or continue with</span>
+                </div>
+
+                <div class="social-auth-grid">
+                    <button type="button" class="btn-social" onclick="handleSocialAuth('Google')">
+                        <i class="fa-brands fa-google" style="color: #ea4335;"></i>
+                        <span>Google</span>
+                    </button>
+                    <button type="button" class="btn-social" onclick="handleSocialAuth('Apple')">
+                        <i class="fa-brands fa-apple"></i>
+                        <span>Apple</span>
+                    </button>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Atmospheric Luxury Brand Showcase Panel (Right Side) -->
+        <div class="login-brand-showcase">
+            <div class="showcase-content">
+                <span class="showcase-badge"><i class="fa-solid fa-crown"></i> Handcrafted Luggage</span>
+                <h2 class="showcase-title">Crafted for Eternity.<br>Engineered for the Voyage.</h2>
+                <p class="showcase-desc">Access your private customer luggage studio, track bespoke orders, and manage 100-year digital warranty certificates.</p>
+                <div class="showcase-features">
+                    <div class="showcase-feat-item"><i class="fa-solid fa-shield-halved"></i> 100-Year Lifetime Guarantee</div>
+                    <div class="showcase-feat-item"><i class="fa-solid fa-plane-departure"></i> Complimentary Worldwide Express Concierge</div>
+                    <div class="showcase-feat-item"><i class="fa-solid fa-wand-magic-sparkles"></i> Custom Monogramming & Laser Engraving</div>
+                </div>
+                <a href="collections.html" class="btn btn-outline" style="border-color: var(--color-gold); color: var(--color-gold);">
+                    <i class="fa-solid fa-suitcase-rolling"></i> View Luggage Catalog
+                </a>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Global Application Scripts -->
+    <script src="js/data.js"></script>
+    <script src="js/theme.js"></script>
+    <script src="js/auth.js"></script>
+
+    <script>
+        function showNotification(msg, type = 'error') {
+            var notif = document.getElementById('authNotification');
+            var icon = document.getElementById('authNotifIcon');
+            var text = document.getElementById('authNotifText');
+            if (!notif) return;
+
+            notif.className = 'auth-notification ' + type;
+            icon.className = type === 'error' ? 'fa-solid fa-circle-exclamation' : 'fa-solid fa-circle-check';
+            text.textContent = msg;
+            notif.style.display = 'flex';
+        }
+
+        function switchAuthTab(tab) {
+            var loginForm = document.getElementById('portalLoginForm');
+            var regForm = document.getElementById('portalRegisterForm');
+            var tabLoginBtn = document.getElementById('tabLoginBtn');
+            var tabRegisterBtn = document.getElementById('tabRegisterBtn');
+            var notif = document.getElementById('authNotification');
+
+            if (notif) notif.style.display = 'none';
+
+            if (tab === 'login') {
+                loginForm.style.display = 'block';
+                regForm.style.display = 'none';
+                tabLoginBtn.classList.add('active');
+                tabRegisterBtn.classList.remove('active');
+            } else {
+                loginForm.style.display = 'none';
+                regForm.style.display = 'block';
+                tabLoginBtn.classList.remove('active');
+                tabRegisterBtn.classList.add('active');
+            }
+        }
+
+        function getRedirectTarget() {
+            var params = new URLSearchParams(window.location.search);
+            var redirect = params.get('redirect');
+            var action = params.get('action');
+            var target = (redirect && redirect !== 'login.html') ? redirect : 'index.html';
+            if (action) {
+                target += (target.includes('?') ? '&' : '?') + 'action=' + encodeURIComponent(action);
+            }
+            return target;
+        }
+
+        function handleLoginSubmit(e) {
+            e.preventDefault();
+            var email = document.getElementById('loginEmail').value;
+            var pass = document.getElementById('loginPass').value;
+
+            if (!window.AetherAuth) return;
+            var res = window.AetherAuth.login(email, pass);
+
+            if (res.success) {
+                showNotification('Welcome back, ' + res.user.name + '! Redirecting to store...', 'success');
+                setTimeout(function() {
+                    window.location.href = getRedirectTarget();
+                }, 800);
+            } else {
+                showNotification(res.message || 'Invalid credentials. Please verify your email and password.', 'error');
+            }
+        }
+
+        function handleRegisterSubmit(e) {
+            e.preventDefault();
+            var name = document.getElementById('regName').value;
+            var email = document.getElementById('regEmail').value;
+            var pass = document.getElementById('regPass').value;
+            var confirmPass = document.getElementById('regConfirmPass').value;
+
+            if (pass !== confirmPass) {
+                showNotification('Passwords do not match. Please re-enter your password.', 'error');
+                return;
+            }
+
+            if (!window.AetherAuth) return;
+            var res = window.AetherAuth.register(name, email, pass);
+
+            if (res.success) {
+                showNotification('Registration complete! Welcome, ' + res.user.name + '. Redirecting...', 'success');
+                setTimeout(function() {
+                    window.location.href = getRedirectTarget();
+                }, 800);
+            } else {
+                showNotification(res.message || 'Registration failed. Please check your information.', 'error');
+            }
+        }
+
+        function handleSocialAuth(provider) {
+            if (!window.AetherAuth) return;
+            var res = window.AetherAuth.socialLogin(provider);
+            if (res.success) {
+                showNotification('Signed in with ' + provider + ' successfully! Redirecting...', 'success');
+                setTimeout(function() {
+                    window.location.href = getRedirectTarget();
+                }, 800);
+            }
+        }
+
+        function handleForgotPassword(e) {
+            e.preventDefault();
+            var email = document.getElementById('loginEmail').value;
+            if (email) {
+                showNotification('A secure password reset link has been dispatched to ' + email + '.', 'success');
+            } else {
+                showNotification('Please enter your account email address in the field above to reset your password.', 'error');
+                document.getElementById('loginEmail').focus();
+            }
+        }
+
+        // Check if user is already logged in
+        document.addEventListener('DOMContentLoaded', function() {
+            var params = new URLSearchParams(window.location.search);
+            if (params.get('action') === 'checkout') {
+                showNotification('Please sign in or create an account to proceed to checkout and complete your order.', 'error');
+            }
+
+            var user = window.AetherAuth ? window.AetherAuth.currentUser : null;
+            if (user) {
+                document.getElementById('authFormState').style.display = 'none';
+                document.getElementById('alreadyLoggedInState').classList.add('active');
+                document.getElementById('loggedInUserName').textContent = 'Welcome Back, ' + user.name;
+                document.getElementById('loggedInUserEmail').textContent = 'Signed in as ' + user.email + '.';
+            }
+        });
+    </script>
+</body>
+</html>

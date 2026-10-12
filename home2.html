@@ -1,0 +1,1163 @@
+<html lang="en" dir="ltr" data-theme="light">
+
+<head>
+    <!-- Instant Theme & Layout Initializer -->
+    <script>
+        (function () {
+            try {
+                var savedTheme = localStorage.getItem('aether_theme') || 'light';
+                var savedDir = localStorage.getItem('aether_dir') || 'ltr';
+                document.documentElement.setAttribute('data-theme', savedTheme);
+                document.documentElement.setAttribute('dir', savedDir);
+                document.documentElement.setAttribute('lang', savedDir === 'rtl' ? 'ar' : 'en');
+            } catch (e) { }
+        })();
+    </script>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="AETHER VOYAGE Bespoke Studio — Customize luxury luggage, aerospace aluminum shells, Tuscan leather trims, hardware, and personalized hot-stamped monograms." />
+    <meta name="keywords"
+        content="bespoke luggage, custom suitcase, monogrammed luggage, personalized travel bag, luxury luggage atelier" />
+    <title>Bespoke Studio & Customizer — AETHER VOYAGE</title>
+
+    <!-- Favicon & Brand Touch Icons -->
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png" />
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="manifest" href="site.webmanifest" />
+    <meta name="theme-color" content="#dfba73" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800;900&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- FontAwesome 6 Icons CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+    <!-- Master Stylesheet -->
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+
+    <!-- Unified Master Header Navigation -->
+    <header class="site-header" id="siteHeader">
+        <div class="container header-container">
+
+            <!-- Brand Monogram & Logo -->
+            <a href="index.html" class="brand-logo" aria-label="Aether Voyage Home">
+                <div class="logo-monogram">Æ</div>
+                <div class="logo-text-group">
+                    <span class="logo-title">AETHER</span>
+                    <span class="logo-subtitle">TRAVEL LUGGAGE</span>
+                </div>
+            </a>
+
+            <!-- Desktop Navigation Menu with Home Dropdown -->
+            <nav class="nav-menu" aria-label="Primary Navigation">
+                <div class="nav-item-dropdown">
+                    <a href="home2.html" class="nav-link dropdown-toggle active">
+                        <span>Home</span>
+                        <i class="fa-solid fa-chevron-down nav-dropdown-arrow"></i>
+                    </a>
+                    <div class="nav-dropdown-menu">
+                        <a href="index.html" class="nav-dropdown-item">
+                            <div class="dropdown-item-icon">
+                                <i class="fa-solid fa-landmark"></i>
+                            </div>
+                            <div class="dropdown-item-content">
+                                <div class="dropdown-item-title">Home 1: Flagship Showcase</div>
+                                <div class="dropdown-item-desc">Classic brand collections & travel luggage</div>
+                            </div>
+                        </a>
+                        <a href="home2.html" class="nav-dropdown-item active">
+                            <div class="dropdown-item-icon">
+                                <i class="fa-solid fa-wand-magic-sparkles"></i>
+                            </div>
+                            <div class="dropdown-item-content">
+                                <div class="dropdown-item-title">Home 2: Bespoke Studio</div>
+                                <div class="dropdown-item-desc">Customize bag designs, colors & monograms</div>
+                            </div>
+                            <span class="dropdown-item-badge">New</span>
+                        </a>
+                    </div>
+                </div>
+                <a href="collections.html" class="nav-link">Collections</a>
+                <a href="brands.html" class="nav-link">Brands</a>
+                <a href="warranty.html" class="nav-link" title="100-Year Warranty & Repair">Warranty</a>
+                <a href="blog.html" class="nav-link">Blog</a>
+                <a href="contact.html" class="nav-link" title="Contact Concierge">Contact</a>
+            </nav>
+
+            <!-- Action Controls -->
+            <div class="header-actions">
+                <!-- LTR / RTL Direction Toggle -->
+                <button id="dirToggle" class="compact-tool-btn" title="Toggle Layout Direction (LTR/RTL)"
+                    aria-label="Toggle Direction">
+                    <span>RTL</span>
+                </button>
+
+                <!-- Light / Dark Theme Toggle -->
+                <button id="themeToggle" class="compact-tool-btn" title="Toggle Dark / Light Theme"
+                    aria-label="Toggle Theme">
+                    <i class="fa-solid fa-sun"></i>
+                </button>
+
+                <!-- Wishlist Button -->
+                <button id="wishlistBtn" class="compact-tool-btn wishlist-open-btn" title="Open Wishlist"
+                    aria-label="Open Wishlist">
+                    <i class="fa-regular fa-heart"></i>
+                    <span class="action-badge wishlist-count-badge" style="display: none;">0</span>
+                </button>
+
+                <!-- Luggage Cart Button -->
+                <button id="cartBtn" class="compact-tool-btn cart-open-btn" title="Open Luggage Cart"
+                    aria-label="Open Luggage Cart">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <span class="action-badge cart-count-badge" style="display: none;">0</span>
+                </button>
+
+                <!-- Primary Header Action CTA -->
+                <a href="collections.html" class="header-cta-btn" id="headerCtaBtn" title="Shop Curated Luxury Luggage">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <span>Shop Luggage</span>
+                </a>
+
+                <!-- Mobile Menu Hamburger -->
+                <button id="mobileMenuToggle" class="hamburger-btn" aria-label="Open Mobile Menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+
+        </div>
+    </header>
+
+    <!-- Mobile Off-Canvas Drawer -->
+    <div class="mobile-nav-drawer" id="mobileMenu">
+        <div class="mobile-nav-header">
+            <a href="index.html" class="brand-logo" aria-label="Aether Voyage Home">
+                <div class="logo-monogram">Æ</div>
+                <span class="logo-title">AETHER</span>
+            </a>
+            <button class="drawer-close-btn" id="mobileMenuClose" aria-label="Close Menu">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+
+        <div class="mobile-nav-links">
+            <div class="mobile-nav-dropdown-section">
+                <a href="home2.html" class="mobile-nav-link active">
+                    <i class="fa-solid fa-house"></i> Home
+                </a>
+                <div class="mobile-nav-subgroup">
+                    <a href="index.html" class="mobile-nav-sublink">
+                        <span>Home 1: Flagship Showcase</span>
+                        <i class="fa-solid fa-landmark"></i>
+                    </a>
+                    <a href="home2.html" class="mobile-nav-sublink active">
+                        <span>Home 2: Bespoke Studio</span>
+                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+                    </a>
+                </div>
+            </div>
+            <a href="collections.html" class="mobile-nav-link">
+                <i class="fa-solid fa-suitcase-rolling"></i> Collections
+            </a>
+            <a href="brands.html" class="mobile-nav-link">
+                <i class="fa-solid fa-award"></i> Brands
+            </a>
+            <a href="warranty.html" class="mobile-nav-link">
+                <i class="fa-solid fa-shield-halved"></i> 100-Year Warranty
+            </a>
+            <a href="blog.html" class="mobile-nav-link">
+                <i class="fa-solid fa-newspaper"></i> Blog & Journal
+            </a>
+            <a href="contact.html" class="mobile-nav-link">
+                <i class="fa-solid fa-headset"></i> Contact Us
+            </a>
+            <a href="collections.html" class="mobile-nav-link mobile-nav-cta">
+                <i class="fa-solid fa-suitcase-rolling"></i> <span>Explore Collections</span>
+            </a>
+            <a href="#wishlist" class="mobile-nav-link wishlist-open-btn">
+                <i class="fa-regular fa-heart"></i>
+                <span>Private Wishlist</span>
+                <span class="action-badge wishlist-count-badge" style="margin-left: auto; display: none;">0</span>
+            </a>
+        </div>
+
+        <div class="mobile-nav-footer">
+            <div class="mobile-tools-grid">
+                <button id="themeToggleMobile" class="btn btn-secondary btn-sm" style="flex:1;">
+                    <i class="fa-solid fa-sun"></i> Theme
+                </button>
+                <button id="dirToggleMobile" class="btn btn-secondary btn-sm" style="flex:1;">
+                    <span>RTL / LTR</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content: Home Page 2 Bespoke Studio -->
+    <main class="bespoke-main">
+
+        <!-- Hero Section -->
+        <section class="bespoke-hero">
+            <div class="hero-realistic-bg hero-bg-home2" aria-hidden="true"></div>
+            <div class="hero-realistic-overlay" aria-hidden="true"></div>
+            <div class="container">
+                <div class="bespoke-hero-badge">
+                    <i class="fa-solid fa-wand-magic-sparkles"></i>
+                    <span>Atelier Bespoke Commissions</span>
+                </div>
+                <h1 class="bespoke-hero-title">
+                    The Bespoke Atelier<br />
+                    <span>Craft Your Signature Luggage</span>
+                </h1>
+                <p class="bespoke-hero-desc">
+                    Sculpt aerospace aluminum shells, select Tuscan vegetable-tanned leather trims, customize 24K gold
+                    or gunmetal hardware, and hot-stamp your private initials. Tailored exclusively to your journey.
+                </p>
+                <div class="bespoke-hero-actions">
+                    <a href="#studio" class="btn btn-primary">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i> Customize & Order Trunk
+                    </a>
+                    <a href="collections.html" class="btn btn-secondary">
+                        <i class="fa-solid fa-bag-shopping"></i> Shop Collections
+                    </a>
+                    <a href="javascript:void(0)"
+                        onclick="if(window.AetherCatalog) window.AetherCatalog.openEnquireModal('bespoke')"
+                        class="btn btn-secondary">
+                        <i class="fa-solid fa-headset"></i> Enquire Concierge
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive Customizer Studio Section -->
+        <section class="bespoke-studio-section" id="studio">
+            <div class="container">
+
+                <div class="bespoke-studio-grid">
+
+                    <!-- Left Column: Interactive Vector Visualizer Stage -->
+                    <div class="visualizer-stage-card">
+
+                        <!-- Top Controls: Live indicator + Private Monogram badge + View Angle switcher -->
+                        <div class="stage-header-row">
+                            <div class="stage-header-left">
+                                <span class="stage-badge-live">Live Vector Studio</span>
+                            </div>
+
+                            <!-- Private Monogram Atelier Badge (Located in studio header to eliminate silhouette overlay) -->
+                            <div class="stage-floating-tag" title="Hot-Stamped Luggage Tag">
+                                <div class="tag-mini-swatch" id="floatingTagSwatch">
+                                    <span id="floatingTagMonogramText">AV</span>
+                                </div>
+                                <div class="tag-info-text">
+                                    <strong>Private Monogram</strong>
+                                    <span id="activeFoilName">24K Gold Foil Leaf</span>
+                                </div>
+                            </div>
+
+                            <div class="stage-angle-controls" aria-label="Luggage Preview Angles">
+                                <button class="angle-btn active" data-view-angle="front">Front</button>
+                                <button class="angle-btn" data-view-angle="perspective">Perspective</button>
+                                <button class="angle-btn" data-view-angle="detail">Tag Zoom</button>
+                            </div>
+                        </div>
+
+                        <!-- Canvas Stage with Multi-layered Vector SVG -->
+                        <div class="stage-canvas-wrapper">
+
+                            <!-- Live Multi-Layer SVG Visualizer -->
+                            <svg id="luggageSvgVisualizer" class="angle-front" viewBox="0 0 500 620" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <!-- Dynamic Shell Metallic Gradient -->
+                                    <linearGradient id="shellGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop id="shellGradStop1" offset="0%" stop-color="#fde9af" />
+                                        <stop id="shellGradStop2" offset="50%" stop-color="#d4af37" />
+                                        <stop id="shellGradStop3" offset="100%" stop-color="#96741b" />
+                                    </linearGradient>
+
+                                    <!-- Dynamic Leather Trim Gradient -->
+                                    <linearGradient id="leatherGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop id="leatherGradStop1" offset="0%" stop-color="#b67644" />
+                                        <stop id="leatherGradStop2" offset="100%" stop-color="#7a461e" />
+                                    </linearGradient>
+
+                                    <!-- Dynamic Hardware Gradient -->
+                                    <linearGradient id="hardwareGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop id="hwGradStop1" offset="0%" stop-color="#fff2b3" />
+                                        <stop id="hwGradStop2" offset="100%" stop-color="#a07823" />
+                                    </linearGradient>
+
+                                    <!-- Shell Subtle Sheen Overlay -->
+                                    <linearGradient id="sheenOverlay" x1="0%" y1="0%" x2="100%" y2="0%">
+                                        <stop offset="0%" stop-color="#ffffff" stop-opacity="0.35" />
+                                        <stop offset="25%" stop-color="#ffffff" stop-opacity="0.08" />
+                                        <stop offset="60%" stop-color="#ffffff" stop-opacity="0" />
+                                        <stop offset="90%" stop-color="#ffffff" stop-opacity="0.25" />
+                                    </linearGradient>
+
+                                    <!-- Shadow Filter -->
+                                    <filter id="softShadow" x="-10%" y="-10%" width="120%" height="120%">
+                                        <feDropShadow dx="0" dy="8" stdDeviation="10" flood-opacity="0.35" />
+                                    </filter>
+                                </defs>
+
+                                <!-- Telescopic Handle (Top) -->
+                                <g id="svgTelescopicHandle">
+                                    <rect x="180" y="30" width="12" height="90" rx="3" fill="url(#hardwareGradient)" />
+                                    <rect x="308" y="30" width="12" height="90" rx="3" fill="url(#hardwareGradient)" />
+                                    <rect x="165" y="20" width="170" height="22" rx="11" fill="url(#leatherGradient)"
+                                        stroke="#111" stroke-width="1.5" />
+                                    <rect x="210" y="24" width="80" height="14" rx="7" fill="url(#hardwareGradient)" />
+                                </g>
+
+                                <!-- Luggage Base Shell Body -->
+                                <rect id="svgMainBody" x="100" y="110" width="300" height="420" rx="24"
+                                    fill="url(#shellGradient)" stroke="rgba(0,0,0,0.18)" stroke-width="2"
+                                    filter="url(#softShadow)" />
+
+                                <!-- Vertical Rib Grooves (Aerospace Engineering Accent) -->
+                                <g id="svgGroovedRibs">
+                                    <line class="svg-rib-line" x1="140" y1="130" x2="140" y2="510"
+                                        stroke="rgba(90, 60, 10, 0.22)" stroke-width="4" stroke-linecap="round" />
+                                    <line class="svg-rib-line" x1="175" y1="130" x2="175" y2="510"
+                                        stroke="rgba(90, 60, 10, 0.22)" stroke-width="4" stroke-linecap="round" />
+                                    <line class="svg-rib-line" x1="210" y1="130" x2="210" y2="510"
+                                        stroke="rgba(90, 60, 10, 0.22)" stroke-width="4" stroke-linecap="round" />
+                                    <line class="svg-rib-line" x1="250" y1="125" x2="250" y2="515"
+                                        stroke="rgba(90, 60, 10, 0.35)" stroke-width="6" stroke-linecap="round" />
+                                    <line class="svg-rib-line" x1="290" y1="130" x2="290" y2="510"
+                                        stroke="rgba(90, 60, 10, 0.22)" stroke-width="4" stroke-linecap="round" />
+                                    <line class="svg-rib-line" x1="325" y1="130" x2="325" y2="510"
+                                        stroke="rgba(90, 60, 10, 0.22)" stroke-width="4" stroke-linecap="round" />
+                                    <line class="svg-rib-line" x1="360" y1="130" x2="360" y2="510"
+                                        stroke="rgba(90, 60, 10, 0.22)" stroke-width="4" stroke-linecap="round" />
+                                </g>
+
+                                <!-- Sheen Light Reflection Overlay -->
+                                <rect id="svgSheenOverlay" x="100" y="110" width="300" height="420" rx="24"
+                                    fill="url(#sheenOverlay)" pointer-events="none" />
+
+                                <!-- Tuscan Leather Corner Guards (4 Corners) -->
+                                <g id="svgLeatherCorners">
+                                    <!-- Top-Left Corner -->
+                                    <g id="cornerTopLeft">
+                                        <path class="svg-leather-fill"
+                                            d="M100 160 C100 135 125 110 150 110 L150 135 C135 135 125 145 125 160 Z"
+                                            fill="url(#leatherGradient)" />
+                                        <circle class="svg-hardware-fill" cx="138" cy="122" r="3.5"
+                                            fill="url(#hardwareGradient)" />
+                                    </g>
+
+                                    <!-- Top-Right Corner -->
+                                    <g id="cornerTopRight">
+                                        <path class="svg-leather-fill"
+                                            d="M400 160 C400 135 375 110 350 110 L350 135 C365 135 375 145 375 160 Z"
+                                            fill="url(#leatherGradient)" />
+                                        <circle class="svg-hardware-fill" cx="362" cy="122" r="3.5"
+                                            fill="url(#hardwareGradient)" />
+                                    </g>
+
+                                    <!-- Bottom-Left Corner -->
+                                    <g id="cornerBottomLeft">
+                                        <path class="svg-leather-fill"
+                                            d="M100 480 C100 505 125 530 150 530 L150 505 C135 505 125 495 125 480 Z"
+                                            fill="url(#leatherGradient)" />
+                                        <circle class="svg-hardware-fill" cx="138" cy="518" r="3.5"
+                                            fill="url(#hardwareGradient)" />
+                                    </g>
+
+                                    <!-- Bottom-Right Corner -->
+                                    <g id="cornerBottomRight">
+                                        <path class="svg-leather-fill"
+                                            d="M400 480 C400 505 375 530 350 530 L350 505 C365 505 375 495 375 480 Z"
+                                            fill="url(#leatherGradient)" />
+                                        <circle class="svg-hardware-fill" cx="362" cy="518" r="3.5"
+                                            fill="url(#hardwareGradient)" />
+                                    </g>
+                                </g>
+
+                                <!-- Top Carry Handle (Leather + Metallic Brackets) -->
+                                <g id="svgTopHandle">
+                                    <rect class="svg-hardware-fill" x="205" y="98" width="16" height="14" rx="3"
+                                        fill="url(#hardwareGradient)" />
+                                    <rect class="svg-hardware-fill" x="279" y="98" width="16" height="14" rx="3"
+                                        fill="url(#hardwareGradient)" />
+                                    <rect class="svg-leather-fill" x="212" y="92" width="76" height="15" rx="7"
+                                        fill="url(#leatherGradient)" stroke="#222" stroke-width="1" />
+                                </g>
+
+                                <!-- Lateral Side Carry Handle -->
+                                <g id="svgSideHandle">
+                                    <rect class="svg-hardware-fill" x="90" y="280" width="12" height="16" rx="3"
+                                        fill="url(#hardwareGradient)" />
+                                    <rect class="svg-hardware-fill" x="90" y="344" width="12" height="16" rx="3"
+                                        fill="url(#hardwareGradient)" />
+                                    <rect class="svg-leather-fill" x="85" y="288" width="14" height="64" rx="6"
+                                        fill="url(#leatherGradient)" stroke="#222" stroke-width="1" />
+                                </g>
+
+                                <!-- Dual TSA Lock Latches -->
+                                <g id="svgTsaLocks">
+                                    <rect class="svg-hardware-fill" x="390" y="220" width="18" height="34" rx="5"
+                                        fill="url(#hardwareGradient)" stroke="#111" stroke-width="1" />
+                                    <circle cx="399" cy="237" r="3.5" fill="#111" />
+                                    <rect class="svg-hardware-fill" x="390" y="380" width="18" height="34" rx="5"
+                                        fill="url(#hardwareGradient)" stroke="#111" stroke-width="1" />
+                                    <circle cx="399" cy="397" r="3.5" fill="#111" />
+                                </g>
+
+                                <!-- Hanging Leather Monogram Luggage Tag -->
+                                <g id="svgLuggageTagGroup" transform="translate(145, 160)">
+                                    <!-- Metallic Cord Ring -->
+                                    <line x1="12" y1="-10" x2="12" y2="10" stroke="url(#hardwareGradient)"
+                                        stroke-width="2.5" />
+                                    <circle cx="12" cy="-10" r="4" fill="none" stroke="url(#hardwareGradient)"
+                                        stroke-width="2" />
+
+                                    <!-- Leather Tag Badge -->
+                                    <rect class="svg-leather-fill" x="0" y="8" width="55" height="75" rx="8"
+                                        fill="url(#leatherGradient)" stroke="#0c0d10" stroke-width="1.5"
+                                        filter="url(#softShadow)" />
+                                    <circle cx="27" cy="18" r="4" fill="url(#hardwareGradient)" />
+
+                                    <!-- Hot-Stamped Initials Text -->
+                                    <text id="svgLuggageTagMonogram" x="27" y="58" font-family="'Cinzel', serif"
+                                        font-size="20" font-weight="900" fill="#ffd269" text-anchor="middle"
+                                        letter-spacing="2">AV</text>
+                                </g>
+
+                                <!-- 4 Hinomoto Whisper-Glide Spinner Wheels -->
+                                <g id="svgSpinnerWheels">
+                                    <!-- Left Wheel Casters -->
+                                    <g transform="translate(130, 526)">
+                                        <rect class="svg-hardware-fill" x="-10" y="0" width="20" height="12" rx="3"
+                                            fill="url(#hardwareGradient)" />
+                                        <circle cx="-6" cy="20" r="14" fill="#1e2229" stroke="#333"
+                                            stroke-width="1.5" />
+                                        <circle cx="6" cy="20" r="14" fill="#1e2229" stroke="#333" stroke-width="1.5" />
+                                        <circle class="svg-hardware-fill" cx="-6" cy="20" r="5"
+                                            fill="url(#hardwareGradient)" />
+                                        <circle class="svg-hardware-fill" cx="6" cy="20" r="5"
+                                            fill="url(#hardwareGradient)" />
+                                    </g>
+
+                                    <!-- Right Wheel Casters -->
+                                    <g transform="translate(370, 526)">
+                                        <rect class="svg-hardware-fill" x="-10" y="0" width="20" height="12" rx="3"
+                                            fill="url(#hardwareGradient)" />
+                                        <circle cx="-6" cy="20" r="14" fill="#1e2229" stroke="#333"
+                                            stroke-width="1.5" />
+                                        <circle cx="6" cy="20" r="14" fill="#1e2229" stroke="#333" stroke-width="1.5" />
+                                        <circle class="svg-hardware-fill" cx="-6" cy="20" r="5"
+                                            fill="url(#hardwareGradient)" />
+                                        <circle class="svg-hardware-fill" cx="6" cy="20" r="5"
+                                            fill="url(#hardwareGradient)" />
+                                    </g>
+                                </g>
+                            </svg>
+
+                            <!-- Realistic Floor Shadow -->
+                            <div class="stage-floor-shadow"></div>
+                        </div>
+
+                        <!-- Signature Preset Quick Selectors -->
+                        <div class="stage-presets-row">
+                            <span class="presets-label">Curated Atelier Presets:</span>
+                            <div class="presets-chips-grid">
+                                <button class="preset-chip" data-preset-config="monaco-gold">
+                                    <i class="fa-solid fa-crown" style="color: #d4af37;"></i> Monaco Gold
+                                </button>
+                                <button class="preset-chip" data-preset-config="wall-street">
+                                    <i class="fa-solid fa-briefcase" style="color: #64748b;"></i> Wall Street Stealth
+                                </button>
+                                <button class="preset-chip" data-preset-config="alpine-silver">
+                                    <i class="fa-solid fa-mountain" style="color: #c0c0c4;"></i> Alpine Silver
+                                </button>
+                                <button class="preset-chip" data-preset-config="goodwood-green">
+                                    <i class="fa-solid fa-compass" style="color: #2d6149;"></i> Goodwood Classic
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Right Column: Bespoke Customizer Suite Controls -->
+                    <div class="customizer-controls-card">
+
+                        <!-- 1. Luggage Silhouette -->
+                        <div class="control-group-card">
+                            <div class="control-group-header">
+                                <h3 class="control-group-title">
+                                    <i class="fa-solid fa-suitcase"></i> 1. Select Silhouette
+                                </h3>
+                                <span class="control-active-value" id="specSilhouetteName">The Continental (Carry-On
+                                    22")</span>
+                            </div>
+                            <div class="silhouette-grid">
+                                <button class="silhouette-card active" data-custom-silhouette="continental">
+                                    <span class="sil-name">The Continental</span>
+                                    <span class="sil-meta">Carry-On 22" • 42L • Cabin Safe</span>
+                                    <span class="sil-price">$1,350</span>
+                                </button>
+                                <button class="silhouette-card" data-custom-silhouette="grand-tourer">
+                                    <span class="sil-name">The Grand Tourer</span>
+                                    <span class="sil-meta">Check-In 30" • 98L • Long Haul</span>
+                                    <span class="sil-price">$1,650</span>
+                                </button>
+                                <button class="silhouette-card" data-custom-silhouette="diplomat">
+                                    <span class="sil-name">The Diplomat</span>
+                                    <span class="sil-meta">Executive Cabin • 32L • Slimline</span>
+                                    <span class="sil-price">$1,100</span>
+                                </button>
+                                <button class="silhouette-card" data-custom-silhouette="amalfi">
+                                    <span class="sil-name">The Amalfi</span>
+                                    <span class="sil-meta">Italian Voyager • 48L • Curved Trunk</span>
+                                    <span class="sil-price">$1,250</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- 2. Aerospace Shell Colors -->
+                        <div class="control-group-card">
+                            <div class="control-group-header">
+                                <h3 class="control-group-title">
+                                    <i class="fa-solid fa-fill-drip"></i> 2. Shell Metal Finish
+                                </h3>
+                                <span class="control-active-value" id="activeColorName">Champagne Gold</span>
+                            </div>
+                            <div class="swatches-flex">
+                                <div class="swatch-item" data-custom-color="titanium" title="Titanium Silver">
+                                    <div class="swatch-circle"
+                                        style="background: linear-gradient(135deg, #f0f0f4, #84848c);"></div>
+                                    <span class="swatch-subtext">Titanium</span>
+                                </div>
+                                <div class="swatch-item" data-custom-color="obsidian" title="Obsidian Noir (+$60)">
+                                    <div class="swatch-circle"
+                                        style="background: linear-gradient(135deg, #363d48, #0f1217);"></div>
+                                    <span class="swatch-subtext">Obsidian</span>
+                                </div>
+                                <div class="swatch-item active" data-custom-color="champagne"
+                                    title="Champagne Gold (+$120)">
+                                    <div class="swatch-circle"
+                                        style="background: linear-gradient(135deg, #fde9af, #96741b);"></div>
+                                    <span class="swatch-subtext">Champagne</span>
+                                </div>
+                                <div class="swatch-item" data-custom-color="racing-green"
+                                    title="British Racing Green (+$90)">
+                                    <div class="swatch-circle"
+                                        style="background: linear-gradient(135deg, #2d6149, #0d1e16);"></div>
+                                    <span class="swatch-subtext">Racing Green</span>
+                                </div>
+                                <div class="swatch-item" data-custom-color="cognac-sienna" title="Cognac Sienna (+$85)">
+                                    <div class="swatch-circle"
+                                        style="background: linear-gradient(135deg, #b56436, #552811);"></div>
+                                    <span class="swatch-subtext">Cognac</span>
+                                </div>
+                                <div class="swatch-item" data-custom-color="royal-navy"
+                                    title="Royal Monaco Navy (+$75)">
+                                    <div class="swatch-circle"
+                                        style="background: linear-gradient(135deg, #2d466d, #0d1624);"></div>
+                                    <span class="swatch-subtext">Monaco Navy</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 3. Tuscan Leather Trims & Handles -->
+                        <div class="control-group-card">
+                            <div class="control-group-header">
+                                <h3 class="control-group-title">
+                                    <i class="fa-solid fa-feather-pointed"></i> 3. Tuscan Leather Trims
+                                </h3>
+                                <span class="control-active-value" id="activeLeatherName">Tuscan Tan Leather</span>
+                            </div>
+                            <div class="swatches-flex">
+                                <div class="swatch-item active" data-custom-leather="tuscan-tan" title="Tuscan Tan">
+                                    <div class="swatch-circle"
+                                        style="background: linear-gradient(135deg, #b67644, #7a461e);"></div>
+                                    <span class="swatch-subtext">Tan</span>
+                                </div>
+                                <div class="swatch-item" data-custom-leather="saddle-cognac"
+                                    title="Saddle Cognac (+$45)">
+                                    <div class="swatch-circle"
+                                        style="background: linear-gradient(135deg, #824621, #4c250e);"></div>
+                                    <span class="swatch-subtext">Cognac</span>
+                                </div>
+                                <div class="swatch-item" data-custom-leather="midnight-nero"
+                                    title="Midnight Nero (+$35)">
+                                    <div class="swatch-circle"
+                                        style="background: linear-gradient(135deg, #333338, #121215);"></div>
+                                    <span class="swatch-subtext">Nero</span>
+                                </div>
+                                <div class="swatch-item" data-custom-leather="raw-vachetta" title="Raw Vachetta (+$70)">
+                                    <div class="swatch-circle"
+                                        style="background: linear-gradient(135deg, #e5d3bc, #be9f7b);"></div>
+                                    <span class="swatch-subtext">Vachetta</span>
+                                </div>
+                                <div class="swatch-item" data-custom-leather="oxblood" title="Oxblood Bordeaux (+$80)">
+                                    <div class="swatch-circle"
+                                        style="background: linear-gradient(135deg, #792534, #3e1018);"></div>
+                                    <span class="swatch-subtext">Oxblood</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 4. Hardware & Lock Metalwork -->
+                        <div class="control-group-card">
+                            <div class="control-group-header">
+                                <h3 class="control-group-title">
+                                    <i class="fa-solid fa-lock"></i> 4. Locks & Hardware
+                                </h3>
+                                <span class="control-active-value" id="activeHardwareName">24K Polished Gold</span>
+                            </div>
+                            <div class="swatches-flex">
+                                <div class="swatch-item active" data-custom-hardware="gold"
+                                    title="24K Polished Gold (+$140)">
+                                    <div class="swatch-circle"
+                                        style="background: linear-gradient(135deg, #fff2b3, #a07823);"></div>
+                                    <span class="swatch-subtext">24K Gold</span>
+                                </div>
+                                <div class="swatch-item" data-custom-hardware="gunmetal"
+                                    title="Matte Gunmetal Obsidian (+$60)">
+                                    <div class="swatch-circle"
+                                        style="background: linear-gradient(135deg, #64748b, #293341);"></div>
+                                    <span class="swatch-subtext">Gunmetal</span>
+                                </div>
+                                <div class="swatch-item" data-custom-hardware="palladium"
+                                    title="Brushed Palladium Silver (+$80)">
+                                    <div class="swatch-circle"
+                                        style="background: linear-gradient(135deg, #f3f4f6, #9ca3af);"></div>
+                                    <span class="swatch-subtext">Palladium</span>
+                                </div>
+                                <div class="swatch-item" data-custom-hardware="antique-brass"
+                                    title="Vintage Heritage Brass (+$95)">
+                                    <div class="swatch-circle"
+                                        style="background: linear-gradient(135deg, #bd9a5a, #6b5125);"></div>
+                                    <span class="swatch-subtext">Brass</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 5. Wheels & Suspension -->
+                        <div class="control-group-card">
+                            <div class="control-group-header">
+                                <h3 class="control-group-title">
+                                    <i class="fa-solid fa-dharmachakra"></i> 5. Spinner Wheel System
+                                </h3>
+                                <span class="control-active-value" id="activeWheelName">360° Whisper-Glide Wheels</span>
+                            </div>
+                            <div class="silhouette-grid">
+                                <button class="silhouette-card active" data-custom-wheel="whisper-360"
+                                    style="padding: 0.75rem 1rem;">
+                                    <span class="sil-name">Whisper-Glide 360°</span>
+                                    <span class="sil-meta">Hinomoto Ball-Bearing Casters</span>
+                                    <span class="sil-price">Included</span>
+                                </button>
+                                <button class="silhouette-card" data-custom-wheel="all-terrain"
+                                    style="padding: 0.75rem 1rem;">
+                                    <span class="sil-name">All-Terrain Dual</span>
+                                    <span class="sil-meta">Reinforced Dual-Urethane Suspension</span>
+                                    <span class="sil-price">+$85</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- 6. Personalized Monogram Suite -->
+                        <div class="control-group-card">
+                            <div class="control-group-header">
+                                <h3 class="control-group-title">
+                                    <i class="fa-solid fa-signature"></i> 6. Monogram Hot-Stamping
+                                </h3>
+                                <span class="control-active-value">Complimentary</span>
+                            </div>
+                            <div class="monogram-suite-grid">
+                                <div class="monogram-input-row">
+                                    <input type="text" id="monogramInput" class="monogram-input-box" value="AV"
+                                        maxlength="3" placeholder="AV" aria-label="Monogram Initials (1-3 letters)" />
+                                    <div style="display:flex; flex-direction:column; gap:2px;">
+                                        <strong style="font-size:0.80rem; color:var(--text-primary);">Personal
+                                            Initials</strong>
+                                        <span style="font-size:0.70rem; color:var(--text-secondary);">1 to 3 uppercase
+                                            letters rendered live on leather tag</span>
+                                    </div>
+                                </div>
+
+                                <div class="foil-options-row">
+                                    <button class="foil-btn active" data-custom-foil="gold-foil">
+                                        <i class="fa-solid fa-sparkles" style="color:#ffd269;"></i> 24K Gold Foil
+                                    </button>
+                                    <button class="foil-btn" data-custom-foil="silver-foil">
+                                        <i class="fa-solid fa-sparkles" style="color:#cbd5e1;"></i> Silver Foil
+                                    </button>
+                                    <button class="foil-btn" data-custom-foil="blind-deboss">
+                                        <i class="fa-solid fa-stamp" style="color:#8c6d46;"></i> Blind Deboss
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 6. Real-Time Price & Spec Summary -->
+                        <div class="bespoke-summary-card">
+                            <div class="summary-price-header">
+                                <div>
+                                    <span class="price-title">Bespoke Total Price</span>
+                                    <div style="font-size:0.75rem; color:var(--text-tertiary);">Base (<span
+                                            id="bespokeBasePrice">$1,350</span>) + Bespoke Finishes</div>
+                                </div>
+                                <div class="price-value-big" id="bespokeTotalPrice">$1,610</div>
+                            </div>
+
+                            <!-- Live Specs Breakdown -->
+                            <div class="summary-specs-list">
+                                <div class="spec-line">
+                                    <span class="spec-label">Weight</span>
+                                    <span class="spec-val" id="specWeight">4.1 kg / 9.0 lbs</span>
+                                </div>
+                                <div class="spec-line">
+                                    <span class="spec-label">Internal Capacity</span>
+                                    <span class="spec-val" id="specCapacity">42 Liters</span>
+                                </div>
+                                <div class="spec-line">
+                                    <span class="spec-label">Dimensions</span>
+                                    <span class="spec-val" id="specDimensions">55 x 40 x 23 cm</span>
+                                </div>
+                                <div class="spec-line">
+                                    <span class="spec-label">Atelier Lead Time</span>
+                                    <span class="spec-val" id="specLeadTime">5–7 Atelier Days</span>
+                                </div>
+                            </div>
+
+                            <div
+                                style="display:flex; align-items:center; gap:0.5rem; margin-bottom:1.5rem; font-size:0.78rem; color:var(--color-gold);">
+                                <i class="fa-solid fa-shield-halved"></i>
+                                <span>Includes 100-Year Unconditional Global Atelier Warranty</span>
+                            </div>
+
+                            <!-- Action Buttons -->
+                            <div class="summary-actions-row">
+                                <button class="btn-bespoke-primary" id="addBespokeToCartBtn">
+                                    <i class="fa-solid fa-boxes-packing"></i> Order Bespoke Creation
+                                </button>
+                                <button class="btn-bespoke-secondary" id="enquireBespokeBtn"
+                                    onclick="if(window.AetherCatalog) window.AetherCatalog.openEnquireModal('bespoke')">
+                                    <i class="fa-regular fa-comment-dots"></i> Enquire Atelier Concierge
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- The Bespoke Journey / Craftsmanship Section -->
+        <section class="atelier-process-section" id="craftsmanship">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="section-badge">Atelier Methodology</span>
+                    <h2 class="section-title">The Four Pillars of Bespoke Creation</h2>
+                    <p class="section-subtitle">
+                        From digital vision to master benchwork in Florence, Italy.
+                    </p>
+                </div>
+
+                <div class="process-grid">
+                    <div class="process-card">
+                        <div class="process-step-num">01</div>
+                        <h3 class="process-step-title">Interactive Configuration</h3>
+                        <p class="process-step-desc">
+                            Select your chassis silhouette, aircraft-grade metal alloy tone, and hand-tanned Italian
+                            leather trim to complement your personal aesthetic.
+                        </p>
+                    </div>
+
+                    <div class="process-card">
+                        <div class="process-step-num">02</div>
+                        <h3 class="process-step-title">Hand-Crafted in Florence</h3>
+                        <p class="process-step-desc">
+                            Master leatherworkers cut, bevel, and saddle-stitch full-grain Tuscan hides directly onto
+                            the anodized aluminum frame.
+                        </p>
+                    </div>
+
+                    <div class="process-card">
+                        <div class="process-step-num">03</div>
+                        <h3 class="process-step-title">Hot-Foil Monogramming</h3>
+                        <p class="process-step-desc">
+                            Your chosen initials are precision-cast in brass typography and heat-stamped with genuine
+                            24K gold foil or deep blind relief.
+                        </p>
+                    </div>
+
+                    <div class="process-card">
+                        <div class="process-step-num">04</div>
+                        <h3 class="process-step-title">White-Glove Delivery</h3>
+                        <p class="process-step-desc">
+                            Packaged in our signature quilted dust bag and wooden presentation crate, delivered directly
+                            to your doorstep with tracking.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Materials of Provenance Section -->
+        <section class="materials-provenance-section" id="provenance">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="section-badge">Exceptional Provenance</span>
+                    <h2 class="section-title">Engineered Without Compromise</h2>
+                    <p class="section-subtitle">
+                        Every component is selected for timeless beauty, featherlight rigidity, and century-long
+                        durability.
+                    </p>
+                </div>
+
+                <div class="materials-grid">
+                    <div class="material-card">
+                        <div class="material-icon-box">
+                            <i class="fa-solid fa-shield-cat"></i>
+                        </div>
+                        <h3 class="material-title">Aerospace Aluminum Alloy</h3>
+                        <p class="material-desc">
+                            High-density 5000-series magnesium-aluminum alloy delivers supreme impact resistance while
+                            remaining remarkably lightweight on long-distance transits.
+                        </p>
+                    </div>
+
+                    <div class="material-card">
+                        <div class="material-icon-box">
+                            <i class="fa-solid fa-leaf"></i>
+                        </div>
+                        <h3 class="material-title">Tuscan Vegetable-Tanned Leather</h3>
+                        <p class="material-desc">
+                            Sourced from century-old tanneries in Santa Croce sull'Arno. Treated with chestnut tannins
+                            that patina into a rich, lustrous glow over decades of travel.
+                        </p>
+                    </div>
+
+                    <div class="material-card">
+                        <div class="material-icon-box">
+                            <i class="fa-solid fa-dharmachakra"></i>
+                        </div>
+                        <h3 class="material-title">Hinomoto 360° Whisper Wheels</h3>
+                        <p class="material-desc">
+                            Japanese-engineered ball-bearing casters lubricated with synthetic silicone grease for
+                            effortless, near-silent 360° glide over airport marble or cobblestone.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- VIP Bespoke Commissions Showcase Gallery -->
+        <section class="commissions-showcase-section">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="section-badge">Recent Commissions</span>
+                    <h2 class="section-title">Curated VIP Bespoke Gallery</h2>
+                    <p class="section-subtitle">
+                        A glimpse into bespoke commissions created for international explorers and connoisseurs.
+                    </p>
+                </div>
+
+                <div class="commissions-grid">
+                    <div class="commission-card">
+                        <div class="commission-img-box">
+                            <img src="https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=800&q=80"
+                                alt="Bespoke Champagne Gold Continental" loading="lazy">
+                            <span class="commission-tag-pill">Monogram: [JDM] • Paris</span>
+                        </div>
+                        <div class="commission-body">
+                            <span class="commission-client">Jean-David M. — Private Investor</span>
+                            <blockquote class="commission-quote">"The Champagne Gold finish with Tuscan Tan trim turns
+                                heads at every private terminal from Nice to Geneva."</blockquote>
+                            <span class="commission-details">The Continental 22" • 24K Gold Hardware • Hinomoto Whisper
+                                Wheels</span>
+                        </div>
+                    </div>
+
+                    <div class="commission-card">
+                        <div class="commission-img-box">
+                            <img src="https://images.unsplash.com/photo-1581553680321-4fffae59fccd?auto=format&fit=crop&w=800&q=80"
+                                alt="Bespoke Obsidian Stealth Grand Tourer" loading="lazy">
+                            <span class="commission-tag-pill">Monogram: [KRT] • London</span>
+                        </div>
+                        <div class="commission-body">
+                            <span class="commission-client">Lady Katherine R. — Architectural Director</span>
+                            <blockquote class="commission-quote">"Understated obsidian stealth with gunmetal locks.
+                                Sublime weight distribution and flawless craftsmanship."</blockquote>
+                            <span class="commission-details">The Grand Tourer 30" • Matte Gunmetal • Silver Foil
+                                Stamping</span>
+                        </div>
+                    </div>
+
+                    <div class="commission-card">
+                        <div class="commission-img-box">
+                            <img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=800&q=80"
+                                alt="Bespoke British Racing Green Amalfi Duffle" loading="lazy">
+                            <span class="commission-tag-pill">Monogram: [EVS] • Milan</span>
+                        </div>
+                        <div class="commission-body">
+                            <span class="commission-client">Eduardo V. S. — Watchmaker</span>
+                            <blockquote class="commission-quote">"The British Racing Green leather combined with antique
+                                brass accents has the soul of a vintage Italian sports car."</blockquote>
+                            <span class="commission-details">The Amalfi Duffle • Saddle Cognac • Vintage Brass</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+
+    <!-- Master Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-top-grid">
+                <div>
+                    <a href="index.html" class="brand-logo" style="margin-bottom: 1rem; text-decoration: none;"
+                        aria-label="Aether Voyage Home">
+                        <div class="logo-monogram">Æ</div>
+                        <div class="logo-text-group">
+                            <span class="logo-title" style="color: #fff;">AETHER</span>
+                            <span class="logo-subtitle">TRAVEL LUGGAGE</span>
+                        </div>
+                    </a>
+                    <p class="footer-brand-desc"
+                        style="font-size: 0.82rem; color: #b8c4d4; line-height: 1.6; max-width: 300px;">
+                        Aeronautical aluminum suitcases, ballistic nylon travel bags, and handcrafted Italian leather
+                        goods. Designed for modern travelers.
+                    </p>
+                    <div class="footer-social-block">
+                        <span class="footer-social-label">Follow Us</span>
+                        <div class="footer-social-icons">
+                            <a href="https://www.instagram.com/accounts/login/" target="_blank"
+                                rel="noopener noreferrer" class="footer-social-btn instagram"
+                                aria-label="Follow us on Instagram (Redirects to Login)" title="Instagram Login">
+                                <i class="fa-brands fa-instagram"></i>
+                            </a>
+                            <a href="https://www.facebook.com/login/" target="_blank" rel="noopener noreferrer"
+                                class="footer-social-btn facebook"
+                                aria-label="Follow us on Facebook (Redirects to Login)" title="Facebook Login">
+                                <i class="fa-brands fa-facebook-f"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/login" target="_blank" rel="noopener noreferrer"
+                                class="footer-social-btn linkedin"
+                                aria-label="Follow us on LinkedIn (Redirects to Login)" title="LinkedIn Login">
+                                <i class="fa-brands fa-linkedin-in"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="footer-col-title">Our Collections</h4>
+                    <ul class="footer-links-list">
+                        <li><a href="collections.html?brand=American+Tourister" class="footer-link">American
+                                Tourister</a></li>
+                        <li><a href="collections.html?brand=Skybags" class="footer-link">Skybags Collection</a></li>
+                        <li><a href="collections.html?brand=Samsonite" class="footer-link">Samsonite Series</a></li>
+                        <li><a href="collections.html?brand=Rimowa" class="footer-link">Rimowa Classic & Cabin</a></li>
+                        <li><a href="collections.html?brand=Tumi" class="footer-link">Tumi Ballistic Duffels</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="footer-col-title">Customer Services</h4>
+                    <ul class="footer-links-list">
+                        <li><a href="warranty.html" class="footer-link">100-Year Lifetime Warranty</a></li>
+                        <li><a href="warranty.html#tracker" class="footer-link">5-Stage Repair Tracker</a></li>
+                        <li><a href="warranty.html#service-centers" class="footer-link">Global Service Centers</a></li>
+                        <li><a href="blog.html" class="footer-link">The Aether Journal</a></li>
+                        <li><a href="contact.html" class="footer-link">Store Consultation</a></li>
+                        <li><a href="collections.html" class="footer-link">Curated Collections</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="footer-col-title">Global Flagships</h4>
+                    <p class="footer-cities" style="font-size: 0.82rem; color: #b8c4d4; line-height: 1.6;">
+                        &bull; Paris &bull; Tokyo &bull; New York &bull; London &bull; Dubai &bull; Singapore
+                    </p>
+                    <p
+                        style="font-size: 0.82rem; color: var(--color-gold); font-weight: 700; margin-top: 0.5rem; margin-bottom: 1rem;">
+                        Contact Us: +1 (800) 492-AETH
+                    </p>
+                    <div class="footer-actions-dock" id="footerActionsDock">
+                        <button id="backToTopBtn" class="back-to-top" title="Back to Top" aria-label="Back to Top">
+                            <i class="fa-solid fa-arrow-up"></i>
+                        </button>
+                        <a href="contact.html" id="floatingContactBtn" class="floating-contact-btn" title="Contact Us"
+                            aria-label="Contact Us">
+                            <span class="contact-status-dot" aria-hidden="true"></span>
+                            <i class="fa-solid fa-headset"></i>
+                            <span class="contact-btn-label">Contact Us</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div>&copy; 2026 AETHER VOYAGE S.A. All Rights Reserved. Luxury Luggage & Travel Goods.</div>
+                <div class="footer-legal-links">
+                    <a href="warranty.html" class="footer-link">Warranty Terms</a>
+                    <a href="contact.html" class="footer-link">Privacy Policy</a>
+                    <a href="contact.html" class="footer-link">Sustainability</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- =========================================================================
+         Slide Drawers (Auth, Cart & Wishlist)
+         ========================================================================= -->
+
+    <!-- Customer Account Drawer (Slides in from Left-to-Right) -->
+    <aside class="slide-drawer slide-drawer-left" id="authDrawer" aria-label="Customer Account Drawer">
+        <div class="drawer-header">
+            <div class="drawer-title-group">
+                <i class="fa-regular fa-user" style="color: var(--color-gold); font-size: 1.1rem;"></i>
+                <h3 class="drawer-title" id="authDrawerTitle">Customer Account</h3>
+            </div>
+            <button class="drawer-close-btn" id="authDrawerClose" aria-label="Close Account Drawer"><i
+                    class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div class="drawer-body" id="authDrawerBody"></div>
+    </aside>
+
+    <!-- Luggage Cart Drawer (Right-to-Left in LTR) -->
+    <aside class="slide-drawer" id="cartDrawer" aria-label="Luggage Cart Drawer">
+        <div class="drawer-header">
+            <div class="drawer-title-group">
+                <i class="fa-solid fa-bag-shopping" style="color: var(--color-gold);"></i>
+                <h3 class="drawer-title">Luggage Cart</h3>
+                <span class="drawer-count-badge cart-count-badge">0</span>
+            </div>
+            <button class="drawer-close-btn" id="cartDrawerClose" aria-label="Close Cart">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+
+        <!-- Free Shipping Progress -->
+        <div class="shipping-progress-box">
+            <div class="shipping-progress-text" id="shippingProgressText">
+                Add <strong>$500</strong> for Complimentary Express Shipping
+            </div>
+            <div class="shipping-bar-bg">
+                <div class="shipping-bar-fill" id="shippingProgressBar" style="width: 0%;"></div>
+            </div>
+        </div>
+
+        <!-- Cart Items List -->
+        <div class="drawer-body" id="cartItemsList"></div>
+
+        <!-- Drawer Footer -->
+        <div class="drawer-footer">
+            <div class="promo-form">
+                <input type="text" class="promo-input" id="promoCodeInput" placeholder="PROMO CODE (VOYAGE10)">
+                <button class="promo-btn" id="applyPromoBtn" type="button">Apply</button>
+            </div>
+
+            <div class="cart-totals-list">
+                <div class="cart-totals-row">
+                    <span>Subtotal</span>
+                    <span id="cartSubtotal">$0</span>
+                </div>
+                <div class="cart-totals-row" id="cartDiscountRow" style="display: none; color: #10b981;">
+                    <span>Member Discount</span>
+                    <span id="cartDiscount">-$0</span>
+                </div>
+                <div class="cart-totals-row">
+                    <span>Worldwide Express Shipping</span>
+                    <span id="cartShipping">FREE</span>
+                </div>
+                <div class="cart-totals-row final-total">
+                    <span>Total</span>
+                    <span class="total-amount" id="cartFinalTotal">$0</span>
+                </div>
+            </div>
+
+            <button class="checkout-btn" id="checkoutBtn">
+                <i class="fa-solid fa-lock"></i> Proceed to Checkout
+            </button>
+        </div>
+    </aside>
+
+    <!-- Wishlist Drawer -->
+    <aside class="slide-drawer" id="wishlistDrawer" aria-label="Wishlist Drawer">
+        <div class="drawer-header">
+            <div class="drawer-title-group">
+                <i class="fa-solid fa-heart" style="color: var(--color-gold);"></i>
+                <h3 class="drawer-title">My Wishlist</h3>
+                <span class="drawer-count-badge wishlist-count-badge">0</span>
+            </div>
+            <button class="drawer-close-btn" id="wishlistDrawerClose" aria-label="Close Wishlist">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+
+        <div class="drawer-body" id="wishlistItemsList"></div>
+
+        <!-- Wishlist Drawer Footer -->
+        <div class="drawer-footer" id="wishlistDrawerFooter" style="display: none;"></div>
+    </aside>
+
+    <!-- =========================================================================
+         Modals (Quick View, Express Checkout)
+         ========================================================================= -->
+
+    <!-- Quick View Modal -->
+    <div class="modal-backdrop" id="quickViewModal">
+        <div class="modal-dialog">
+            <button class="modal-close-btn" id="quickViewCloseBtn" aria-label="Close Quick View">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div id="quickViewContent"></div>
+        </div>
+    </div>
+
+    <!-- Express Checkout Modal -->
+    <div class="modal-backdrop" id="checkoutModal">
+        <div class="modal-dialog checkout-dialog" id="checkoutDialogContent">
+            <button class="modal-close-btn" id="checkoutModalClose"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+    </div>
+
+    <!-- Drawer Backdrop Overlay -->
+    <div class="drawer-backdrop" id="drawerBackdrop"></div>
+
+    <!-- Toast Notification Container -->
+    <div id="toastContainer" class="toast-container"></div>
+
+    <!-- =========================================================================
+         Modular Scripts
+         ========================================================================= -->
+    <script src="js/data.js"></script>
+    <script src="js/theme.js"></script>
+    <script src="js/router.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/catalog.js"></script>
+    <script src="js/warranty.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/checkout.js"></script>
+    <script src="js/customizer.js"></script>
+    <script src="js/app.js"></script>
+
+</body>
+
+</html>

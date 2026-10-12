@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+    <!-- Instant Theme & Layout Initializer (Prevents Flash of Dark/Light Theme on Navigation) -->
+    <script>
+        (function() {
+            try {
+                var savedTheme = localStorage.getItem('aether_theme') || 'light';
+                var savedDir = localStorage.getItem('aether_dir') || 'ltr';
+                document.documentElement.setAttribute('data-theme', savedTheme);
+                document.documentElement.setAttribute('dir', savedDir);
+                document.documentElement.setAttribute('lang', savedDir === 'rtl' ? 'ar' : 'en');
+            } catch(e) {}
+        })();
+    </script>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="AETHER VOYAGE 100-Year Lifetime Unconditional Warranty — Submit repair claims, track 5-stage live diagnostics, and locate global service centers." />
+    <title>100-Year Warranty & Repair Hub — AETHER VOYAGE</title>
+
+    <!-- Favicon & Brand Touch Icons -->
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png" />
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="manifest" href="site.webmanifest" />
+    <meta name="theme-color" content="#dfba73" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800;900&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome 6 Icons CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+    <!-- Master Stylesheet -->
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="site-header" id="siteHeader">
+        <div class="container header-container">
+            <a href="index.html" class="brand-logo" aria-label="Aether Voyage Home">
+                <div class="logo-monogram">Æ</div>
+                <div class="logo-text-group">
+                    <span class="logo-title">AETHER</span>
+                    <span class="logo-subtitle">TRAVEL LUGGAGE</span>
+                </div>
+            </a>
+
+            <nav class="nav-menu" aria-label="Primary Navigation">
+                <div class="nav-item-dropdown">
+                    <a href="index.html" class="nav-link dropdown-toggle">
+                        <span>Home</span>
+                        <i class="fa-solid fa-chevron-down nav-dropdown-arrow"></i>
+                    </a>
+                    <div class="nav-dropdown-menu">
+                        <a href="index.html" class="nav-dropdown-item">
+                            <div class="dropdown-item-icon">
+                                <i class="fa-solid fa-landmark"></i>
+                            </div>
+                            <div class="dropdown-item-content">
+                                <div class="dropdown-item-title">Home 1: Flagship Showcase</div>
+                                <div class="dropdown-item-desc">Classic brand collections & travel luggage</div>
+                            </div>
+                        </a>
+                        <a href="home2.html" class="nav-dropdown-item">
+                            <div class="dropdown-item-icon">
+                                <i class="fa-solid fa-wand-magic-sparkles"></i>
+                            </div>
+                            <div class="dropdown-item-content">
+                                <div class="dropdown-item-title">Home 2: Bespoke Studio</div>
+                                <div class="dropdown-item-desc">Customize bag designs, colors & monograms</div>
+                            </div>
+                            <span class="dropdown-item-badge">New</span>
+                        </a>
+                    </div>
+                </div>
+                <a href="collections.html" class="nav-link">Collections</a>
+                <a href="brands.html" class="nav-link">Brands</a>
+                <a href="warranty.html" class="nav-link active" title="100-Year Warranty & Repair">Warranty</a>
+                <a href="blog.html" class="nav-link">Blog</a>
+                <a href="contact.html" class="nav-link" title="Contact Concierge">Contact</a>
+            </nav>
+
+            <div class="header-actions">
+
+                <button id="dirToggle" class="compact-tool-btn" title="Toggle Layout Direction (LTR/RTL)">
+                    <span>RTL</span>
+                </button>
+
+                <button id="themeToggle" class="compact-tool-btn" title="Toggle Dark / Light Theme">
+                    <i class="fa-solid fa-sun"></i>
+                </button>
+
+                <button id="wishlistBtn" class="compact-tool-btn wishlist-open-btn" title="Open Wishlist">
+                    <i class="fa-regular fa-heart"></i>
+                    <span class="action-badge wishlist-count-badge" style="display: none;">0</span>
+                </button>
+
+                <button id="cartBtn" class="compact-tool-btn cart-open-btn" title="Open Luggage Cart">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <span class="action-badge cart-count-badge" style="display: none;">0</span>
+                </button>
+
+                <a href="collections.html" class="header-cta-btn" id="headerCtaBtn" title="Shop Curated Luxury Luggage">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <span>Shop Luggage</span>
+                </a>
+
+                <button id="mobileMenuToggle" class="hamburger-btn" aria-label="Open Mobile Menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Drawer -->
+    <div class="mobile-nav-drawer" id="mobileMenu">
+        <div class="mobile-nav-header">
+            <a href="index.html" class="brand-logo" aria-label="Aether Voyage Home">
+                <div class="logo-monogram">Æ</div>
+                <span class="logo-title">AETHER</span>
+            </a>
+            <button class="drawer-close-btn" id="mobileMenuClose"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div class="mobile-nav-links">
+            <div class="mobile-nav-dropdown-section">
+                <a href="index.html" class="mobile-nav-link">
+                    <i class="fa-solid fa-house"></i> Home
+                </a>
+                <div class="mobile-nav-subgroup">
+                    <a href="index.html" class="mobile-nav-sublink">
+                        <span>Home 1: Flagship Showcase</span>
+                        <i class="fa-solid fa-landmark"></i>
+                    </a>
+                    <a href="home2.html" class="mobile-nav-sublink">
+                        <span>Home 2: Bespoke Studio</span>
+                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+                    </a>
+                </div>
+            </div>
+            <a href="collections.html" class="mobile-nav-link"><i class="fa-solid fa-suitcase-rolling"></i> Collections</a>
+            <a href="brands.html" class="mobile-nav-link"><i class="fa-solid fa-award"></i> Brands</a>
+            <a href="warranty.html" class="mobile-nav-link active"><i class="fa-solid fa-shield-halved"></i> 100-Year Warranty</a>
+            <a href="blog.html" class="mobile-nav-link"><i class="fa-solid fa-newspaper"></i> Blog & Journal</a>
+            <a href="contact.html" class="mobile-nav-link"><i class="fa-solid fa-headset"></i> Contact Us</a>
+            <a href="collections.html" class="mobile-nav-link mobile-nav-cta">
+                <i class="fa-solid fa-suitcase-rolling"></i> <span>Shop Luggage</span>
+            </a>
+            <a href="#wishlist" class="mobile-nav-link wishlist-open-btn">
+                <i class="fa-regular fa-heart"></i>
+                <span>Private Wishlist</span>
+                <span class="action-badge wishlist-count-badge" style="margin-left: auto; display: none;">0</span>
+            </a>
+        </div>
+        <div class="mobile-nav-footer">
+            <div class="mobile-tools-grid">
+                <button id="themeToggleMobile" class="btn btn-secondary btn-sm" style="flex:1;"><i class="fa-solid fa-sun"></i> Theme</button>
+                <button id="dirToggleMobile" class="btn btn-secondary btn-sm" style="flex:1;"><span>RTL / LTR</span></button>
+            </div>
+        </div>
+    </div>
+
+    <div class="drawer-backdrop" id="drawerBackdrop"></div>
+
+    <!-- Main Warranty Hub Content -->
+    <main id="mainContent">
+        <section class="warranty-section">
+            <div class="container">
+                <div class="warranty-header">
+                    <div class="warranty-badge-pill">
+                        <i class="fa-solid fa-shield-halved"></i> Unconditional 100-Year Guarantee
+                    </div>
+                    <h1 class="section-title">Warranty & Repair Service</h1>
+                    <p class="section-subtitle">
+                        We unconditionally guarantee your luggage against functional damage for 100 years — including airline baggage mishandling, cracked shells, broken locks, wheel replacement, and handle restoration.
+                    </p>
+                </div>
+
+                <div class="warranty-grid">
+                    <!-- Claim Registration Form -->
+                    <div class="warranty-card">
+                        <h2 style="font-family: var(--font-serif); font-size: 1.4rem; margin-bottom: 0.5rem;">
+                            <i class="fa-solid fa-file-signature" style="color: var(--color-gold);"></i> Submit Repair Request
+                        </h2>
+                        <p style="font-size: 0.82rem; color: var(--text-secondary); margin-bottom: 1.25rem;">
+                            Submit your claim request. Our service team will provide an insured shipping label or arrange courier pickup.
+                        </p>
+
+                        <form class="warranty-form" id="warrantyClaimForm">
+                            <div class="warranty-form-row">
+                                <div class="form-field">
+                                    <label for="warrantySerial">Serial Number</label>
+                                    <input type="text" id="warrantySerial" placeholder="e.g. AV-PASS-8819" required>
+                                </div>
+                                <div class="form-field">
+                                    <label for="warrantyModel">Luggage Brand & Model</label>
+                                    <input type="text" id="warrantyModel" placeholder="e.g. Rimowa Classic Cabin" required>
+                                </div>
+                            </div>
+                            <div class="warranty-form-row">
+                                <div class="form-field">
+                                    <label for="warrantyName">Owner Full Name</label>
+                                    <input type="text" id="warrantyName" placeholder="e.g. Alex Morgan" required>
+                                </div>
+                                <div class="form-field">
+                                    <label for="warrantyServiceCenter">Preferred Service Center</label>
+                                    <select id="warrantyServiceCenter">
+                                        <option value="paris">Paris Flagship (Place Vendôme)</option>
+                                        <option value="tokyo">Tokyo Ginza Service Center</option>
+                                        <option value="newyork">New York Madison Ave</option>
+                                        <option value="london">London Bond Street</option>
+                                        <option value="dubai">Dubai Mall Fashion Avenue</option>
+                                        <option value="singapore">Singapore Marina Bay Sands</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-field">
+                                <label for="warrantyIssue">Description of Damage or Service</label>
+                                <textarea id="warrantyIssue" rows="3" placeholder="Describe the wheel, lock, handle, or shell repair required..." required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary" style="margin-top: 0.5rem;">
+                                <i class="fa-solid fa-paper-plane"></i> Submit Repair Request
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- 5-Stage Live Repair Progress Tracker -->
+                    <div class="warranty-card" id="tracker" style="scroll-margin-top: 100px;">
+                        <h2 style="font-family: var(--font-serif); font-size: 1.4rem; margin-bottom: 0.5rem;">
+                            <i class="fa-solid fa-satellite-dish" style="color: var(--color-gold);"></i> 5-Stage Live Tracker
+                        </h2>
+                        <p style="font-size: 0.82rem; color: var(--text-secondary); margin-bottom: 1.25rem;">
+                            Track your luggage piece in real time through inspection diagnostics, repair, and express delivery.
+                        </p>
+
+                        <div class="tracker-container">
+                            <div class="tracker-search-bar">
+                                <input type="text" id="trackerSearchInput" placeholder="Enter Claim ID (e.g. AV-9842 or AV-1044)" value="AV-9842">
+                                <button class="btn btn-secondary" id="trackerSearchBtn" type="button">Track</button>
+                            </div>
+
+                            <div id="trackerClaimInfo" style="font-size: 0.78rem; color: var(--text-secondary); padding: 0.6rem 0.85rem; background: var(--bg-surface); border-radius: var(--radius-md);">
+                                <strong>Claim ID:</strong> AV-9842 &bull; <strong>Piece:</strong> Aether Chronos Titan Trunk
+                            </div>
+
+                            <div class="tracker-progress-timeline" id="trackerTimeline"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Global Service Centers Section -->
+                <section class="service-centers-wrapper" id="service-centers" style="scroll-margin-top: 100px;">
+                    <div class="service-centers-header">
+                        <span class="section-eyebrow"><i class="fa-solid fa-globe fa-spin-pulse" style="--fa-animation-duration: 6s;"></i> Global Service Network</span>
+                        <h3 class="section-title" style="font-size: 1.85rem;">6 Global Flagship Service Centers</h3>
+                        <p class="section-subtitle" style="max-width: 680px; margin: 0.5rem auto 1.5rem;">
+                            Equipped with cleanroom diagnostic labs, genuine aerospace-grade alloy components, and master artisan craftsmen. Drop off in person or book white-glove hotel concierge pickup across our worldwide flagships.
+                        </p>
+                        
+                        <!-- Hub Quick Filter Bar -->
+                        <div class="hub-filter-bar">
+                            <button type="button" class="hub-filter-pill active" data-filter="all">
+                                <i class="fa-solid fa-earth-americas"></i> All Flagships (6)
+                            </button>
+                            <button type="button" class="hub-filter-pill" data-filter="europe">
+                                <i class="fa-solid fa-landmark"></i> Europe (2)
+                            </button>
+                            <button type="button" class="hub-filter-pill" data-filter="asia">
+                                <i class="fa-solid fa-torii-gate"></i> Asia-Pacific (2)
+                            </button>
+                            <button type="button" class="hub-filter-pill" data-filter="middle-east">
+                                <i class="fa-solid fa-gem"></i> Middle East (1)
+                            </button>
+                            <button type="button" class="hub-filter-pill" data-filter="americas">
+                                <i class="fa-solid fa-city"></i> Americas (1)
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="service-centers-grid" id="serviceCentersGrid">
+                        <!-- Paris Flagship -->
+                        <div class="center-card" data-region="europe" data-center="paris">
+                            <div class="center-card-header">
+                                <div class="center-city">
+                                    <i class="fa-solid fa-location-dot"></i> Paris Flagship
+                                </div>
+                                <span class="center-code-badge">PAR &bull; 01</span>
+                            </div>
+                            <div class="center-status-badge">
+                                <span class="radar-ping"></span>
+                                <span class="radar-dot"></span>
+                                <span class="status-text">Open &bull; Express Diagnostics</span>
+                            </div>
+                            <div class="center-address">18 Place Vendôme, 75001 Paris, France</div>
+                            
+                            <div class="center-live-clock" data-tz="Europe/Paris" title="Current Local Time in Paris (CET)">
+                                <i class="fa-regular fa-clock"></i>
+                                <span>Local Time:</span>
+                                <strong class="clock-display">--:--:--</strong>
+                                <span class="clock-zone">CET</span>
+                            </div>
+
+                            <div class="center-tags">
+                                <span class="center-tag"><i class="fa-solid fa-sparkles"></i> Titanium Polishing</span>
+                                <span class="center-tag"><i class="fa-solid fa-bolt"></i> 2h Diagnostics</span>
+                            </div>
+
+                            <div class="center-contact">
+                                <span><i class="fa-solid fa-phone"></i> +33 1 42 68 00 00</span>
+                                <span><i class="fa-solid fa-business-time"></i> Mon–Sat: 10:00 – 19:00</span>
+                            </div>
+
+                            <div class="center-actions">
+                                <button type="button" class="btn btn-secondary btn-sm center-select-btn" data-center="paris">
+                                    <i class="fa-solid fa-screwdriver-wrench"></i> Select for Repair
+                                </button>
+                                <a href="tel:+33142680000" class="btn-icon-call" title="Call Paris Atelier" aria-label="Call Paris Atelier">
+                                    <i class="fa-solid fa-phone-volume"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Tokyo Flagship -->
+                        <div class="center-card" data-region="asia" data-center="tokyo">
+                            <div class="center-card-header">
+                                <div class="center-city">
+                                    <i class="fa-solid fa-location-dot"></i> Tokyo Ginza Flagship
+                                </div>
+                                <span class="center-code-badge">TYO &bull; 02</span>
+                            </div>
+                            <div class="center-status-badge">
+                                <span class="radar-ping"></span>
+                                <span class="radar-dot"></span>
+                                <span class="status-text">Open &bull; Precision Alloy Lab</span>
+                            </div>
+                            <div class="center-address">6-10-1 Ginza, Chuo-ku, Tokyo 104-0061, Japan</div>
+
+                            <div class="center-live-clock" data-tz="Asia/Tokyo" title="Current Local Time in Tokyo (JST)">
+                                <i class="fa-regular fa-clock"></i>
+                                <span>Local Time:</span>
+                                <strong class="clock-display">--:--:--</strong>
+                                <span class="clock-zone">JST</span>
+                            </div>
+
+                            <div class="center-tags">
+                                <span class="center-tag"><i class="fa-solid fa-gears"></i> Wheel Re-alignment</span>
+                                <span class="center-tag"><i class="fa-solid fa-shield"></i> Laser Diagnostics</span>
+                            </div>
+
+                            <div class="center-contact">
+                                <span><i class="fa-solid fa-phone"></i> +81 3 5537 0000</span>
+                                <span><i class="fa-solid fa-business-time"></i> Daily: 11:00 – 20:00</span>
+                            </div>
+
+                            <div class="center-actions">
+                                <button type="button" class="btn btn-secondary btn-sm center-select-btn" data-center="tokyo">
+                                    <i class="fa-solid fa-screwdriver-wrench"></i> Select for Repair
+                                </button>
+                                <a href="tel:+81355370000" class="btn-icon-call" title="Call Tokyo Atelier" aria-label="Call Tokyo Atelier">
+                                    <i class="fa-solid fa-phone-volume"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- New York Flagship -->
+                        <div class="center-card" data-region="americas" data-center="newyork">
+                            <div class="center-card-header">
+                                <div class="center-city">
+                                    <i class="fa-solid fa-location-dot"></i> New York Madison Ave
+                                </div>
+                                <span class="center-code-badge">NYC &bull; 03</span>
+                            </div>
+                            <div class="center-status-badge">
+                                <span class="radar-ping"></span>
+                                <span class="radar-dot"></span>
+                                <span class="status-text">Open &bull; VIP Private Salon</span>
+                            </div>
+                            <div class="center-address">712 Madison Ave, New York, NY 10065, USA</div>
+
+                            <div class="center-live-clock" data-tz="America/New_York" title="Current Local Time in New York (EST)">
+                                <i class="fa-regular fa-clock"></i>
+                                <span>Local Time:</span>
+                                <strong class="clock-display">--:--:--</strong>
+                                <span class="clock-zone">EST</span>
+                            </div>
+
+                            <div class="center-tags">
+                                <span class="center-tag"><i class="fa-solid fa-truck-fast"></i> Same-Day Courier</span>
+                                <span class="center-tag"><i class="fa-solid fa-crown"></i> VIP Loaner Luggage</span>
+                            </div>
+
+                            <div class="center-contact">
+                                <span><i class="fa-solid fa-phone"></i> +1 212 555 0199</span>
+                                <span><i class="fa-solid fa-business-time"></i> Mon–Sat: 10:00 – 18:00</span>
+                            </div>
+
+                            <div class="center-actions">
+                                <button type="button" class="btn btn-secondary btn-sm center-select-btn" data-center="newyork">
+                                    <i class="fa-solid fa-screwdriver-wrench"></i> Select for Repair
+                                </button>
+                                <a href="tel:+12125550199" class="btn-icon-call" title="Call New York Center" aria-label="Call New York Center">
+                                    <i class="fa-solid fa-phone-volume"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- London Flagship -->
+                        <div class="center-card" data-region="europe" data-center="london">
+                            <div class="center-card-header">
+                                <div class="center-city">
+                                    <i class="fa-solid fa-location-dot"></i> London Bond Street
+                                </div>
+                                <span class="center-code-badge">LON &bull; 04</span>
+                            </div>
+                            <div class="center-status-badge">
+                                <span class="radar-ping"></span>
+                                <span class="radar-dot"></span>
+                                <span class="status-text">Open &bull; Master Locksmithing</span>
+                            </div>
+                            <div class="center-address">144 New Bond Street, Mayfair, London W1S 2PF, UK</div>
+
+                            <div class="center-live-clock" data-tz="Europe/London" title="Current Local Time in London (GMT)">
+                                <i class="fa-regular fa-clock"></i>
+                                <span>Local Time:</span>
+                                <strong class="clock-display">--:--:--</strong>
+                                <span class="clock-zone">GMT</span>
+                            </div>
+
+                            <div class="center-tags">
+                                <span class="center-tag"><i class="fa-solid fa-key"></i> TSA Lock Reset</span>
+                                <span class="center-tag"><i class="fa-solid fa-plane-arrival"></i> Heathrow Courier</span>
+                            </div>
+
+                            <div class="center-contact">
+                                <span><i class="fa-solid fa-phone"></i> +44 20 7493 0000</span>
+                                <span><i class="fa-solid fa-business-time"></i> Mon–Sat: 10:00 – 18:30</span>
+                            </div>
+
+                            <div class="center-actions">
+                                <button type="button" class="btn btn-secondary btn-sm center-select-btn" data-center="london">
+                                    <i class="fa-solid fa-screwdriver-wrench"></i> Select for Repair
+                                </button>
+                                <a href="tel:+442074930000" class="btn-icon-call" title="Call London Atelier" aria-label="Call London Atelier">
+                                    <i class="fa-solid fa-phone-volume"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Dubai Flagship (NEW) -->
+                        <div class="center-card" data-region="middle-east" data-center="dubai">
+                            <div class="center-card-header">
+                                <div class="center-city">
+                                    <i class="fa-solid fa-location-dot"></i> Dubai Fashion Avenue
+                                </div>
+                                <span class="center-code-badge">DXB &bull; 05</span>
+                            </div>
+                            <div class="center-status-badge">
+                                <span class="radar-ping"></span>
+                                <span class="radar-dot"></span>
+                                <span class="status-text">Open &bull; Private Concierge Lounge</span>
+                            </div>
+                            <div class="center-address">Fashion Avenue, The Dubai Mall, Downtown Dubai, UAE</div>
+
+                            <div class="center-live-clock" data-tz="Asia/Dubai" title="Current Local Time in Dubai (GST)">
+                                <i class="fa-regular fa-clock"></i>
+                                <span>Local Time:</span>
+                                <strong class="clock-display">--:--:--</strong>
+                                <span class="clock-zone">GST</span>
+                            </div>
+
+                            <div class="center-tags">
+                                <span class="center-tag"><i class="fa-solid fa-clock-rotate-left"></i> 2h Airport Transit</span>
+                                <span class="center-tag"><i class="fa-solid fa-car-side"></i> Chauffeur Service</span>
+                            </div>
+
+                            <div class="center-contact">
+                                <span><i class="fa-solid fa-phone"></i> +971 4 362 7500</span>
+                                <span><i class="fa-solid fa-business-time"></i> Daily: 10:00 – 23:00</span>
+                            </div>
+
+                            <div class="center-actions">
+                                <button type="button" class="btn btn-secondary btn-sm center-select-btn" data-center="dubai">
+                                    <i class="fa-solid fa-screwdriver-wrench"></i> Select for Repair
+                                </button>
+                                <a href="tel:+97143627500" class="btn-icon-call" title="Call Dubai Lounge" aria-label="Call Dubai Lounge">
+                                    <i class="fa-solid fa-phone-volume"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Singapore Flagship (NEW) -->
+                        <div class="center-card" data-region="asia" data-center="singapore">
+                            <div class="center-card-header">
+                                <div class="center-city">
+                                    <i class="fa-solid fa-location-dot"></i> Singapore Marina Bay
+                                </div>
+                                <span class="center-code-badge">SIN &bull; 06</span>
+                            </div>
+                            <div class="center-status-badge">
+                                <span class="radar-ping"></span>
+                                <span class="radar-dot"></span>
+                                <span class="status-text">Open &bull; Changi Hub Dispatch</span>
+                            </div>
+                            <div class="center-address">The Shoppes at Marina Bay Sands #B2-88, 2 Bayfront Ave, Singapore 018972</div>
+
+                            <div class="center-live-clock" data-tz="Asia/Singapore" title="Current Local Time in Singapore (SGT)">
+                                <i class="fa-regular fa-clock"></i>
+                                <span>Local Time:</span>
+                                <strong class="clock-display">--:--:--</strong>
+                                <span class="clock-zone">SGT</span>
+                            </div>
+
+                            <div class="center-tags">
+                                <span class="center-tag"><i class="fa-solid fa-plane-departure"></i> Changi VIP Dispatch</span>
+                                <span class="center-tag"><i class="fa-solid fa-fingerprint"></i> RFID Digital Retag</span>
+                            </div>
+
+                            <div class="center-contact">
+                                <span><i class="fa-solid fa-phone"></i> +65 6688 8868</span>
+                                <span><i class="fa-solid fa-business-time"></i> Daily: 10:30 – 22:00</span>
+                            </div>
+
+                            <div class="center-actions">
+                                <button type="button" class="btn btn-secondary btn-sm center-select-btn" data-center="singapore">
+                                    <i class="fa-solid fa-screwdriver-wrench"></i> Select for Repair
+                                </button>
+                                <a href="tel:+6566888868" class="btn-icon-call" title="Call Singapore Hub" aria-label="Call Singapore Hub">
+                                    <i class="fa-solid fa-phone-volume"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- FAQ Accordion -->
+                <div class="faq-section">
+                    <div class="section-header" style="margin-bottom: 1.5rem;">
+                        <h3 style="font-family: var(--font-serif); font-size: 1.5rem;">Frequently Answered Inquiries</h3>
+                    </div>
+                    <div class="faq-list">
+                        <div class="faq-item active">
+                            <div class="faq-question">
+                                <span>What does the 100-Year Unconditional Warranty cover?</span>
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                Our warranty covers all functional aspects of your luggage for 100 years, including cracked shells, broken locks, wheel failure, zipper malfunction, telescopic handle jamming, and transit damage caused by airlines. Cosmetic wear and scratches are not considered functional defects, though refinishing is available at our service centers.
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>How do I claim a repair when traveling abroad?</span>
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                You can present your luggage at any of our worldwide service centers or contact our 24/7 Customer Support team. We will arrange a complimentary loaner piece while your luggage is serviced or ship replacement components directly to your hotel.
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>Are American Tourister, Skybags, Samsonite, and Rimowa pieces covered?</span>
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                Yes! Every curated brand piece acquired through Aether Voyage receives our unified 100-Year Warranty Certificate in addition to the original manufacturer warranty.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Customer Account Drawer (Slides in from Left-to-Right) -->
+    <aside class="slide-drawer slide-drawer-left" id="authDrawer" aria-label="Customer Account Drawer">
+        <div class="drawer-header">
+            <div class="drawer-title-group">
+                <i class="fa-regular fa-user" style="color: var(--color-gold); font-size: 1.1rem;"></i>
+                <h3 class="drawer-title" id="authDrawerTitle">Customer Account</h3>
+            </div>
+            <button class="drawer-close-btn" id="authDrawerClose" aria-label="Close Account Drawer"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div class="drawer-body" id="authDrawerBody"></div>
+    </aside>
+
+    <aside class="slide-drawer" id="cartDrawer" aria-label="Luggage Cart Drawer">
+        <div class="drawer-header">
+            <div class="drawer-title-group">
+                <i class="fa-solid fa-bag-shopping" style="color: var(--color-gold);"></i>
+                <h3 class="drawer-title">Luggage Cart</h3>
+                <span class="drawer-count-badge cart-count-badge">0</span>
+            </div>
+            <button class="drawer-close-btn" id="cartDrawerClose"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div class="shipping-progress-box">
+            <div class="shipping-progress-text" id="shippingProgressText">
+                Add <strong>$500</strong> for Complimentary Express Shipping
+            </div>
+            <div class="shipping-bar-bg">
+                <div class="shipping-bar-fill" id="shippingProgressBar" style="width: 0%;"></div>
+            </div>
+        </div>
+        <div class="drawer-body" id="cartItemsList"></div>
+        <div class="drawer-footer">
+            <div class="promo-form">
+                <input type="text" class="promo-input" id="promoCodeInput" placeholder="PROMO CODE (VOYAGE10)">
+                <button class="promo-btn" id="applyPromoBtn" type="button">Apply</button>
+            </div>
+            <div class="cart-totals-list">
+                <div class="cart-totals-row">
+                    <span>Subtotal</span>
+                    <span id="cartSubtotal">$0</span>
+                </div>
+                <div class="cart-totals-row" id="cartDiscountRow" style="display: none; color: #10b981;">
+                    <span>Member Discount</span>
+                    <span id="cartDiscount">-$0</span>
+                </div>
+                <div class="cart-totals-row">
+                    <span>Worldwide Express Shipping</span>
+                    <span id="cartShipping">FREE</span>
+                </div>
+                <div class="cart-totals-row final-total">
+                    <span>Total</span>
+                    <span class="total-amount" id="cartFinalTotal">$0</span>
+                </div>
+            </div>
+            <button class="checkout-btn" id="checkoutBtn">
+                <i class="fa-solid fa-lock"></i> Proceed to Checkout
+            </button>
+        </div>
+    </aside>
+
+    <aside class="slide-drawer" id="wishlistDrawer" aria-label="Wishlist Drawer">
+        <div class="drawer-header">
+            <div class="drawer-title-group">
+                <i class="fa-solid fa-heart" style="color: var(--color-gold);"></i>
+                <h3 class="drawer-title">My Wishlist</h3>
+                <span class="drawer-count-badge wishlist-count-badge">0</span>
+            </div>
+            <button class="drawer-close-btn" id="wishlistDrawerClose"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div class="drawer-body" id="wishlistItemsList"></div>
+        <!-- Wishlist Drawer Footer -->
+        <div class="drawer-footer" id="wishlistDrawerFooter" style="display: none;"></div>
+    </aside>
+
+    <!-- Modals -->
+    <div class="modal-backdrop" id="checkoutModal">
+        <div class="modal-dialog checkout-dialog" id="checkoutDialogContent">
+            <button class="modal-close-btn" id="checkoutModalClose"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+    </div>
+
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-top-grid">
+                <div>
+                    <a href="index.html" class="brand-logo" style="margin-bottom: 1rem; text-decoration: none;" aria-label="Aether Voyage Home">
+                        <div class="logo-monogram">Æ</div>
+                        <div class="logo-text-group">
+                            <span class="logo-title" style="color: #fff;">AETHER</span>
+                            <span class="logo-subtitle">TRAVEL LUGGAGE</span>
+                        </div>
+                    </a>
+                    <p class="footer-brand-desc" style="font-size: 0.82rem; color: #b8c4d4; line-height: 1.6; max-width: 300px;">
+                        Aeronautical aluminum suitcases, ballistic nylon travel bags, and handcrafted Italian leather goods. Designed for modern travelers.
+                    </p>
+                    <div class="footer-social-block">
+                        <span class="footer-social-label">Follow Us</span>
+                        <div class="footer-social-icons">
+                            <a href="https://www.instagram.com/accounts/login/" target="_blank" rel="noopener noreferrer" class="footer-social-btn instagram" aria-label="Follow us on Instagram (Redirects to Login)" title="Instagram Login">
+                                <i class="fa-brands fa-instagram"></i>
+                            </a>
+                            <a href="https://www.facebook.com/login/" target="_blank" rel="noopener noreferrer" class="footer-social-btn facebook" aria-label="Follow us on Facebook (Redirects to Login)" title="Facebook Login">
+                                <i class="fa-brands fa-facebook-f"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/login" target="_blank" rel="noopener noreferrer" class="footer-social-btn linkedin" aria-label="Follow us on LinkedIn (Redirects to Login)" title="LinkedIn Login">
+                                <i class="fa-brands fa-linkedin-in"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="footer-col-title">Our Collections</h4>
+                    <ul class="footer-links-list">
+                        <li><a href="collections.html?brand=American+Tourister" class="footer-link">American Tourister</a></li>
+                        <li><a href="collections.html?brand=Skybags" class="footer-link">Skybags Collection</a></li>
+                        <li><a href="collections.html?brand=Samsonite" class="footer-link">Samsonite Series</a></li>
+                        <li><a href="collections.html?brand=Rimowa" class="footer-link">Rimowa Classic & Cabin</a></li>
+                        <li><a href="collections.html?brand=Tumi" class="footer-link">Tumi Ballistic Duffels</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-col-title">Customer Services</h4>
+                    <ul class="footer-links-list">
+                        <li><a href="warranty.html" class="footer-link">100-Year Lifetime Warranty</a></li>
+                        <li><a href="#tracker" class="footer-link">5-Stage Repair Tracker</a></li>
+                        <li><a href="#service-centers" class="footer-link">Global Service Centers</a></li>
+                        <li><a href="blog.html" class="footer-link">The Aether Journal</a></li>
+                        <li><a href="contact.html" class="footer-link">Store Consultation</a></li>
+                        <li><a href="collections.html" class="footer-link">Curated Collections</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-col-title">Global Flagships</h4>
+                    <p class="footer-cities" style="font-size: 0.82rem; color: #b8c4d4; line-height: 1.6;">&bull; Paris &bull; Tokyo &bull; New York &bull; London &bull; Dubai &bull; Singapore</p>
+                    <p style="font-size: 0.82rem; color: var(--color-gold); font-weight: 700; margin-top: 0.5rem; margin-bottom: 1rem;">Contact Us: +1 (800) 492-AETH</p>
+                    <div class="footer-actions-dock" id="footerActionsDock">
+                        <button id="backToTopBtn" class="back-to-top" title="Back to Top" aria-label="Back to Top">
+                            <i class="fa-solid fa-arrow-up"></i>
+                        </button>
+                        <a href="contact.html" id="floatingContactBtn" class="floating-contact-btn" title="Contact Us" aria-label="Contact Us">
+                            <span class="contact-status-dot" aria-hidden="true"></span>
+                            <i class="fa-solid fa-headset"></i>
+                            <span class="contact-btn-label">Contact Us</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div>&copy; 2026 AETHER VOYAGE S.A. All Rights Reserved. Luxury Luggage & Travel Goods.</div>
+                <div class="footer-legal-links">
+                    <a href="warranty.html" class="footer-link">Warranty Terms</a>
+                    <a href="contact.html" class="footer-link">Privacy Policy</a>
+                    <a href="contact.html" class="footer-link">Sustainability</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/data.js"></script>
+    <script src="js/theme.js"></script>
+    <script src="js/router.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/catalog.js"></script>
+    <script src="js/warranty.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/checkout.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

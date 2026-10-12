@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+    <!-- Instant Theme & Layout Initializer (Prevents Flash of Dark/Light Theme on Navigation) -->
+    <script>
+        (function() {
+            try {
+                var savedTheme = localStorage.getItem('aether_theme') || 'light';
+                var savedDir = localStorage.getItem('aether_dir') || 'ltr';
+                document.documentElement.setAttribute('data-theme', savedTheme);
+                document.documentElement.setAttribute('dir', savedDir);
+                document.documentElement.setAttribute('lang', savedDir === 'rtl' ? 'ar' : 'en');
+            } catch(e) {}
+        })();
+    </script>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Explore AETHER VOYAGE Collections — American Tourister, Skybags, Samsonite, Rimowa, Tumi, Carl Friedrik, and Aether luggage with live material finish visualizer." />
+    <title>Luggage Collections — AETHER VOYAGE</title>
+
+    <!-- Favicon & Brand Touch Icons -->
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png" />
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="manifest" href="site.webmanifest" />
+    <meta name="theme-color" content="#dfba73" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800;900&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome 6 Icons CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+    <!-- Master Stylesheet -->
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="site-header" id="siteHeader">
+        <div class="container header-container">
+            <a href="index.html" class="brand-logo" aria-label="Aether Voyage Home">
+                <div class="logo-monogram">Æ</div>
+                <div class="logo-text-group">
+                    <span class="logo-title">AETHER</span>
+                    <span class="logo-subtitle">TRAVEL LUGGAGE</span>
+                </div>
+            </a>
+
+            <nav class="nav-menu" aria-label="Primary Navigation">
+                <div class="nav-item-dropdown">
+                    <a href="index.html" class="nav-link dropdown-toggle">
+                        <span>Home</span>
+                        <i class="fa-solid fa-chevron-down nav-dropdown-arrow"></i>
+                    </a>
+                    <div class="nav-dropdown-menu">
+                        <a href="index.html" class="nav-dropdown-item">
+                            <div class="dropdown-item-icon">
+                                <i class="fa-solid fa-landmark"></i>
+                            </div>
+                            <div class="dropdown-item-content">
+                                <div class="dropdown-item-title">Home 1: Flagship Showcase</div>
+                                <div class="dropdown-item-desc">Classic brand collections & travel luggage</div>
+                            </div>
+                        </a>
+                        <a href="home2.html" class="nav-dropdown-item">
+                            <div class="dropdown-item-icon">
+                                <i class="fa-solid fa-wand-magic-sparkles"></i>
+                            </div>
+                            <div class="dropdown-item-content">
+                                <div class="dropdown-item-title">Home 2: Bespoke Studio</div>
+                                <div class="dropdown-item-desc">Customize bag designs, colors & monograms</div>
+                            </div>
+                            <span class="dropdown-item-badge">New</span>
+                        </a>
+                    </div>
+                </div>
+                <a href="collections.html" class="nav-link active">Collections</a>
+                <a href="brands.html" class="nav-link">Brands</a>
+                <a href="warranty.html" class="nav-link" title="100-Year Warranty & Repair">Warranty</a>
+                <a href="blog.html" class="nav-link">Blog</a>
+                <a href="contact.html" class="nav-link" title="Contact Concierge">Contact</a>
+            </nav>
+
+            <div class="header-actions">
+
+                <button id="dirToggle" class="compact-tool-btn" title="Toggle Layout Direction (LTR/RTL)">
+                    <span>RTL</span>
+                </button>
+
+                <button id="themeToggle" class="compact-tool-btn" title="Toggle Dark / Light Theme">
+                    <i class="fa-solid fa-sun"></i>
+                </button>
+
+                <button id="wishlistBtn" class="compact-tool-btn wishlist-open-btn" title="Open Wishlist">
+                    <i class="fa-regular fa-heart"></i>
+                    <span class="action-badge wishlist-count-badge" style="display: none;">0</span>
+                </button>
+
+                <button id="cartBtn" class="compact-tool-btn cart-open-btn" title="Open Luggage Cart">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <span class="action-badge cart-count-badge" style="display: none;">0</span>
+                </button>
+
+                <a href="home2.html#studio" class="header-cta-btn" id="headerCtaBtn" title="Order Bespoke Commission Luggage">
+                    <i class="fa-solid fa-boxes-packing"></i>
+                    <span>Order Bespoke</span>
+                </a>
+
+                <button id="mobileMenuToggle" class="hamburger-btn" aria-label="Open Mobile Menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Drawer -->
+    <div class="mobile-nav-drawer" id="mobileMenu">
+        <div class="mobile-nav-header">
+            <a href="index.html" class="brand-logo" aria-label="Aether Voyage Home">
+                <div class="logo-monogram">Æ</div>
+                <span class="logo-title">AETHER</span>
+            </a>
+            <button class="drawer-close-btn" id="mobileMenuClose"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div class="mobile-nav-links">
+            <div class="mobile-nav-dropdown-section">
+                <a href="index.html" class="mobile-nav-link">
+                    <i class="fa-solid fa-house"></i> Home
+                </a>
+                <div class="mobile-nav-subgroup">
+                    <a href="index.html" class="mobile-nav-sublink">
+                        <span>Home 1: Flagship Showcase</span>
+                        <i class="fa-solid fa-landmark"></i>
+                    </a>
+                    <a href="home2.html" class="mobile-nav-sublink">
+                        <span>Home 2: Bespoke Studio</span>
+                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+                    </a>
+                </div>
+            </div>
+            <a href="collections.html" class="mobile-nav-link active"><i class="fa-solid fa-suitcase-rolling"></i> Collections</a>
+            <a href="brands.html" class="mobile-nav-link"><i class="fa-solid fa-award"></i> Brands</a>
+            <a href="warranty.html" class="mobile-nav-link"><i class="fa-solid fa-shield-halved"></i> 100-Year Warranty</a>
+            <a href="blog.html" class="mobile-nav-link"><i class="fa-solid fa-newspaper"></i> Blog & Journal</a>
+            <a href="contact.html" class="mobile-nav-link"><i class="fa-solid fa-headset"></i> Contact Us</a>
+            <a href="home2.html#studio" class="mobile-nav-link mobile-nav-cta">
+                <i class="fa-solid fa-boxes-packing"></i> <span>Order Bespoke</span>
+            </a>
+            <a href="#wishlist" class="mobile-nav-link wishlist-open-btn">
+                <i class="fa-regular fa-heart"></i>
+                <span>Private Wishlist</span>
+                <span class="action-badge wishlist-count-badge" style="margin-left: auto; display: none;">0</span>
+            </a>
+        </div>
+        <div class="mobile-nav-footer">
+            <div class="mobile-tools-grid">
+                <button id="themeToggleMobile" class="btn btn-secondary btn-sm" style="flex:1;"><i class="fa-solid fa-sun"></i> Theme</button>
+                <button id="dirToggleMobile" class="btn btn-secondary btn-sm" style="flex:1;"><span>RTL / LTR</span></button>
+            </div>
+        </div>
+    </div>
+
+    <div class="drawer-backdrop" id="drawerBackdrop"></div>
+
+    <!-- Main Collections Catalog -->
+    <main id="mainContent">
+        <section class="catalog-section" style="padding-top: 3.5rem;">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-eyebrow"><i class="fa-solid fa-suitcase-rolling"></i> All Luggage</span>
+                    <h1 class="section-title">Luggage Collections</h1>
+                    <p class="section-subtitle">Discover precision-engineered hardcases, trunks, and artisan leather goods curated from the world's finest luggage brands.</p>
+                </div>
+
+                <!-- Luxury Collection Selector Hub (Clean Responsive Category Filter & Search) -->
+                <div class="collection-selector-hub">
+                    <!-- Row 1: Search & Sort Controls -->
+                    <div class="selector-top-row">
+                        <div class="catalog-search-box">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                            <input type="text" id="catalogSearchInput" placeholder="Search by brand, model, material, or keyword...">
+                        </div>
+                        
+                        <div class="catalog-sort-box">
+                            <label for="catalogSortSelect"><i class="fa-solid fa-arrow-down-short-wide"></i> Sort:</label>
+                            <select id="catalogSortSelect" aria-label="Sort collections">
+                                <option value="featured">Featured Items</option>
+                                <option value="price-low">Price: Low to High</option>
+                                <option value="price-high">Price: High to Low</option>
+                                <option value="rating">Highest Rated</option>
+                                <option value="newest">Newest Arrivals</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Row 2: Category Segmented Tabs (Clean, Grid-Wrapped, Realistic Icons) -->
+                    <div class="collection-category-tabs" role="tablist" aria-label="Luggage Category Filter">
+                        <button class="collection-tab-btn active" data-filter="all" role="tab" aria-selected="true">
+                            <span class="tab-icon"><i class="fa-solid fa-border-all"></i></span>
+                            <span class="tab-label">All Luggage</span>
+                            <span class="tab-counter">18</span>
+                        </button>
+                        <button class="collection-tab-btn" data-filter="suitcases" role="tab" aria-selected="false">
+                            <span class="tab-icon"><i class="fa-solid fa-suitcase-rolling"></i></span>
+                            <span class="tab-label">Hardcase Trunks</span>
+                            <span class="tab-counter">13</span>
+                        </button>
+                        <button class="collection-tab-btn" data-filter="duffles" role="tab" aria-selected="false">
+                            <span class="tab-icon"><i class="fa-solid fa-bag-shopping"></i></span>
+                            <span class="tab-label">Duffels & Bags</span>
+                            <span class="tab-counter">2</span>
+                        </button>
+                        <button class="collection-tab-btn" data-filter="backpacks" role="tab" aria-selected="false">
+                            <span class="tab-icon"><i class="fa-solid fa-shield-halved"></i></span>
+                            <span class="tab-label">City Backpacks</span>
+                            <span class="tab-counter">1</span>
+                        </button>
+                        <button class="collection-tab-btn" data-filter="accessories" role="tab" aria-selected="false">
+                            <span class="tab-icon"><i class="fa-solid fa-briefcase"></i></span>
+                            <span class="tab-label">Business & Tech</span>
+                            <span class="tab-counter">2</span>
+                        </button>
+                    </div>
+
+                    <!-- Row 3: Status Bar with Active Filter Indicator, Reset Button & Results Counter -->
+                    <div class="catalog-status-bar">
+                        <div class="active-filter-indicator" id="activeFilterTag" style="display: none;">
+                            <span class="filter-indicator-text">Filtered by: <strong id="activeFilterLabel">All</strong></span>
+                            <button class="filter-clear-btn" id="clearActiveFilterBtn" title="Clear filter">
+                                <i class="fa-solid fa-xmark"></i> Clear Filter
+                            </button>
+                        </div>
+                        <div class="catalog-count-badge" id="catalogResultsCount">18 products found</div>
+                    </div>
+                </div>
+
+                <!-- Products Grid -->
+                <div class="products-grid" id="productsGrid"></div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Customer Account Drawer (Slides in from Left-to-Right) -->
+    <aside class="slide-drawer slide-drawer-left" id="authDrawer" aria-label="Customer Account Drawer">
+        <div class="drawer-header">
+            <div class="drawer-title-group">
+                <i class="fa-regular fa-user" style="color: var(--color-gold); font-size: 1.1rem;"></i>
+                <h3 class="drawer-title" id="authDrawerTitle">Customer Account</h3>
+            </div>
+            <button class="drawer-close-btn" id="authDrawerClose" aria-label="Close Account Drawer"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div class="drawer-body" id="authDrawerBody"></div>
+    </aside>
+
+    <aside class="slide-drawer" id="cartDrawer" aria-label="Luggage Cart Drawer">
+        <div class="drawer-header">
+            <div class="drawer-title-group">
+                <i class="fa-solid fa-bag-shopping" style="color: var(--color-gold);"></i>
+                <h3 class="drawer-title">Luggage Cart</h3>
+                <span class="drawer-count-badge cart-count-badge">0</span>
+            </div>
+            <button class="drawer-close-btn" id="cartDrawerClose"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div class="shipping-progress-box">
+            <div class="shipping-progress-text" id="shippingProgressText">
+                Add <strong>$500</strong> for Complimentary Express Shipping
+            </div>
+            <div class="shipping-bar-bg">
+                <div class="shipping-bar-fill" id="shippingProgressBar" style="width: 0%;"></div>
+            </div>
+        </div>
+        <div class="drawer-body" id="cartItemsList"></div>
+        <div class="drawer-footer">
+            <div class="promo-form">
+                <input type="text" class="promo-input" id="promoCodeInput" placeholder="PROMO CODE (VOYAGE10)">
+                <button class="promo-btn" id="applyPromoBtn" type="button">Apply</button>
+            </div>
+            <div class="cart-totals-list">
+                <div class="cart-totals-row">
+                    <span>Subtotal</span>
+                    <span id="cartSubtotal">$0</span>
+                </div>
+                <div class="cart-totals-row" id="cartDiscountRow" style="display: none; color: #10b981;">
+                    <span>Member Discount</span>
+                    <span id="cartDiscount">-$0</span>
+                </div>
+                <div class="cart-totals-row">
+                    <span>Worldwide Express Shipping</span>
+                    <span id="cartShipping">FREE</span>
+                </div>
+                <div class="cart-totals-row final-total">
+                    <span>Total</span>
+                    <span class="total-amount" id="cartFinalTotal">$0</span>
+                </div>
+            </div>
+            <button class="checkout-btn" id="checkoutBtn">
+                <i class="fa-solid fa-lock"></i> Proceed to Checkout
+            </button>
+        </div>
+    </aside>
+
+    <aside class="slide-drawer" id="wishlistDrawer" aria-label="Wishlist Drawer">
+        <div class="drawer-header">
+            <div class="drawer-title-group">
+                <i class="fa-solid fa-heart" style="color: var(--color-gold);"></i>
+                <h3 class="drawer-title">My Wishlist</h3>
+                <span class="drawer-count-badge wishlist-count-badge">0</span>
+            </div>
+            <button class="drawer-close-btn" id="wishlistDrawerClose"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div class="drawer-body" id="wishlistItemsList"></div>
+        <!-- Wishlist Drawer Footer -->
+        <div class="drawer-footer" id="wishlistDrawerFooter" style="display: none;"></div>
+    </aside>
+
+    <!-- Modals -->
+    <div class="modal-backdrop" id="quickViewModal">
+        <div class="modal-dialog">
+            <button class="modal-close-btn" id="quickViewCloseBtn"><i class="fa-solid fa-xmark"></i></button>
+            <div id="quickViewContent"></div>
+        </div>
+    </div>
+
+    <div class="modal-backdrop" id="checkoutModal">
+        <div class="modal-dialog checkout-dialog" id="checkoutDialogContent">
+            <button class="modal-close-btn" id="checkoutModalClose"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+    </div>
+
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-top-grid">
+                <div>
+                    <a href="index.html" class="brand-logo" style="margin-bottom: 1rem; text-decoration: none;" aria-label="Aether Voyage Home">
+                        <div class="logo-monogram">Æ</div>
+                        <div class="logo-text-group">
+                            <span class="logo-title" style="color: #fff;">AETHER</span>
+                            <span class="logo-subtitle">TRAVEL LUGGAGE</span>
+                        </div>
+                    </a>
+                    <p class="footer-brand-desc" style="font-size: 0.82rem; color: #b8c4d4; line-height: 1.6; max-width: 300px;">
+                        Aeronautical aluminum suitcases, ballistic nylon travel bags, and handcrafted Italian leather goods. Designed for modern travelers.
+                    </p>
+                    <div class="footer-social-block">
+                        <span class="footer-social-label">Follow Us</span>
+                        <div class="footer-social-icons">
+                            <a href="https://www.instagram.com/accounts/login/" target="_blank" rel="noopener noreferrer" class="footer-social-btn instagram" aria-label="Follow us on Instagram (Redirects to Login)" title="Instagram Login">
+                                <i class="fa-brands fa-instagram"></i>
+                            </a>
+                            <a href="https://www.facebook.com/login/" target="_blank" rel="noopener noreferrer" class="footer-social-btn facebook" aria-label="Follow us on Facebook (Redirects to Login)" title="Facebook Login">
+                                <i class="fa-brands fa-facebook-f"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/login" target="_blank" rel="noopener noreferrer" class="footer-social-btn linkedin" aria-label="Follow us on LinkedIn (Redirects to Login)" title="LinkedIn Login">
+                                <i class="fa-brands fa-linkedin-in"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="footer-col-title">Our Collections</h4>
+                    <ul class="footer-links-list">
+                        <li><a href="collections.html?brand=American+Tourister" class="footer-link">American Tourister</a></li>
+                        <li><a href="collections.html?brand=Skybags" class="footer-link">Skybags Collection</a></li>
+                        <li><a href="collections.html?brand=Samsonite" class="footer-link">Samsonite Series</a></li>
+                        <li><a href="collections.html?brand=Rimowa" class="footer-link">Rimowa Classic & Cabin</a></li>
+                        <li><a href="collections.html?brand=Tumi" class="footer-link">Tumi Ballistic Duffels</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-col-title">Customer Services</h4>
+                    <ul class="footer-links-list">
+                        <li><a href="warranty.html" class="footer-link">100-Year Lifetime Warranty</a></li>
+                        <li><a href="warranty.html#tracker" class="footer-link">5-Stage Repair Tracker</a></li>
+                        <li><a href="warranty.html#service-centers" class="footer-link">Global Service Centers</a></li>
+                        <li><a href="blog.html" class="footer-link">The Aether Journal</a></li>
+                        <li><a href="contact.html" class="footer-link">Store Consultation</a></li>
+                        <li><a href="home2.html#studio" class="footer-link">Bespoke Atelier Studio</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-col-title">Global Flagships</h4>
+                    <p class="footer-cities" style="font-size: 0.82rem; color: #b8c4d4; line-height: 1.6;">&bull; Paris &bull; Tokyo &bull; New York &bull; London &bull; Dubai &bull; Singapore</p>
+                    <p style="font-size: 0.82rem; color: var(--color-gold); font-weight: 700; margin-top: 0.5rem; margin-bottom: 1rem;">Contact Us: +1 (800) 492-AETH</p>
+                    <div class="footer-actions-dock" id="footerActionsDock">
+                        <button id="backToTopBtn" class="back-to-top" title="Back to Top" aria-label="Back to Top">
+                            <i class="fa-solid fa-arrow-up"></i>
+                        </button>
+                        <a href="contact.html" id="floatingContactBtn" class="floating-contact-btn" title="Contact Us" aria-label="Contact Us">
+                            <span class="contact-status-dot" aria-hidden="true"></span>
+                            <i class="fa-solid fa-headset"></i>
+                            <span class="contact-btn-label">Contact Us</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div>&copy; 2026 AETHER VOYAGE S.A. All Rights Reserved. Luxury Luggage & Travel Goods.</div>
+                <div class="footer-legal-links">
+                    <a href="warranty.html" class="footer-link">Warranty Terms</a>
+                    <a href="contact.html" class="footer-link">Privacy Policy</a>
+                    <a href="contact.html" class="footer-link">Sustainability</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/data.js"></script>
+    <script src="js/theme.js"></script>
+    <script src="js/router.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/catalog.js"></script>
+    <script src="js/warranty.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/checkout.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
