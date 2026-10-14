@@ -51,6 +51,7 @@
             border-bottom: 1px solid var(--border-color);
             position: relative;
             overflow: hidden;
+            text-align: center;
         }
 
         .journal-hero-section::before {
@@ -68,6 +69,7 @@
         .journal-header-badge {
             display: inline-flex;
             align-items: center;
+            justify-content: center;
             gap: 0.5rem;
             background: var(--color-gold-glow);
             color: var(--color-gold);
@@ -78,7 +80,7 @@
             font-weight: 700;
             letter-spacing: 0.14em;
             text-transform: uppercase;
-            margin-bottom: 1.25rem;
+            margin: 0 auto 1.25rem;
         }
 
         .journal-hero-title {
@@ -88,8 +90,9 @@
             letter-spacing: 0.04em;
             color: var(--text-primary);
             line-height: 1.15;
-            margin-bottom: 1rem;
+            margin: 0 auto 1rem;
             max-width: 900px;
+            text-align: center;
         }
 
         .journal-hero-subtitle {
@@ -97,17 +100,19 @@
             line-height: 1.65;
             color: var(--text-secondary);
             max-width: 720px;
-            margin-bottom: 2.25rem;
+            margin: 0 auto 2.25rem;
+            text-align: center;
         }
 
-        /* Search & Filter Bar */
+        /* Search & Filter Bar - Centered Editorial Toolbar */
         .journal-toolbar-row {
             display: flex;
             align-items: center;
-            justify-content: space-between;
-            gap: 1.5rem;
+            justify-content: center;
+            gap: 1.25rem;
             flex-wrap: wrap;
-            margin-top: 1.5rem;
+            margin: 1.5rem auto 0;
+            max-width: 1040px;
         }
 
         .journal-search-wrap {
@@ -157,6 +162,7 @@
         .journal-pills-row {
             display: flex;
             align-items: center;
+            justify-content: center;
             gap: 0.5rem;
             flex-wrap: wrap;
         }
@@ -604,6 +610,85 @@
             }
             .reader-modal-dialog {
                 padding: 2rem 1.5rem;
+            }
+            .journal-toolbar-row {
+                flex-direction: column;
+                align-items: center;
+                gap: 1.25rem;
+                width: 100%;
+            }
+            .journal-search-wrap {
+                width: 100%;
+                max-width: 520px;
+            }
+            .journal-pills-row {
+                justify-content: center;
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .journal-hero-section {
+                padding: 3.5rem 0 2.25rem;
+            }
+            .journal-hero-title {
+                font-size: clamp(1.85rem, 5.5vw, 2.5rem);
+            }
+            .journal-hero-subtitle {
+                font-size: 0.98rem;
+                margin-bottom: 1.75rem;
+            }
+            .journal-pills-row {
+                gap: 0.4rem;
+            }
+            .journal-pill-btn {
+                font-size: 0.74rem;
+                padding: 0.45rem 0.85rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .journal-hero-section {
+                padding: 2.75rem 0 1.75rem;
+            }
+            .journal-hero-title {
+                font-size: clamp(1.6rem, 6.5vw, 2.1rem);
+                letter-spacing: 0.02em;
+            }
+            .journal-hero-subtitle {
+                font-size: 0.92rem;
+                line-height: 1.6;
+                margin-bottom: 1.5rem;
+            }
+            .journal-search-wrap {
+                width: 100%;
+                max-width: 100%;
+            }
+            .journal-search-input {
+                font-size: 0.82rem;
+                padding: 0.7rem 0.9rem 0.7rem 2.4rem;
+            }
+            [dir="rtl"] .journal-search-input {
+                padding: 0.7rem 2.4rem 0.7rem 0.9rem;
+            }
+            .journal-pills-row {
+                display: flex;
+                flex-wrap: nowrap;
+                overflow-x: auto;
+                justify-content: flex-start;
+                padding: 0.35rem 0.25rem 0.65rem;
+                width: 100%;
+                -webkit-overflow-scrolling: touch;
+                scrollbar-width: none;
+            }
+            .journal-pills-row::-webkit-scrollbar {
+                display: none;
+            }
+            .journal-pill-btn {
+                flex-shrink: 0;
+                white-space: nowrap;
+                font-size: 0.72rem;
+                padding: 0.45rem 0.8rem;
             }
         }
     </style>
